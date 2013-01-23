@@ -16625,6 +16625,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <wire x1="170.18" y1="-12.7" x2="165.1" y2="-12.7" width="0.1524" layer="91"/>
 <pinref part="SV3" gate="1" pin="4"/>
+<label x="165.1" y="-12.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$20" class="0">
@@ -17027,6 +17028,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <wire x1="170.18" y1="-20.32" x2="165.1" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="SV3" gate="1" pin="7"/>
+<label x="165.1" y="-20.32" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MOTOR_1" class="0">
@@ -17345,6 +17347,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <wire x1="170.18" y1="-15.24" x2="165.1" y2="-15.24" width="0.1524" layer="91"/>
 <pinref part="SV3" gate="1" pin="5"/>
+<label x="165.1" y="-15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ADC3" class="0">
@@ -17356,6 +17359,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <segment>
 <wire x1="170.18" y1="-17.78" x2="165.1" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="SV3" gate="1" pin="6"/>
+<label x="165.1" y="-17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SERVO_3" class="0">
@@ -17435,7 +17439,6 @@ In this library the device names are the same as the pin names of the symbols, t
 </sheet>
 </sheets>
 <errors>
-<approved hash="201,1,-86.36,-88.9,V+,N$7\, V+,,,,"/>
 <approved hash="115,1,-6.6831,71.5095,JP2,,,,,"/>
 </errors>
 </schematic>
