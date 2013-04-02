@@ -1,0 +1,581 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\MultirotorF4\MultirotorF4.uvproj
+Project File Date:  04/01/2013
+
+<h2>Output:</h2>
+Build target 'MultirotorF4'
+compiling system_stm32f4xx.c...
+compiling core_cm3.c...
+compiling drv_adc.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_adxl345.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_bmp085.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_hcsr04.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_hmc5883l.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_i2c.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_i2c_soft.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_l3g4200d.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_ledring.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_mma845x.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_mpu3050.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_mpu6050.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_ms5611.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_pwm.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_spi.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_system.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling drv_uart.c...
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(147): error:  #256: invalid redeclaration of type name "NVIC_Type" (declared at line 318 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(176): error:  #256: invalid redeclaration of type name "SCB_Type" (declared at line 358 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(371): error:  #256: invalid redeclaration of type name "SysTick_Type" (declared at line 596 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(444): error:  #256: invalid redeclaration of type name "ITM_Type" (declared at line 654 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(548): error:  #256: invalid redeclaration of type name "MPU_Type" (declared at line 713 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(626): error:  #256: invalid redeclaration of type name "CoreDebug_Type" (declared at line 886 of ".\lib\CMSIS\CM4\CoreSupport\core_cm4.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(838): error:  #147-D: declaration is incompatible with "uint32_t __REV16(uint32_t)" (declared at line 114 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(848): error:  #147-D: declaration is incompatible with "int32_t __REVSH(int32_t)" (declared at line 128 of ".\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h")
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(948): error:  #247: function "__get_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(961): error:  #247: function "__set_BASEPRI" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(974): error:  #247: function "__get_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(987): error:  #247: function "__set_PRIMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1000): error:  #247: function "__get_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1013): error:  #247: function "__set_FAULTMASK" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1026): error:  #247: function "__get_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1039): error:  #247: function "__set_CONTROL" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1468): error:  #247: function "NVIC_SetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1489): error:  #247: function "NVIC_GetPriorityGrouping" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1502): error:  #247: function "NVIC_EnableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1515): error:  #247: function "NVIC_DisableIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1529): error:  #247: function "NVIC_GetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1542): error:  #247: function "NVIC_SetPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1555): error:  #247: function "NVIC_ClearPendingIRQ" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1569): error:  #247: function "NVIC_GetActive" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1586): error:  #247: function "NVIC_SetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1609): error:  #247: function "NVIC_GetPriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1634): error:  #247: function "NVIC_EncodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1665): error:  #247: function "NVIC_DecodePriority" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1694): error:  #247: function "SysTick_Config" has already been defined
+.\lib\CMSIS\CM4\CoreSupport\core_cm3.h(1719): error:  #247: function "NVIC_SystemReset" has already been defined
+compiling barofilter.c...
+compiling baroFusion.c...
+compiling buzzer.c...
+compiling cli.c...
+compiling config.c...
+compiling gps.c...
+compiling imu.c...
+compiling kalman1D.c...
+compiling kalmanFilterFrontend.c...
+compiling main.c...
+compiling mixer.c...
+compiling mw.c...
+compiling printf.c...
+compiling quaternion.c...
+compiling sensors.c...
+compiling serial.c...
+compiling simpleIntegrator.c...
+compiling spektrum.c...
+compiling telemetry.c...
+Target not created
+Build target 'MultirotorF4'
+compiling drv_adc.c...
+compiling drv_adxl345.c...
+compiling drv_bmp085.c...
+compiling drv_hcsr04.c...
+compiling drv_hmc5883l.c...
+compiling drv_i2c.c...
+compiling drv_i2c_soft.c...
+compiling drv_l3g4200d.c...
+compiling drv_ledring.c...
+compiling drv_mma845x.c...
+compiling drv_mpu3050.c...
+compiling drv_mpu6050.c...
+compiling drv_ms5611.c...
+compiling drv_pwm.c...
+compiling drv_spi.c...
+compiling drv_system.c...
+compiling drv_uart.c...
+linking...
+Program Size: Code=62222 RO-data=7258 RW-data=1184 ZI-data=4352  
+FromELF: creating hex file...
+".\build\MultirotorF4.axf" - 0 Error(s), 0 Warning(s).
