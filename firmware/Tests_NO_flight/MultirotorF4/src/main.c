@@ -141,10 +141,10 @@ int main(void)
     }
 #endif
 
-    LED1_ON;
+   // LED1_ON;
     LED0_OFF;
     for (i = 0; i < 10; i++) {
-        LED0_ON;
+    LED0_ON;
     
     
     delay(300);
@@ -171,6 +171,7 @@ int main(void)
     LED1_OFF;
     LED2_OFF;
     LED3_OFF;
+		delay(300);
 			// LED1_TOGGLE;
        // LED0_TOGGLE;
        // delay(25);
@@ -178,8 +179,8 @@ int main(void)
       //  delay(25);
       //  BEEP_OFF;
     }
-    LED0_OFF;
-    LED1_OFF;
+   // LED0_OFF;
+   // LED1_OFF;
 
     // drop out any sensors that don't seem to work, init all the others. halt if gyro is dead.
     sensorsAutodetect();

@@ -80,7 +80,7 @@
 ### ADS-LD Output File: '.\build\MultirotorF4.axf'
 ### ADS-LD Command File: '.\build\MultirotorF4.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\build\MultirotorF4.lnp', Handle=0x000002D8
+### Creating CmdFile '.\build\MultirotorF4.lnp', Handle=0x0000019C
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\build\MultirotorF4.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

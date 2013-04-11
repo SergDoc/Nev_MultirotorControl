@@ -1409,6 +1409,7 @@ Removing Unused input sections from the image.
     Removing gps.o(.data), (1 bytes).
     Removing imu.o(.rev16_text), (4 bytes).
     Removing imu.o(.revsh_text), (4 bytes).
+    Removing imu.o(.text), (4 bytes).
     Removing kalman1d.o(.rev16_text), (4 bytes).
     Removing kalman1d.o(.revsh_text), (4 bytes).
     Removing kalmanfilterfrontend.o(.rev16_text), (4 bytes).
@@ -1457,7 +1458,7 @@ Removing Unused input sections from the image.
     Removing dneg.o(.text), (6 bytes).
     Removing cdcmple.o(.text), (40 bytes).
 
-694 unused section(s) (total 22641 bytes) removed from the image.
+695 unused section(s) (total 22645 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1771,196 +1772,196 @@ Image Symbol Table
     pwmICConfig                              0x08002e2d   Thumb Code    48  drv_pwm.o(.text)
     .text                                    0x08002e84   Section        0  drv_system.o(.text)
     cycleCounterInit                         0x08002e85   Thumb Code    22  drv_system.o(.text)
-    .text                                    0x08003068   Section        0  drv_uart.o(.text)
-    uartTxDMA                                0x08003069   Thumb Code    52  drv_uart.o(.text)
-    uart2Open                                0x08003251   Thumb Code    70  drv_uart.o(.text)
-    .text                                    0x08003448   Section        0  buzzer.o(.text)
-    beep                                     0x08003449   Thumb Code    92  buzzer.o(.text)
-    beep_code                                0x080034a5   Thumb Code   136  buzzer.o(.text)
-    .text                                    0x08003664   Section        0  cli.o(.text)
-    i2a                                      0x08003665   Thumb Code    36  cli.o(.text)
-    _atof                                    0x080036b1   Thumb Code   380  cli.o(.text)
-    ftoa                                     0x0800382d   Thumb Code   204  cli.o(.text)
-    cliCompare                               0x080038f9   Thumb Code    26  cli.o(.text)
-    cliAux                                   0x08003913   Thumb Code    90  cli.o(.text)
-    cliCMix                                  0x0800396d   Thumb Code   806  cli.o(.text)
-    cliDefaults                              0x08003c93   Thumb Code    36  cli.o(.text)
-    cliPrintVar                              0x08003cb7   Thumb Code   148  cli.o(.text)
-    cliDump                                  0x08003d4b   Thumb Code   386  cli.o(.text)
-    cliSave                                  0x08003ecd   Thumb Code    36  cli.o(.text)
-    cliExit                                  0x08003ef1   Thumb Code    36  cli.o(.text)
-    cliFeature                               0x08003f15   Thumb Code   674  cli.o(.text)
-    cliHelp                                  0x080041b7   Thumb Code    42  cli.o(.text)
-    cliMap                                   0x080041e1   Thumb Code   116  cli.o(.text)
-    cliMixer                                 0x08004255   Thumb Code   140  cli.o(.text)
-    cliSet                                   0x080042e1   Thumb Code   300  cli.o(.text)
-    cliStatus                                0x0800440d   Thumb Code   168  cli.o(.text)
-    cliVersion                               0x080044b5   Thumb Code     6  cli.o(.text)
-    cliPrompt                                0x080048cd   Thumb Code     6  cli.o(.text)
-    .text                                    0x08004924   Section        0  config.o(.text)
-    resetConf                                0x08004abf   Thumb Code   534  config.o(.text)
-    .text                                    0x08004da4   Section        0  gps.o(.text)
-    gpsPrint                                 0x08004da5   Thumb Code    54  gps.o(.text)
-    get_D                                    0x08004df5   Thumb Code   108  gps.o(.text)
-    get_I                                    0x08004e61   Thumb Code    84  gps.o(.text)
-    GPS_update_crosstrack                    0x08004eb5   Thumb Code   140  gps.o(.text)
-    GPS_calc_nav_rate                        0x08004f41   Thumb Code   258  gps.o(.text)
-    GPS_calc_poshold                         0x08005043   Thumb Code   194  gps.o(.text)
-    GPS_calc_location_error                  0x08005105   Thumb Code    44  gps.o(.text)
-    GPS_distance_cm_bearing                  0x08005131   Thumb Code   182  gps.o(.text)
-    GPS_calc_velocity                        0x080051e7   Thumb Code   144  gps.o(.text)
-    GPS_calc_longitude_scaling               0x08005277   Thumb Code    46  gps.o(.text)
-    UBLOX_parse_gps                          0x080052d5   Thumb Code   176  gps.o(.text)
-    GPS_UBLOX_newFrame                       0x08005385   Thumb Code   216  gps.o(.text)
-    grab_fields                              0x0800545d   Thumb Code    56  gps.o(.text)
-    GPS_NMEA_newFrame                        0x08005535   Thumb Code   472  gps.o(.text)
-    GPS_NewData                              0x0800570d   Thumb Code   548  gps.o(.text)
-    GPS_set_pids                             0x08005931   Thumb Code   276  gps.o(.text)
-    get_P                                    0x08005bbd   Thumb Code    26  gps.o(.text)
-    GPS_calc_desired_speed                   0x08005bd7   Thumb Code    76  gps.o(.text)
-    hex_c                                    0x08005c23   Thumb Code    18  gps.o(.text)
-    reset_PID                                0x08005c35   Thumb Code    18  gps.o(.text)
-    .text                                    0x08005cbc   Section        0  imu.o(.text)
-    getEstimatedAttitude                     0x08005f59   Thumb Code   900  imu.o(.text)
-    .text                                    0x080067d0   Section        0  kalman1d.o(.text)
-    .text                                    0x080068ec   Section        0  kalmanfilterfrontend.o(.text)
-    .text                                    0x08006ab0   Section        0  main.o(.text)
-    _putc                                    0x08006ab1   Thumb Code     6  main.o(.text)
-    .text                                    0x08006c98   Section        0  mixer.o(.text)
-    airplaneMixer                            0x08006e1f   Thumb Code   306  mixer.o(.text)
-    .text                                    0x080073c0   Section        0  mw.o(.text)
-    .text                                    0x080083a0   Section        0  printf.o(.text)
-    uli2a                                    0x080083a1   Thumb Code    88  printf.o(.text)
-    ui2a                                     0x080083f9   Thumb Code    88  printf.o(.text)
-    putchw                                   0x08008451   Thumb Code    70  printf.o(.text)
-    .text                                    0x080085f8   Section        0  sensors.o(.text)
-    alignSensors                             0x080087c3   Thumb Code    72  sensors.o(.text)
-    ACC_Common                               0x0800880b   Thumb Code   398  sensors.o(.text)
-    GYRO_Common                              0x08008abb   Thumb Code   410  sensors.o(.text)
-    Mag_getRawADC                            0x08008fbf   Thumb Code    20  sensors.o(.text)
-    .text                                    0x08008fec   Section        0  serial.o(.text)
-    evaluateCommand                          0x08009107   Thumb Code  1330  serial.o(.text)
-    .text                                    0x08009764   Section        0  simpleintegrator.o(.text)
-    .text                                    0x080098a8   Section        0  spektrum.o(.text)
-    spektrumDataReceive                      0x080098a9   Thumb Code    58  spektrum.o(.text)
-    .text                                    0x0800999c   Section        0  telemetry.o(.text)
-    serializeFrsky                           0x0800999d   Thumb Code    38  telemetry.o(.text)
-    sendGPS                                  0x080099c3   Thumb Code   174  telemetry.o(.text)
-    sendDataHead                             0x08009c29   Thumb Code    20  telemetry.o(.text)
-    serialize16                              0x08009c3d   Thumb Code    20  telemetry.o(.text)
-    sendVoltage                              0x08009c51   Thumb Code    82  telemetry.o(.text)
-    .text                                    0x08009cd4   Section        0  ctype_o.o(.text)
-    .text                                    0x08009cdc   Section        0  toupper.o(.text)
-    .text                                    0x08009ce8   Section        0  bsearch.o(.text)
-    .text                                    0x08009d2e   Section        0  memcpya.o(.text)
-    .text                                    0x08009d52   Section        0  memseta.o(.text)
-    .text                                    0x08009d78   Section        0  strcat.o(.text)
-    .text                                    0x08009d94   Section        0  strstr.o(.text)
-    .text                                    0x08009dc0   Section        0  strncpy.o(.text)
-    .text                                    0x08009dd8   Section        0  strchr.o(.text)
-    .text                                    0x08009dea   Section        0  strlen.o(.text)
-    .text                                    0x08009dfa   Section        0  strncasecmp.o(.text)
-    .text                                    0x08009e2c   Section        0  atoi.o(.text)
-    .text                                    0x08009e46   Section        0  dadd.o(.text)
-    .text                                    0x08009f92   Section        0  dmul.o(.text)
-    .text                                    0x0800a072   Section        0  ddiv.o(.text)
-    .text                                    0x0800a150   Section        0  dflti.o(.text)
-    .text                                    0x0800a172   Section        0  dfltui.o(.text)
-    .text                                    0x0800a18c   Section        0  dfixi.o(.text)
-    .text                                    0x0800a1ca   Section        0  f2d.o(.text)
-    .text                                    0x0800a1f6   Section        0  d2f.o(.text)
-    .text                                    0x0800a22e   Section        0  llshl.o(.text)
-    .text                                    0x0800a24c   Section        0  llushr.o(.text)
-    .text                                    0x0800a26c   Section        0  llsshr.o(.text)
-    .text                                    0x0800a290   Section        0  tolower.o(.text)
-    .text                                    0x0800a29c   Section        0  strtol.o(.text)
-    .text                                    0x0800a30c   Section        0  iusefp.o(.text)
-    .text                                    0x0800a30c   Section        0  fepilogue.o(.text)
-    .text                                    0x0800a378   Section        0  depilogue.o(.text)
-    .text                                    0x0800a436   Section        0  dscalb.o(.text)
-    .text                                    0x0800a464   Section       40  cdrcmple.o(.text)
-    .text                                    0x0800a48c   Section       36  init.o(.text)
-    .text                                    0x0800a4b0   Section        0  _strtoul.o(.text)
-    .text                                    0x0800a54e   Section        0  dsqrt.o(.text)
-    .text                                    0x0800a5f0   Section        0  _chval.o(.text)
-    .text                                    0x0800a60c   Section        0  __dczerorl2.o(.text)
-    i.__ARM_fpclassify                       0x0800a668   Section        0  fpclassify.o(i.__ARM_fpclassify)
-    i.__ARM_fpclassifyf                      0x0800a698   Section        0  fpclassifyf.o(i.__ARM_fpclassifyf)
-    i.__aeabi_errno_addr                     0x0800a6c0   Section        0  errno.o(i.__aeabi_errno_addr)
-    i.__hardfp_asinf                         0x0800a6c8   Section        0  asinf.o(i.__hardfp_asinf)
-    i.__hardfp_atan2f                        0x0800a7ec   Section        0  atan2f.o(i.__hardfp_atan2f)
-    i.__hardfp_cosf                          0x0800aa34   Section        0  cosf.o(i.__hardfp_cosf)
-    i.__hardfp_pow                           0x0800ab98   Section        0  pow.o(i.__hardfp_pow)
-    i.__hardfp_sinf                          0x0800b840   Section        0  sinf.o(i.__hardfp_sinf)
-    i.__hardfp_sqrtf                         0x0800b9b8   Section        0  sqrtf.o(i.__hardfp_sqrtf)
-    i.__kernel_poly                          0x0800b9f2   Section        0  poly.o(i.__kernel_poly)
-    i.__mathlib_dbl_underflow                0x0800baf0   Section        0  dunder.o(i.__mathlib_dbl_underflow)
-    i.__mathlib_flt_underflow                0x0800bb10   Section        0  funder.o(i.__mathlib_flt_underflow)
-    i.__mathlib_rredf2                       0x0800bb20   Section        0  rredf.o(i.__mathlib_rredf2)
-    i.__scatterload_copy                     0x0800bc60   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0800bc6e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x0800bc70   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.__set_errno                            0x0800bc80   Section        0  errno.o(i.__set_errno)
-    i.fabs                                   0x0800bc8c   Section        0  fabs.o(i.fabs)
-    i.sqrt                                   0x0800bcac   Section        0  sqrt.o(i.sqrt)
-    i.sqrtf                                  0x0800bd18   Section        0  sqrtf.o(i.sqrtf)
-    .constdata                               0x0800bd56   Section       14  drv_pwm.o(.constdata)
-    multiPPM                                 0x0800bd56   Data          14  drv_pwm.o(.constdata)
-    .constdata                               0x0800bd64   Section       21  drv_pwm.o(.constdata)
-    multiPWM                                 0x0800bd64   Data          21  drv_pwm.o(.constdata)
-    .constdata                               0x0800bd79   Section       14  drv_pwm.o(.constdata)
-    airPPM                                   0x0800bd79   Data          14  drv_pwm.o(.constdata)
-    .constdata                               0x0800bd87   Section       21  drv_pwm.o(.constdata)
-    airPWM                                   0x0800bd87   Data          21  drv_pwm.o(.constdata)
-    .constdata                               0x0800bd9c   Section     2572  cli.o(.constdata)
-    .constdata                               0x0800c7a8   Section       21  config.o(.constdata)
-    .constdata                               0x0800c7c0   Section      192  gps.o(.constdata)
-    gpsInitStrings                           0x0800c7d4   Data          32  gps.o(.constdata)
-    ubloxInit                                0x0800c7f4   Data         140  gps.o(.constdata)
-    .constdata                               0x0800c880   Section       48  mixer.o(.constdata)
-    mixerTri                                 0x0800c880   Data          48  mixer.o(.constdata)
-    .constdata                               0x0800c8b0   Section       64  mixer.o(.constdata)
-    mixerQuadP                               0x0800c8b0   Data          64  mixer.o(.constdata)
-    .constdata                               0x0800c8f0   Section       64  mixer.o(.constdata)
-    mixerQuadX                               0x0800c8f0   Data          64  mixer.o(.constdata)
-    .constdata                               0x0800c930   Section       32  mixer.o(.constdata)
-    mixerBi                                  0x0800c930   Data          32  mixer.o(.constdata)
-    .constdata                               0x0800c950   Section       96  mixer.o(.constdata)
-    mixerY6                                  0x0800c950   Data          96  mixer.o(.constdata)
-    .constdata                               0x0800c9b0   Section       96  mixer.o(.constdata)
-    mixerHex6P                               0x0800c9b0   Data          96  mixer.o(.constdata)
-    .constdata                               0x0800ca10   Section       64  mixer.o(.constdata)
-    mixerY4                                  0x0800ca10   Data          64  mixer.o(.constdata)
-    .constdata                               0x0800ca50   Section       96  mixer.o(.constdata)
-    mixerHex6X                               0x0800ca50   Data          96  mixer.o(.constdata)
-    .constdata                               0x0800cab0   Section      128  mixer.o(.constdata)
-    mixerOctoX8                              0x0800cab0   Data         128  mixer.o(.constdata)
-    .constdata                               0x0800cb30   Section      128  mixer.o(.constdata)
-    mixerOctoFlatP                           0x0800cb30   Data         128  mixer.o(.constdata)
-    .constdata                               0x0800cbb0   Section      128  mixer.o(.constdata)
-    mixerOctoFlatX                           0x0800cbb0   Data         128  mixer.o(.constdata)
-    .constdata                               0x0800cc30   Section       64  mixer.o(.constdata)
-    mixerVtail4                              0x0800cc30   Data          64  mixer.o(.constdata)
-    .constdata                               0x0800cc70   Section       96  mixer.o(.constdata)
-    mixerHexV6                               0x0800cc70   Data          96  mixer.o(.constdata)
-    .constdata                               0x0800ccd0   Section      160  mixer.o(.constdata)
-    .constdata                               0x0800cd70   Section      158  serial.o(.constdata)
-    boxnames                                 0x0800cd70   Data         110  serial.o(.constdata)
-    pidnames                                 0x0800cdde   Data          48  serial.o(.constdata)
-    .constdata                               0x0800ce10   Section      136  pow.o(.constdata)
-    bp                                       0x0800ce10   Data          16  pow.o(.constdata)
-    dp_h                                     0x0800ce20   Data          16  pow.o(.constdata)
-    dp_l                                     0x0800ce30   Data          16  pow.o(.constdata)
-    L                                        0x0800ce40   Data          48  pow.o(.constdata)
-    P                                        0x0800ce70   Data          40  pow.o(.constdata)
-    .constdata                               0x0800ce98   Section      129  ctype_o.o(.constdata)
-    .constdata                               0x0800cf1c   Section        4  ctype_o.o(.constdata)
-    table                                    0x0800cf1c   Data           4  ctype_o.o(.constdata)
-    .constdata                               0x0800cf20   Section        8  qnan.o(.constdata)
-    .constdata                               0x0800cf28   Section       32  rredf.o(.constdata)
-    twooverpi                                0x0800cf28   Data          32  rredf.o(.constdata)
-    .conststring                             0x0800cf48   Section     1940  cli.o(.conststring)
-    .conststring                             0x0800d6dc   Section      218  gps.o(.conststring)
+    .text                                    0x0800306c   Section        0  drv_uart.o(.text)
+    uartTxDMA                                0x0800306d   Thumb Code    52  drv_uart.o(.text)
+    uart2Open                                0x08003255   Thumb Code    70  drv_uart.o(.text)
+    .text                                    0x0800344c   Section        0  buzzer.o(.text)
+    beep                                     0x0800344d   Thumb Code    92  buzzer.o(.text)
+    beep_code                                0x080034a9   Thumb Code   136  buzzer.o(.text)
+    .text                                    0x08003668   Section        0  cli.o(.text)
+    i2a                                      0x08003669   Thumb Code    36  cli.o(.text)
+    _atof                                    0x080036b5   Thumb Code   380  cli.o(.text)
+    ftoa                                     0x08003831   Thumb Code   204  cli.o(.text)
+    cliCompare                               0x080038fd   Thumb Code    26  cli.o(.text)
+    cliAux                                   0x08003917   Thumb Code    90  cli.o(.text)
+    cliCMix                                  0x08003971   Thumb Code   806  cli.o(.text)
+    cliDefaults                              0x08003c97   Thumb Code    36  cli.o(.text)
+    cliPrintVar                              0x08003cbb   Thumb Code   148  cli.o(.text)
+    cliDump                                  0x08003d4f   Thumb Code   386  cli.o(.text)
+    cliSave                                  0x08003ed1   Thumb Code    36  cli.o(.text)
+    cliExit                                  0x08003ef5   Thumb Code    36  cli.o(.text)
+    cliFeature                               0x08003f19   Thumb Code   674  cli.o(.text)
+    cliHelp                                  0x080041bb   Thumb Code    42  cli.o(.text)
+    cliMap                                   0x080041e5   Thumb Code   116  cli.o(.text)
+    cliMixer                                 0x08004259   Thumb Code   140  cli.o(.text)
+    cliSet                                   0x080042e5   Thumb Code   300  cli.o(.text)
+    cliStatus                                0x08004411   Thumb Code   168  cli.o(.text)
+    cliVersion                               0x080044b9   Thumb Code     6  cli.o(.text)
+    cliPrompt                                0x080048d1   Thumb Code     6  cli.o(.text)
+    .text                                    0x08004928   Section        0  config.o(.text)
+    resetConf                                0x08004ac3   Thumb Code   534  config.o(.text)
+    .text                                    0x08004da8   Section        0  gps.o(.text)
+    gpsPrint                                 0x08004da9   Thumb Code    54  gps.o(.text)
+    get_D                                    0x08004df9   Thumb Code   108  gps.o(.text)
+    get_I                                    0x08004e65   Thumb Code    84  gps.o(.text)
+    GPS_update_crosstrack                    0x08004eb9   Thumb Code   140  gps.o(.text)
+    GPS_calc_nav_rate                        0x08004f45   Thumb Code   258  gps.o(.text)
+    GPS_calc_poshold                         0x08005047   Thumb Code   194  gps.o(.text)
+    GPS_calc_location_error                  0x08005109   Thumb Code    44  gps.o(.text)
+    GPS_distance_cm_bearing                  0x08005135   Thumb Code   182  gps.o(.text)
+    GPS_calc_velocity                        0x080051eb   Thumb Code   144  gps.o(.text)
+    GPS_calc_longitude_scaling               0x0800527b   Thumb Code    46  gps.o(.text)
+    UBLOX_parse_gps                          0x080052d9   Thumb Code   176  gps.o(.text)
+    GPS_UBLOX_newFrame                       0x08005389   Thumb Code   216  gps.o(.text)
+    grab_fields                              0x08005461   Thumb Code    56  gps.o(.text)
+    GPS_NMEA_newFrame                        0x08005539   Thumb Code   472  gps.o(.text)
+    GPS_NewData                              0x08005711   Thumb Code   548  gps.o(.text)
+    GPS_set_pids                             0x08005935   Thumb Code   276  gps.o(.text)
+    get_P                                    0x08005bc1   Thumb Code    26  gps.o(.text)
+    GPS_calc_desired_speed                   0x08005bdb   Thumb Code    76  gps.o(.text)
+    hex_c                                    0x08005c27   Thumb Code    18  gps.o(.text)
+    reset_PID                                0x08005c39   Thumb Code    18  gps.o(.text)
+    .text                                    0x08005cc0   Section        0  imu.o(.text)
+    getEstimatedAttitude                     0x08005f5d   Thumb Code   900  imu.o(.text)
+    .text                                    0x080067d4   Section        0  kalman1d.o(.text)
+    .text                                    0x080068f0   Section        0  kalmanfilterfrontend.o(.text)
+    .text                                    0x08006ab4   Section        0  main.o(.text)
+    _putc                                    0x08006ab5   Thumb Code     6  main.o(.text)
+    .text                                    0x08006cac   Section        0  mixer.o(.text)
+    airplaneMixer                            0x08006e33   Thumb Code   306  mixer.o(.text)
+    .text                                    0x080073d4   Section        0  mw.o(.text)
+    .text                                    0x080083b4   Section        0  printf.o(.text)
+    uli2a                                    0x080083b5   Thumb Code    88  printf.o(.text)
+    ui2a                                     0x0800840d   Thumb Code    88  printf.o(.text)
+    putchw                                   0x08008465   Thumb Code    70  printf.o(.text)
+    .text                                    0x0800860c   Section        0  sensors.o(.text)
+    alignSensors                             0x080087d7   Thumb Code    72  sensors.o(.text)
+    ACC_Common                               0x0800881f   Thumb Code   398  sensors.o(.text)
+    GYRO_Common                              0x08008acf   Thumb Code   410  sensors.o(.text)
+    Mag_getRawADC                            0x08008fd3   Thumb Code    20  sensors.o(.text)
+    .text                                    0x08009000   Section        0  serial.o(.text)
+    evaluateCommand                          0x0800911b   Thumb Code  1330  serial.o(.text)
+    .text                                    0x08009778   Section        0  simpleintegrator.o(.text)
+    .text                                    0x080098bc   Section        0  spektrum.o(.text)
+    spektrumDataReceive                      0x080098bd   Thumb Code    58  spektrum.o(.text)
+    .text                                    0x080099b0   Section        0  telemetry.o(.text)
+    serializeFrsky                           0x080099b1   Thumb Code    38  telemetry.o(.text)
+    sendGPS                                  0x080099d7   Thumb Code   174  telemetry.o(.text)
+    sendDataHead                             0x08009c3d   Thumb Code    20  telemetry.o(.text)
+    serialize16                              0x08009c51   Thumb Code    20  telemetry.o(.text)
+    sendVoltage                              0x08009c65   Thumb Code    82  telemetry.o(.text)
+    .text                                    0x08009ce8   Section        0  ctype_o.o(.text)
+    .text                                    0x08009cf0   Section        0  toupper.o(.text)
+    .text                                    0x08009cfc   Section        0  bsearch.o(.text)
+    .text                                    0x08009d42   Section        0  memcpya.o(.text)
+    .text                                    0x08009d66   Section        0  memseta.o(.text)
+    .text                                    0x08009d8c   Section        0  strcat.o(.text)
+    .text                                    0x08009da8   Section        0  strstr.o(.text)
+    .text                                    0x08009dd4   Section        0  strncpy.o(.text)
+    .text                                    0x08009dec   Section        0  strchr.o(.text)
+    .text                                    0x08009dfe   Section        0  strlen.o(.text)
+    .text                                    0x08009e0e   Section        0  strncasecmp.o(.text)
+    .text                                    0x08009e40   Section        0  atoi.o(.text)
+    .text                                    0x08009e5a   Section        0  dadd.o(.text)
+    .text                                    0x08009fa6   Section        0  dmul.o(.text)
+    .text                                    0x0800a086   Section        0  ddiv.o(.text)
+    .text                                    0x0800a164   Section        0  dflti.o(.text)
+    .text                                    0x0800a186   Section        0  dfltui.o(.text)
+    .text                                    0x0800a1a0   Section        0  dfixi.o(.text)
+    .text                                    0x0800a1de   Section        0  f2d.o(.text)
+    .text                                    0x0800a20a   Section        0  d2f.o(.text)
+    .text                                    0x0800a242   Section        0  llshl.o(.text)
+    .text                                    0x0800a260   Section        0  llushr.o(.text)
+    .text                                    0x0800a280   Section        0  llsshr.o(.text)
+    .text                                    0x0800a2a4   Section        0  tolower.o(.text)
+    .text                                    0x0800a2b0   Section        0  strtol.o(.text)
+    .text                                    0x0800a320   Section        0  iusefp.o(.text)
+    .text                                    0x0800a320   Section        0  fepilogue.o(.text)
+    .text                                    0x0800a38c   Section        0  depilogue.o(.text)
+    .text                                    0x0800a44a   Section        0  dscalb.o(.text)
+    .text                                    0x0800a478   Section       40  cdrcmple.o(.text)
+    .text                                    0x0800a4a0   Section       36  init.o(.text)
+    .text                                    0x0800a4c4   Section        0  _strtoul.o(.text)
+    .text                                    0x0800a562   Section        0  dsqrt.o(.text)
+    .text                                    0x0800a604   Section        0  _chval.o(.text)
+    .text                                    0x0800a620   Section        0  __dczerorl2.o(.text)
+    i.__ARM_fpclassify                       0x0800a67c   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i.__ARM_fpclassifyf                      0x0800a6ac   Section        0  fpclassifyf.o(i.__ARM_fpclassifyf)
+    i.__aeabi_errno_addr                     0x0800a6d4   Section        0  errno.o(i.__aeabi_errno_addr)
+    i.__hardfp_asinf                         0x0800a6dc   Section        0  asinf.o(i.__hardfp_asinf)
+    i.__hardfp_atan2f                        0x0800a800   Section        0  atan2f.o(i.__hardfp_atan2f)
+    i.__hardfp_cosf                          0x0800aa48   Section        0  cosf.o(i.__hardfp_cosf)
+    i.__hardfp_pow                           0x0800aba8   Section        0  pow.o(i.__hardfp_pow)
+    i.__hardfp_sinf                          0x0800b850   Section        0  sinf.o(i.__hardfp_sinf)
+    i.__hardfp_sqrtf                         0x0800b9c8   Section        0  sqrtf.o(i.__hardfp_sqrtf)
+    i.__kernel_poly                          0x0800ba02   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_underflow                0x0800bb00   Section        0  dunder.o(i.__mathlib_dbl_underflow)
+    i.__mathlib_flt_underflow                0x0800bb20   Section        0  funder.o(i.__mathlib_flt_underflow)
+    i.__mathlib_rredf2                       0x0800bb30   Section        0  rredf.o(i.__mathlib_rredf2)
+    i.__scatterload_copy                     0x0800bc70   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800bc7e   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800bc80   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x0800bc90   Section        0  errno.o(i.__set_errno)
+    i.fabs                                   0x0800bc9c   Section        0  fabs.o(i.fabs)
+    i.sqrt                                   0x0800bcbc   Section        0  sqrt.o(i.sqrt)
+    i.sqrtf                                  0x0800bd28   Section        0  sqrtf.o(i.sqrtf)
+    .constdata                               0x0800bd66   Section       14  drv_pwm.o(.constdata)
+    multiPPM                                 0x0800bd66   Data          14  drv_pwm.o(.constdata)
+    .constdata                               0x0800bd74   Section       21  drv_pwm.o(.constdata)
+    multiPWM                                 0x0800bd74   Data          21  drv_pwm.o(.constdata)
+    .constdata                               0x0800bd89   Section       14  drv_pwm.o(.constdata)
+    airPPM                                   0x0800bd89   Data          14  drv_pwm.o(.constdata)
+    .constdata                               0x0800bd97   Section       21  drv_pwm.o(.constdata)
+    airPWM                                   0x0800bd97   Data          21  drv_pwm.o(.constdata)
+    .constdata                               0x0800bdac   Section     2572  cli.o(.constdata)
+    .constdata                               0x0800c7b8   Section       21  config.o(.constdata)
+    .constdata                               0x0800c7d0   Section      192  gps.o(.constdata)
+    gpsInitStrings                           0x0800c7e4   Data          32  gps.o(.constdata)
+    ubloxInit                                0x0800c804   Data         140  gps.o(.constdata)
+    .constdata                               0x0800c890   Section       48  mixer.o(.constdata)
+    mixerTri                                 0x0800c890   Data          48  mixer.o(.constdata)
+    .constdata                               0x0800c8c0   Section       64  mixer.o(.constdata)
+    mixerQuadP                               0x0800c8c0   Data          64  mixer.o(.constdata)
+    .constdata                               0x0800c900   Section       64  mixer.o(.constdata)
+    mixerQuadX                               0x0800c900   Data          64  mixer.o(.constdata)
+    .constdata                               0x0800c940   Section       32  mixer.o(.constdata)
+    mixerBi                                  0x0800c940   Data          32  mixer.o(.constdata)
+    .constdata                               0x0800c960   Section       96  mixer.o(.constdata)
+    mixerY6                                  0x0800c960   Data          96  mixer.o(.constdata)
+    .constdata                               0x0800c9c0   Section       96  mixer.o(.constdata)
+    mixerHex6P                               0x0800c9c0   Data          96  mixer.o(.constdata)
+    .constdata                               0x0800ca20   Section       64  mixer.o(.constdata)
+    mixerY4                                  0x0800ca20   Data          64  mixer.o(.constdata)
+    .constdata                               0x0800ca60   Section       96  mixer.o(.constdata)
+    mixerHex6X                               0x0800ca60   Data          96  mixer.o(.constdata)
+    .constdata                               0x0800cac0   Section      128  mixer.o(.constdata)
+    mixerOctoX8                              0x0800cac0   Data         128  mixer.o(.constdata)
+    .constdata                               0x0800cb40   Section      128  mixer.o(.constdata)
+    mixerOctoFlatP                           0x0800cb40   Data         128  mixer.o(.constdata)
+    .constdata                               0x0800cbc0   Section      128  mixer.o(.constdata)
+    mixerOctoFlatX                           0x0800cbc0   Data         128  mixer.o(.constdata)
+    .constdata                               0x0800cc40   Section       64  mixer.o(.constdata)
+    mixerVtail4                              0x0800cc40   Data          64  mixer.o(.constdata)
+    .constdata                               0x0800cc80   Section       96  mixer.o(.constdata)
+    mixerHexV6                               0x0800cc80   Data          96  mixer.o(.constdata)
+    .constdata                               0x0800cce0   Section      160  mixer.o(.constdata)
+    .constdata                               0x0800cd80   Section      158  serial.o(.constdata)
+    boxnames                                 0x0800cd80   Data         110  serial.o(.constdata)
+    pidnames                                 0x0800cdee   Data          48  serial.o(.constdata)
+    .constdata                               0x0800ce20   Section      136  pow.o(.constdata)
+    bp                                       0x0800ce20   Data          16  pow.o(.constdata)
+    dp_h                                     0x0800ce30   Data          16  pow.o(.constdata)
+    dp_l                                     0x0800ce40   Data          16  pow.o(.constdata)
+    L                                        0x0800ce50   Data          48  pow.o(.constdata)
+    P                                        0x0800ce80   Data          40  pow.o(.constdata)
+    .constdata                               0x0800cea8   Section      129  ctype_o.o(.constdata)
+    .constdata                               0x0800cf2c   Section        4  ctype_o.o(.constdata)
+    table                                    0x0800cf2c   Data           4  ctype_o.o(.constdata)
+    .constdata                               0x0800cf30   Section        8  qnan.o(.constdata)
+    .constdata                               0x0800cf38   Section       32  rredf.o(.constdata)
+    twooverpi                                0x0800cf38   Data          32  rredf.o(.constdata)
+    .conststring                             0x0800cf58   Section     1940  cli.o(.conststring)
+    .conststring                             0x0800d6ec   Section      218  gps.o(.conststring)
     .data                                    0x20000000   Section       20  system_stm32f4xx.o(.data)
     .data                                    0x20000014   Section       16  stm32f4xx_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f4xx_rcc.o(.data)
@@ -2440,189 +2441,188 @@ Image Symbol Table
     millis                                   0x08002ed3   Thumb Code     6  drv_system.o(.text)
     delayMicroseconds                        0x08002ed9   Thumb Code    24  drv_system.o(.text)
     delay                                    0x08002ef1   Thumb Code    24  drv_system.o(.text)
-    systemInit                               0x08002f09   Thumb Code   196  drv_system.o(.text)
-    failureMode                              0x08002fcd   Thumb Code    76  drv_system.o(.text)
-    systemReset                              0x08003019   Thumb Code    18  drv_system.o(.text)
-    uartInit                                 0x0800309d   Thumb Code   318  drv_uart.o(.text)
-    uartAvailable                            0x080031db   Thumb Code    26  drv_uart.o(.text)
-    uartTransmitEmpty                        0x080031f5   Thumb Code    18  drv_uart.o(.text)
-    uartRead                                 0x08003207   Thumb Code    26  drv_uart.o(.text)
-    uartWrite                                0x08003221   Thumb Code    28  drv_uart.o(.text)
-    uartPrint                                0x0800323d   Thumb Code    20  drv_uart.o(.text)
-    uart2Init                                0x08003297   Thumb Code   170  drv_uart.o(.text)
-    uart2ChangeBaud                          0x08003341   Thumb Code     2  drv_uart.o(.text)
-    uart2Write                               0x08003343   Thumb Code    36  drv_uart.o(.text)
-    uart2TransmitEmpty                       0x08003367   Thumb Code    18  drv_uart.o(.text)
-    USART2_IRQHandler                        0x08003379   Thumb Code    78  drv_uart.o(.text)
-    USART3_IRQHandler                        0x080033c7   Thumb Code    80  drv_uart.o(.text)
-    buzzer                                   0x0800352d   Thumb Code   284  buzzer.o(.text)
-    itoa                                     0x08003689   Thumb Code    40  cli.o(.text)
-    cliProcess                               0x080044bb   Thumb Code  1042  cli.o(.text)
-    parseRcChannels                          0x08004925   Thumb Code    44  config.o(.text)
-    readEEPROM                               0x08004951   Thumb Code   224  config.o(.text)
-    writeParams                              0x08004a31   Thumb Code   132  config.o(.text)
-    setFeature                               0x08004ab5   Thumb Code    10  config.o(.text)
-    checkFirstTime                           0x08004cd5   Thumb Code   124  config.o(.text)
-    getSensors                               0x08004d51   Thumb Code    16  config.o(.text)
-    setSensors                               0x08004d61   Thumb Code    10  config.o(.text)
-    clearSensors                             0x08004d6b   Thumb Code    10  config.o(.text)
-    sensorsMask                              0x08004d75   Thumb Code     6  config.o(.text)
-    getFeature                               0x08004d7b   Thumb Code    16  config.o(.text)
-    featureClear                             0x08004d8b   Thumb Code    10  config.o(.text)
-    featureMask                              0x08004d95   Thumb Code     6  config.o(.text)
-    wrap_18000                               0x08004ddb   Thumb Code    26  gps.o(.text)
-    GPS_reset_home_position                  0x080052a5   Thumb Code    48  gps.o(.text)
-    GPS_coord_to_degrees                     0x08005495   Thumb Code   160  gps.o(.text)
-    gpsInit                                  0x08005a45   Thumb Code   218  gps.o(.text)
-    GPS_reset_nav                            0x08005b1f   Thumb Code    80  gps.o(.text)
-    GPS_set_next_wp                          0x08005b6f   Thumb Code    78  gps.o(.text)
-    imuInit                                  0x08005cbd   Thumb Code    82  imu.o(.text)
-    rotateV                                  0x08005d0f   Thumb Code   208  imu.o(.text)
-    applyDeadband16                          0x08005ddf   Thumb Code    36  imu.o(.text)
-    integratorStep                           0x08005e03   Thumb Code   342  imu.o(.text)
-    computeIMU                               0x080062dd   Thumb Code   304  imu.o(.text)
-    applyDeadbandFloat                       0x0800640d   Thumb Code    92  imu.o(.text)
-    InvSqrt                                  0x08006469   Thumb Code    40  imu.o(.text)
-    isq                                      0x08006491   Thumb Code     4  imu.o(.text)
-    getEstimatedAltitude                     0x08006495   Thumb Code   772  imu.o(.text)
-    initKalman1D                             0x080067d1   Thumb Code    50  kalman1d.o(.text)
-    kalman1DUpdate32                         0x08006803   Thumb Code   202  kalman1d.o(.text)
-    kalman1DUpdate                           0x080068cd   Thumb Code    24  kalman1d.o(.text)
-    accelKalmanfilterStep                    0x080068ed   Thumb Code   212  kalmanfilterfrontend.o(.text)
-    gyroKalmanfilterStep                     0x080069c1   Thumb Code   212  kalmanfilterfrontend.o(.text)
-    main                                     0x08006ab7   Thumb Code   424  main.o(.text)
-    HardFault_Handler                        0x08006c5f   Thumb Code    12  main.o(.text)
-    mixerInit                                0x08006c99   Thumb Code   132  mixer.o(.text)
-    mixerLoadMix                             0x08006d1d   Thumb Code    76  mixer.o(.text)
-    writeServos                              0x08006d69   Thumb Code   120  mixer.o(.text)
-    writeMotors                              0x08006de1   Thumb Code    34  mixer.o(.text)
-    writeAllMotors                           0x08006e03   Thumb Code    28  mixer.o(.text)
-    mixTable                                 0x08006f51   Thumb Code  1120  mixer.o(.text)
-    blinkLED                                 0x080073c1   Thumb Code    86  mw.o(.text)
-    annexCode                                0x08007417   Thumb Code   894  mw.o(.text)
-    pwmReadRawRC                             0x08007795   Thumb Code    32  mw.o(.text)
-    computeRC                                0x080077b5   Thumb Code   198  mw.o(.text)
-    loop                                     0x0800787b   Thumb Code  2820  mw.o(.text)
-    tfp_format                               0x08008497   Thumb Code   306  printf.o(.text)
-    init_printf                              0x080085c9   Thumb Code     8  printf.o(.text)
-    tfp_printf                               0x080085d1   Thumb Code    34  printf.o(.text)
-    sensorsAutodetect                        0x080085f9   Thumb Code   328  sensors.o(.text)
-    batteryAdcToVoltage                      0x08008741   Thumb Code    56  sensors.o(.text)
-    batteryInit                              0x08008779   Thumb Code    74  sensors.o(.text)
-    ACC_getADC                               0x08008999   Thumb Code    52  sensors.o(.text)
-    Baro_update                              0x080089cd   Thumb Code   238  sensors.o(.text)
-    Gyro_getADC                              0x08008c55   Thumb Code    50  sensors.o(.text)
-    Mag_init                                 0x08008c87   Thumb Code   376  sensors.o(.text)
-    Mag_getADC                               0x08008dff   Thumb Code   420  sensors.o(.text)
-    Sonar_init                               0x08008fa3   Thumb Code    22  sensors.o(.text)
-    Sonar_update                             0x08008fb9   Thumb Code     6  sensors.o(.text)
-    serialize32                              0x08008fed   Thumb Code    76  serial.o(.text)
-    serialize16                              0x08009039   Thumb Code    42  serial.o(.text)
-    serialize8                               0x08009063   Thumb Code    18  serial.o(.text)
-    read8                                    0x08009075   Thumb Code    14  serial.o(.text)
-    read16                                   0x08009083   Thumb Code    20  serial.o(.text)
-    read32                                   0x08009097   Thumb Code    18  serial.o(.text)
-    headSerialResponse                       0x080090a9   Thumb Code    50  serial.o(.text)
-    headSerialReply                          0x080090db   Thumb Code     6  serial.o(.text)
-    headSerialError                          0x080090e1   Thumb Code     6  serial.o(.text)
-    tailSerialReply                          0x080090e7   Thumb Code     6  serial.o(.text)
-    serializeNames                           0x080090ed   Thumb Code    22  serial.o(.text)
-    serialInit                               0x08009103   Thumb Code     4  serial.o(.text)
-    serialCom                                0x08009639   Thumb Code   234  serial.o(.text)
-    resetIntegrator                          0x08009765   Thumb Code    44  simpleintegrator.o(.text)
-    accIntegratorStep                        0x08009791   Thumb Code   266  simpleintegrator.o(.text)
-    spektrumInit                             0x080098e3   Thumb Code    36  spektrum.o(.text)
-    spektrumFrameComplete                    0x08009907   Thumb Code     6  spektrum.o(.text)
-    spektrumReadRawRC                        0x0800990d   Thumb Code   124  spektrum.o(.text)
-    initTelemetry                            0x08009a71   Thumb Code    34  telemetry.o(.text)
-    sendTelemetry                            0x08009a93   Thumb Code   406  telemetry.o(.text)
-    __rt_ctype_table                         0x08009cd5   Thumb Code     4  ctype_o.o(.text)
-    toupper                                  0x08009cdd   Thumb Code    12  toupper.o(.text)
-    bsearch                                  0x08009ce9   Thumb Code    70  bsearch.o(.text)
-    __aeabi_memcpy                           0x08009d2f   Thumb Code    36  memcpya.o(.text)
-    __aeabi_memcpy4                          0x08009d2f   Thumb Code     0  memcpya.o(.text)
-    __aeabi_memcpy8                          0x08009d2f   Thumb Code     0  memcpya.o(.text)
-    __aeabi_memset                           0x08009d53   Thumb Code    14  memseta.o(.text)
-    __aeabi_memset4                          0x08009d53   Thumb Code     0  memseta.o(.text)
-    __aeabi_memset8                          0x08009d53   Thumb Code     0  memseta.o(.text)
-    __aeabi_memclr                           0x08009d61   Thumb Code     4  memseta.o(.text)
-    __aeabi_memclr4                          0x08009d61   Thumb Code     0  memseta.o(.text)
-    __aeabi_memclr8                          0x08009d61   Thumb Code     0  memseta.o(.text)
-    _memset$wrapper                          0x08009d65   Thumb Code    20  memseta.o(.text)
-    strcat                                   0x08009d79   Thumb Code    28  strcat.o(.text)
-    strstr                                   0x08009d95   Thumb Code    44  strstr.o(.text)
-    strncpy                                  0x08009dc1   Thumb Code    24  strncpy.o(.text)
-    strchr                                   0x08009dd9   Thumb Code    18  strchr.o(.text)
-    strlen                                   0x08009deb   Thumb Code    16  strlen.o(.text)
-    strncasecmp                              0x08009dfb   Thumb Code    50  strncasecmp.o(.text)
-    atoi                                     0x08009e2d   Thumb Code    26  atoi.o(.text)
-    __aeabi_dadd                             0x08009e47   Thumb Code   320  dadd.o(.text)
-    __aeabi_dsub                             0x08009f87   Thumb Code     6  dadd.o(.text)
-    __aeabi_drsub                            0x08009f8d   Thumb Code     6  dadd.o(.text)
-    __aeabi_dmul                             0x08009f93   Thumb Code   224  dmul.o(.text)
-    __aeabi_ddiv                             0x0800a073   Thumb Code   222  ddiv.o(.text)
-    __aeabi_i2d                              0x0800a151   Thumb Code    34  dflti.o(.text)
-    __aeabi_ui2d                             0x0800a173   Thumb Code    26  dfltui.o(.text)
-    __aeabi_d2iz                             0x0800a18d   Thumb Code    62  dfixi.o(.text)
-    __aeabi_f2d                              0x0800a1cb   Thumb Code    44  f2d.o(.text)
-    __aeabi_d2f                              0x0800a1f7   Thumb Code    56  d2f.o(.text)
-    __aeabi_llsl                             0x0800a22f   Thumb Code    30  llshl.o(.text)
-    _ll_shift_l                              0x0800a22f   Thumb Code     0  llshl.o(.text)
-    __aeabi_llsr                             0x0800a24d   Thumb Code    32  llushr.o(.text)
-    _ll_ushift_r                             0x0800a24d   Thumb Code     0  llushr.o(.text)
-    __aeabi_lasr                             0x0800a26d   Thumb Code    36  llsshr.o(.text)
-    _ll_sshift_r                             0x0800a26d   Thumb Code     0  llsshr.o(.text)
-    tolower                                  0x0800a291   Thumb Code    12  tolower.o(.text)
-    strtol                                   0x0800a29d   Thumb Code   112  strtol.o(.text)
-    __I$use$fp                               0x0800a30d   Thumb Code     0  iusefp.o(.text)
-    _float_round                             0x0800a30d   Thumb Code    18  fepilogue.o(.text)
-    _float_epilogue                          0x0800a31f   Thumb Code    90  fepilogue.o(.text)
-    _double_round                            0x0800a379   Thumb Code    26  depilogue.o(.text)
-    _double_epilogue                         0x0800a393   Thumb Code   164  depilogue.o(.text)
-    __ARM_scalbn                             0x0800a437   Thumb Code    46  dscalb.o(.text)
-    scalbn                                   0x0800a437   Thumb Code     0  dscalb.o(.text)
-    __aeabi_cdrcmple                         0x0800a465   Thumb Code    38  cdrcmple.o(.text)
-    __scatterload                            0x0800a48d   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x0800a48d   Thumb Code     0  init.o(.text)
-    _strtoul                                 0x0800a4b1   Thumb Code   158  _strtoul.o(.text)
-    _dsqrt                                   0x0800a54f   Thumb Code   162  dsqrt.o(.text)
-    _chval                                   0x0800a5f1   Thumb Code    28  _chval.o(.text)
-    __decompress                             0x0800a60d   Thumb Code     0  __dczerorl2.o(.text)
-    __decompress1                            0x0800a60d   Thumb Code    92  __dczerorl2.o(.text)
-    __ARM_fpclassify                         0x0800a669   Thumb Code    48  fpclassify.o(i.__ARM_fpclassify)
-    __ARM_fpclassifyf                        0x0800a699   Thumb Code    38  fpclassifyf.o(i.__ARM_fpclassifyf)
-    __aeabi_errno_addr                       0x0800a6c1   Thumb Code     4  errno.o(i.__aeabi_errno_addr)
-    __rt_errno_addr                          0x0800a6c1   Thumb Code     0  errno.o(i.__aeabi_errno_addr)
-    __hardfp_asinf                           0x0800a6c9   Thumb Code   250  asinf.o(i.__hardfp_asinf)
-    __hardfp_atan2f                          0x0800a7ed   Thumb Code   486  atan2f.o(i.__hardfp_atan2f)
-    __hardfp_cosf                            0x0800aa35   Thumb Code   286  cosf.o(i.__hardfp_cosf)
-    __hardfp_pow                             0x0800ab99   Thumb Code  3148  pow.o(i.__hardfp_pow)
-    __hardfp_sinf                            0x0800b841   Thumb Code   314  sinf.o(i.__hardfp_sinf)
-    __hardfp_sqrtf                           0x0800b9b9   Thumb Code    58  sqrtf.o(i.__hardfp_sqrtf)
-    __kernel_poly                            0x0800b9f3   Thumb Code   248  poly.o(i.__kernel_poly)
-    __mathlib_dbl_underflow                  0x0800baf1   Thumb Code    24  dunder.o(i.__mathlib_dbl_underflow)
-    __mathlib_flt_underflow                  0x0800bb11   Thumb Code    10  funder.o(i.__mathlib_flt_underflow)
-    __mathlib_rredf2                         0x0800bb21   Thumb Code   294  rredf.o(i.__mathlib_rredf2)
-    __scatterload_copy                       0x0800bc61   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0800bc6f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x0800bc71   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    __set_errno                              0x0800bc81   Thumb Code     6  errno.o(i.__set_errno)
-    fabs                                     0x0800bc8d   Thumb Code    32  fabs.o(i.fabs)
-    sqrt                                     0x0800bcad   Thumb Code   108  sqrt.o(i.sqrt)
-    sqrtf                                    0x0800bd19   Thumb Code    62  sqrtf.o(i.sqrtf)
-    mixerNames                               0x0800bd9c   Data          80  cli.o(.constdata)
-    featureNames                             0x0800bdec   Data          52  cli.o(.constdata)
-    sensorNames                              0x0800be20   Data          24  cli.o(.constdata)
-    accNames                                 0x0800be38   Data          20  cli.o(.constdata)
-    cmdTable                                 0x0800be4c   Data         156  cli.o(.constdata)
-    valueTable                               0x0800bee8   Data        2240  cli.o(.constdata)
-    rcChannelLetters                         0x0800c7a8   Data           9  config.o(.constdata)
-    init_speed                               0x0800c7c0   Data          20  gps.o(.constdata)
-    mixers                                   0x0800ccd0   Data         160  mixer.o(.constdata)
-    __ctype_table                            0x0800ce98   Data         129  ctype_o.o(.constdata)
-    __mathlib_zero                           0x0800cf20   Data           8  qnan.o(.constdata)
-    Region$$Table$$Base                      0x0800d7b8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800d7d8   Number         0  anon$$obj.o(Region$$Table)
+    systemInit                               0x08002f09   Thumb Code   200  drv_system.o(.text)
+    failureMode                              0x08002fd1   Thumb Code    76  drv_system.o(.text)
+    systemReset                              0x0800301d   Thumb Code    18  drv_system.o(.text)
+    uartInit                                 0x080030a1   Thumb Code   318  drv_uart.o(.text)
+    uartAvailable                            0x080031df   Thumb Code    26  drv_uart.o(.text)
+    uartTransmitEmpty                        0x080031f9   Thumb Code    18  drv_uart.o(.text)
+    uartRead                                 0x0800320b   Thumb Code    26  drv_uart.o(.text)
+    uartWrite                                0x08003225   Thumb Code    28  drv_uart.o(.text)
+    uartPrint                                0x08003241   Thumb Code    20  drv_uart.o(.text)
+    uart2Init                                0x0800329b   Thumb Code   170  drv_uart.o(.text)
+    uart2ChangeBaud                          0x08003345   Thumb Code     2  drv_uart.o(.text)
+    uart2Write                               0x08003347   Thumb Code    36  drv_uart.o(.text)
+    uart2TransmitEmpty                       0x0800336b   Thumb Code    18  drv_uart.o(.text)
+    USART2_IRQHandler                        0x0800337d   Thumb Code    78  drv_uart.o(.text)
+    USART3_IRQHandler                        0x080033cb   Thumb Code    80  drv_uart.o(.text)
+    buzzer                                   0x08003531   Thumb Code   284  buzzer.o(.text)
+    itoa                                     0x0800368d   Thumb Code    40  cli.o(.text)
+    cliProcess                               0x080044bf   Thumb Code  1042  cli.o(.text)
+    parseRcChannels                          0x08004929   Thumb Code    44  config.o(.text)
+    readEEPROM                               0x08004955   Thumb Code   224  config.o(.text)
+    writeParams                              0x08004a35   Thumb Code   132  config.o(.text)
+    setFeature                               0x08004ab9   Thumb Code    10  config.o(.text)
+    checkFirstTime                           0x08004cd9   Thumb Code   124  config.o(.text)
+    getSensors                               0x08004d55   Thumb Code    16  config.o(.text)
+    setSensors                               0x08004d65   Thumb Code    10  config.o(.text)
+    clearSensors                             0x08004d6f   Thumb Code    10  config.o(.text)
+    sensorsMask                              0x08004d79   Thumb Code     6  config.o(.text)
+    getFeature                               0x08004d7f   Thumb Code    16  config.o(.text)
+    featureClear                             0x08004d8f   Thumb Code    10  config.o(.text)
+    featureMask                              0x08004d99   Thumb Code     6  config.o(.text)
+    wrap_18000                               0x08004ddf   Thumb Code    26  gps.o(.text)
+    GPS_reset_home_position                  0x080052a9   Thumb Code    48  gps.o(.text)
+    GPS_coord_to_degrees                     0x08005499   Thumb Code   160  gps.o(.text)
+    gpsInit                                  0x08005a49   Thumb Code   218  gps.o(.text)
+    GPS_reset_nav                            0x08005b23   Thumb Code    80  gps.o(.text)
+    GPS_set_next_wp                          0x08005b73   Thumb Code    78  gps.o(.text)
+    imuInit                                  0x08005cc1   Thumb Code    82  imu.o(.text)
+    rotateV                                  0x08005d13   Thumb Code   208  imu.o(.text)
+    applyDeadband16                          0x08005de3   Thumb Code    36  imu.o(.text)
+    integratorStep                           0x08005e07   Thumb Code   342  imu.o(.text)
+    computeIMU                               0x080062e1   Thumb Code   304  imu.o(.text)
+    applyDeadbandFloat                       0x08006411   Thumb Code    92  imu.o(.text)
+    InvSqrt                                  0x0800646d   Thumb Code    40  imu.o(.text)
+    getEstimatedAltitude                     0x08006495   Thumb Code   774  imu.o(.text)
+    initKalman1D                             0x080067d5   Thumb Code    50  kalman1d.o(.text)
+    kalman1DUpdate32                         0x08006807   Thumb Code   202  kalman1d.o(.text)
+    kalman1DUpdate                           0x080068d1   Thumb Code    24  kalman1d.o(.text)
+    accelKalmanfilterStep                    0x080068f1   Thumb Code   212  kalmanfilterfrontend.o(.text)
+    gyroKalmanfilterStep                     0x080069c5   Thumb Code   212  kalmanfilterfrontend.o(.text)
+    main                                     0x08006abb   Thumb Code   440  main.o(.text)
+    HardFault_Handler                        0x08006c73   Thumb Code    12  main.o(.text)
+    mixerInit                                0x08006cad   Thumb Code   132  mixer.o(.text)
+    mixerLoadMix                             0x08006d31   Thumb Code    76  mixer.o(.text)
+    writeServos                              0x08006d7d   Thumb Code   120  mixer.o(.text)
+    writeMotors                              0x08006df5   Thumb Code    34  mixer.o(.text)
+    writeAllMotors                           0x08006e17   Thumb Code    28  mixer.o(.text)
+    mixTable                                 0x08006f65   Thumb Code  1120  mixer.o(.text)
+    blinkLED                                 0x080073d5   Thumb Code    86  mw.o(.text)
+    annexCode                                0x0800742b   Thumb Code   894  mw.o(.text)
+    pwmReadRawRC                             0x080077a9   Thumb Code    32  mw.o(.text)
+    computeRC                                0x080077c9   Thumb Code   198  mw.o(.text)
+    loop                                     0x0800788f   Thumb Code  2820  mw.o(.text)
+    tfp_format                               0x080084ab   Thumb Code   306  printf.o(.text)
+    init_printf                              0x080085dd   Thumb Code     8  printf.o(.text)
+    tfp_printf                               0x080085e5   Thumb Code    34  printf.o(.text)
+    sensorsAutodetect                        0x0800860d   Thumb Code   328  sensors.o(.text)
+    batteryAdcToVoltage                      0x08008755   Thumb Code    56  sensors.o(.text)
+    batteryInit                              0x0800878d   Thumb Code    74  sensors.o(.text)
+    ACC_getADC                               0x080089ad   Thumb Code    52  sensors.o(.text)
+    Baro_update                              0x080089e1   Thumb Code   238  sensors.o(.text)
+    Gyro_getADC                              0x08008c69   Thumb Code    50  sensors.o(.text)
+    Mag_init                                 0x08008c9b   Thumb Code   376  sensors.o(.text)
+    Mag_getADC                               0x08008e13   Thumb Code   420  sensors.o(.text)
+    Sonar_init                               0x08008fb7   Thumb Code    22  sensors.o(.text)
+    Sonar_update                             0x08008fcd   Thumb Code     6  sensors.o(.text)
+    serialize32                              0x08009001   Thumb Code    76  serial.o(.text)
+    serialize16                              0x0800904d   Thumb Code    42  serial.o(.text)
+    serialize8                               0x08009077   Thumb Code    18  serial.o(.text)
+    read8                                    0x08009089   Thumb Code    14  serial.o(.text)
+    read16                                   0x08009097   Thumb Code    20  serial.o(.text)
+    read32                                   0x080090ab   Thumb Code    18  serial.o(.text)
+    headSerialResponse                       0x080090bd   Thumb Code    50  serial.o(.text)
+    headSerialReply                          0x080090ef   Thumb Code     6  serial.o(.text)
+    headSerialError                          0x080090f5   Thumb Code     6  serial.o(.text)
+    tailSerialReply                          0x080090fb   Thumb Code     6  serial.o(.text)
+    serializeNames                           0x08009101   Thumb Code    22  serial.o(.text)
+    serialInit                               0x08009117   Thumb Code     4  serial.o(.text)
+    serialCom                                0x0800964d   Thumb Code   234  serial.o(.text)
+    resetIntegrator                          0x08009779   Thumb Code    44  simpleintegrator.o(.text)
+    accIntegratorStep                        0x080097a5   Thumb Code   266  simpleintegrator.o(.text)
+    spektrumInit                             0x080098f7   Thumb Code    36  spektrum.o(.text)
+    spektrumFrameComplete                    0x0800991b   Thumb Code     6  spektrum.o(.text)
+    spektrumReadRawRC                        0x08009921   Thumb Code   124  spektrum.o(.text)
+    initTelemetry                            0x08009a85   Thumb Code    34  telemetry.o(.text)
+    sendTelemetry                            0x08009aa7   Thumb Code   406  telemetry.o(.text)
+    __rt_ctype_table                         0x08009ce9   Thumb Code     4  ctype_o.o(.text)
+    toupper                                  0x08009cf1   Thumb Code    12  toupper.o(.text)
+    bsearch                                  0x08009cfd   Thumb Code    70  bsearch.o(.text)
+    __aeabi_memcpy                           0x08009d43   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x08009d43   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x08009d43   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x08009d67   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x08009d67   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x08009d67   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x08009d75   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x08009d75   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x08009d75   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x08009d79   Thumb Code    20  memseta.o(.text)
+    strcat                                   0x08009d8d   Thumb Code    28  strcat.o(.text)
+    strstr                                   0x08009da9   Thumb Code    44  strstr.o(.text)
+    strncpy                                  0x08009dd5   Thumb Code    24  strncpy.o(.text)
+    strchr                                   0x08009ded   Thumb Code    18  strchr.o(.text)
+    strlen                                   0x08009dff   Thumb Code    16  strlen.o(.text)
+    strncasecmp                              0x08009e0f   Thumb Code    50  strncasecmp.o(.text)
+    atoi                                     0x08009e41   Thumb Code    26  atoi.o(.text)
+    __aeabi_dadd                             0x08009e5b   Thumb Code   320  dadd.o(.text)
+    __aeabi_dsub                             0x08009f9b   Thumb Code     6  dadd.o(.text)
+    __aeabi_drsub                            0x08009fa1   Thumb Code     6  dadd.o(.text)
+    __aeabi_dmul                             0x08009fa7   Thumb Code   224  dmul.o(.text)
+    __aeabi_ddiv                             0x0800a087   Thumb Code   222  ddiv.o(.text)
+    __aeabi_i2d                              0x0800a165   Thumb Code    34  dflti.o(.text)
+    __aeabi_ui2d                             0x0800a187   Thumb Code    26  dfltui.o(.text)
+    __aeabi_d2iz                             0x0800a1a1   Thumb Code    62  dfixi.o(.text)
+    __aeabi_f2d                              0x0800a1df   Thumb Code    44  f2d.o(.text)
+    __aeabi_d2f                              0x0800a20b   Thumb Code    56  d2f.o(.text)
+    __aeabi_llsl                             0x0800a243   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x0800a243   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x0800a261   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x0800a261   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x0800a281   Thumb Code    36  llsshr.o(.text)
+    _ll_sshift_r                             0x0800a281   Thumb Code     0  llsshr.o(.text)
+    tolower                                  0x0800a2a5   Thumb Code    12  tolower.o(.text)
+    strtol                                   0x0800a2b1   Thumb Code   112  strtol.o(.text)
+    __I$use$fp                               0x0800a321   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x0800a321   Thumb Code    18  fepilogue.o(.text)
+    _float_epilogue                          0x0800a333   Thumb Code    90  fepilogue.o(.text)
+    _double_round                            0x0800a38d   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x0800a3a7   Thumb Code   164  depilogue.o(.text)
+    __ARM_scalbn                             0x0800a44b   Thumb Code    46  dscalb.o(.text)
+    scalbn                                   0x0800a44b   Thumb Code     0  dscalb.o(.text)
+    __aeabi_cdrcmple                         0x0800a479   Thumb Code    38  cdrcmple.o(.text)
+    __scatterload                            0x0800a4a1   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x0800a4a1   Thumb Code     0  init.o(.text)
+    _strtoul                                 0x0800a4c5   Thumb Code   158  _strtoul.o(.text)
+    _dsqrt                                   0x0800a563   Thumb Code   162  dsqrt.o(.text)
+    _chval                                   0x0800a605   Thumb Code    28  _chval.o(.text)
+    __decompress                             0x0800a621   Thumb Code     0  __dczerorl2.o(.text)
+    __decompress1                            0x0800a621   Thumb Code    92  __dczerorl2.o(.text)
+    __ARM_fpclassify                         0x0800a67d   Thumb Code    48  fpclassify.o(i.__ARM_fpclassify)
+    __ARM_fpclassifyf                        0x0800a6ad   Thumb Code    38  fpclassifyf.o(i.__ARM_fpclassifyf)
+    __aeabi_errno_addr                       0x0800a6d5   Thumb Code     4  errno.o(i.__aeabi_errno_addr)
+    __rt_errno_addr                          0x0800a6d5   Thumb Code     0  errno.o(i.__aeabi_errno_addr)
+    __hardfp_asinf                           0x0800a6dd   Thumb Code   250  asinf.o(i.__hardfp_asinf)
+    __hardfp_atan2f                          0x0800a801   Thumb Code   486  atan2f.o(i.__hardfp_atan2f)
+    __hardfp_cosf                            0x0800aa49   Thumb Code   286  cosf.o(i.__hardfp_cosf)
+    __hardfp_pow                             0x0800aba9   Thumb Code  3148  pow.o(i.__hardfp_pow)
+    __hardfp_sinf                            0x0800b851   Thumb Code   314  sinf.o(i.__hardfp_sinf)
+    __hardfp_sqrtf                           0x0800b9c9   Thumb Code    58  sqrtf.o(i.__hardfp_sqrtf)
+    __kernel_poly                            0x0800ba03   Thumb Code   248  poly.o(i.__kernel_poly)
+    __mathlib_dbl_underflow                  0x0800bb01   Thumb Code    24  dunder.o(i.__mathlib_dbl_underflow)
+    __mathlib_flt_underflow                  0x0800bb21   Thumb Code    10  funder.o(i.__mathlib_flt_underflow)
+    __mathlib_rredf2                         0x0800bb31   Thumb Code   294  rredf.o(i.__mathlib_rredf2)
+    __scatterload_copy                       0x0800bc71   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800bc7f   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800bc81   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x0800bc91   Thumb Code     6  errno.o(i.__set_errno)
+    fabs                                     0x0800bc9d   Thumb Code    32  fabs.o(i.fabs)
+    sqrt                                     0x0800bcbd   Thumb Code   108  sqrt.o(i.sqrt)
+    sqrtf                                    0x0800bd29   Thumb Code    62  sqrtf.o(i.sqrtf)
+    mixerNames                               0x0800bdac   Data          80  cli.o(.constdata)
+    featureNames                             0x0800bdfc   Data          52  cli.o(.constdata)
+    sensorNames                              0x0800be30   Data          24  cli.o(.constdata)
+    accNames                                 0x0800be48   Data          20  cli.o(.constdata)
+    cmdTable                                 0x0800be5c   Data         156  cli.o(.constdata)
+    valueTable                               0x0800bef8   Data        2240  cli.o(.constdata)
+    rcChannelLetters                         0x0800c7b8   Data           9  config.o(.constdata)
+    init_speed                               0x0800c7d0   Data          20  gps.o(.constdata)
+    mixers                                   0x0800cce0   Data         160  mixer.o(.constdata)
+    __ctype_table                            0x0800cea8   Data         129  ctype_o.o(.constdata)
+    __mathlib_zero                           0x0800cf30   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x0800d7c8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800d7e8   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f4xx.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f4xx.o(.data)
     acc_samples                              0x20000029   Data           1  drv_adxl345.o(.data)
@@ -2734,19 +2734,19 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000dc44, Max: 0x00060000, ABSOLUTE, COMPRESSED[0x0000d8a4])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000dc54, Max: 0x00060000, ABSOLUTE, COMPRESSED[0x0000d8b4])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x0000d7d8, Max: 0x00060000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x0000d7e8, Max: 0x00060000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x00000188   Data   RO            3    RESET               startup_stm32f4xx_md.o
-    0x08000188   0x00000000   Code   RO         4937  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000188   0x00000004   Code   RO         5040    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x0800018c   0x00000004   Code   RO         5043    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000190   0x00000000   Code   RO         5045    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000190   0x00000008   Code   RO         5046    .ARM.Collect$$$$00000009  mc_w.l(entry8.o)
-    0x08000198   0x00000004   Code   RO         5041    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000188   0x00000000   Code   RO         4942  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x00000004   Code   RO         5045    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x00000004   Code   RO         5048    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x00000000   Code   RO         5050    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x00000008   Code   RO         5051    .ARM.Collect$$$$00000009  mc_w.l(entry8.o)
+    0x08000198   0x00000004   Code   RO         5046    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x0800019c   0x00000024   Code   RO            4    .text               startup_stm32f4xx_md.o
     0x080001c0   0x0000016c   Code   RO           12    .text               system_stm32f4xx.o
     0x0800032c   0x00000074   Code   RO          139    .text               misc.o
@@ -2773,117 +2773,116 @@ Memory Map of the image
     0x08002218   0x00000200   Code   RO         4003    .text               drv_mpu6050.o
     0x08002418   0x000002ac   Code   RO         4038    .text               drv_ms5611.o
     0x080026c4   0x000007c0   Code   RO         4061    .text               drv_pwm.o
-    0x08002e84   0x000001e4   Code   RO         4092    .text               drv_system.o
-    0x08003068   0x000003e0   Code   RO         4118    .text               drv_uart.o
-    0x08003448   0x0000021c   Code   RO         4254    .text               buzzer.o
-    0x08003664   0x000012c0   Code   RO         4276    .text               cli.o
-    0x08004924   0x00000480   Code   RO         4303    .text               config.o
-    0x08004da4   0x00000f18   Code   RO         4338    .text               gps.o
-    0x08005cbc   0x00000b14   Code   RO         4374    .text               imu.o
-    0x080067d0   0x0000011c   Code   RO         4411    .text               kalman1d.o
-    0x080068ec   0x000001c4   Code   RO         4434    .text               kalmanfilterfrontend.o
-    0x08006ab0   0x000001e8   Code   RO         4461    .text               main.o
-    0x08006c98   0x00000728   Code   RO         4482    .text               mixer.o
-    0x080073c0   0x00000fe0   Code   RO         4537    .text               mw.o
-    0x080083a0   0x00000258   Code   RO         4580    .text               printf.o
-    0x080085f8   0x000009f4   Code   RO         4694    .text               sensors.o
-    0x08008fec   0x00000778   Code   RO         4732    .text               serial.o
-    0x08009764   0x00000144   Code   RO         4758    .text               simpleintegrator.o
-    0x080098a8   0x000000f4   Code   RO         4806    .text               spektrum.o
-    0x0800999c   0x00000338   Code   RO         4830    .text               telemetry.o
-    0x08009cd4   0x00000008   Code   RO         4940    .text               mc_w.l(ctype_o.o)
-    0x08009cdc   0x0000000c   Code   RO         4968    .text               mc_w.l(toupper.o)
-    0x08009ce8   0x00000046   Code   RO         4970    .text               mc_w.l(bsearch.o)
-    0x08009d2e   0x00000024   Code   RO         4972    .text               mc_w.l(memcpya.o)
-    0x08009d52   0x00000026   Code   RO         4974    .text               mc_w.l(memseta.o)
-    0x08009d78   0x0000001c   Code   RO         4976    .text               mc_w.l(strcat.o)
-    0x08009d94   0x0000002c   Code   RO         4978    .text               mc_w.l(strstr.o)
-    0x08009dc0   0x00000018   Code   RO         4980    .text               mc_w.l(strncpy.o)
-    0x08009dd8   0x00000012   Code   RO         4982    .text               mc_w.l(strchr.o)
-    0x08009dea   0x00000010   Code   RO         4984    .text               mc_w.l(strlen.o)
-    0x08009dfa   0x00000032   Code   RO         4988    .text               mc_w.l(strncasecmp.o)
-    0x08009e2c   0x0000001a   Code   RO         4990    .text               mc_w.l(atoi.o)
-    0x08009e46   0x0000014c   Code   RO         4992    .text               mf_w.l(dadd.o)
-    0x08009f92   0x000000e0   Code   RO         4994    .text               mf_w.l(dmul.o)
-    0x0800a072   0x000000de   Code   RO         4996    .text               mf_w.l(ddiv.o)
-    0x0800a150   0x00000022   Code   RO         4998    .text               mf_w.l(dflti.o)
-    0x0800a172   0x0000001a   Code   RO         5000    .text               mf_w.l(dfltui.o)
-    0x0800a18c   0x0000003e   Code   RO         5002    .text               mf_w.l(dfixi.o)
-    0x0800a1ca   0x0000002c   Code   RO         5004    .text               mf_w.l(f2d.o)
-    0x0800a1f6   0x00000038   Code   RO         5006    .text               mf_w.l(d2f.o)
-    0x0800a22e   0x0000001e   Code   RO         5047    .text               mc_w.l(llshl.o)
-    0x0800a24c   0x00000020   Code   RO         5049    .text               mc_w.l(llushr.o)
-    0x0800a26c   0x00000024   Code   RO         5051    .text               mc_w.l(llsshr.o)
-    0x0800a290   0x0000000c   Code   RO         5053    .text               mc_w.l(tolower.o)
-    0x0800a29c   0x00000070   Code   RO         5062    .text               mc_w.l(strtol.o)
-    0x0800a30c   0x00000000   Code   RO         5064    .text               mc_w.l(iusefp.o)
-    0x0800a30c   0x0000006c   Code   RO         5065    .text               mf_w.l(fepilogue.o)
-    0x0800a378   0x000000be   Code   RO         5067    .text               mf_w.l(depilogue.o)
-    0x0800a436   0x0000002e   Code   RO         5071    .text               mf_w.l(dscalb.o)
-    0x0800a464   0x00000028   Code   RO         5073    .text               mf_w.l(cdrcmple.o)
-    0x0800a48c   0x00000024   Code   RO         5075    .text               mc_w.l(init.o)
-    0x0800a4b0   0x0000009e   Code   RO         5077    .text               mc_w.l(_strtoul.o)
-    0x0800a54e   0x000000a2   Code   RO         5079    .text               mf_w.l(dsqrt.o)
-    0x0800a5f0   0x0000001c   Code   RO         5083    .text               mc_w.l(_chval.o)
-    0x0800a60c   0x0000005c   Code   RO         5093    .text               mc_w.l(__dczerorl2.o)
-    0x0800a668   0x00000030   Code   RO         5016    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
-    0x0800a698   0x00000026   Code   RO         5018    i.__ARM_fpclassifyf  m_wm.l(fpclassifyf.o)
-    0x0800a6be   0x00000002   PAD
-    0x0800a6c0   0x00000008   Code   RO         5055    i.__aeabi_errno_addr  mc_w.l(errno.o)
-    0x0800a6c8   0x00000124   Code   RO         4851    i.__hardfp_asinf    m_wm.l(asinf.o)
-    0x0800a7ec   0x00000248   Code   RO         4863    i.__hardfp_atan2f   m_wm.l(atan2f.o)
-    0x0800aa34   0x00000160   Code   RO         4887    i.__hardfp_cosf     m_wm.l(cosf.o)
-    0x0800ab94   0x00000004   PAD
-    0x0800ab98   0x00000ca8   Code   RO         4899    i.__hardfp_pow      m_wm.l(pow.o)
-    0x0800b840   0x00000178   Code   RO         4913    i.__hardfp_sinf     m_wm.l(sinf.o)
-    0x0800b9b8   0x0000003a   Code   RO         4925    i.__hardfp_sqrtf    m_wm.l(sqrtf.o)
-    0x0800b9f2   0x000000f8   Code   RO         5022    i.__kernel_poly     m_wm.l(poly.o)
-    0x0800baea   0x00000006   PAD
-    0x0800baf0   0x00000020   Code   RO         5008    i.__mathlib_dbl_underflow  m_wm.l(dunder.o)
-    0x0800bb10   0x00000010   Code   RO         5020    i.__mathlib_flt_underflow  m_wm.l(funder.o)
-    0x0800bb20   0x00000140   Code   RO         5025    i.__mathlib_rredf2  m_wm.l(rredf.o)
-    0x0800bc60   0x0000000e   Code   RO         5087    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800bc6e   0x00000002   Code   RO         5088    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0800bc70   0x0000000e   Code   RO         5089    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800bc7e   0x00000002   PAD
-    0x0800bc80   0x0000000c   Code   RO         5057    i.__set_errno       mc_w.l(errno.o)
-    0x0800bc8c   0x00000020   Code   RO         5012    i.fabs              m_wm.l(fabs.o)
-    0x0800bcac   0x0000006c   Code   RO         5030    i.sqrt              m_wm.l(sqrt.o)
-    0x0800bd18   0x0000003e   Code   RO         4927    i.sqrtf             m_wm.l(sqrtf.o)
-    0x0800bd56   0x0000000e   Data   RO         4063    .constdata          drv_pwm.o
-    0x0800bd64   0x00000015   Data   RO         4064    .constdata          drv_pwm.o
-    0x0800bd79   0x0000000e   Data   RO         4065    .constdata          drv_pwm.o
-    0x0800bd87   0x00000015   Data   RO         4066    .constdata          drv_pwm.o
-    0x0800bd9c   0x00000a0c   Data   RO         4278    .constdata          cli.o
-    0x0800c7a8   0x00000015   Data   RO         4306    .constdata          config.o
-    0x0800c7bd   0x00000003   PAD
-    0x0800c7c0   0x000000c0   Data   RO         4341    .constdata          gps.o
-    0x0800c880   0x00000030   Data   RO         4486    .constdata          mixer.o
-    0x0800c8b0   0x00000040   Data   RO         4487    .constdata          mixer.o
-    0x0800c8f0   0x00000040   Data   RO         4488    .constdata          mixer.o
-    0x0800c930   0x00000020   Data   RO         4489    .constdata          mixer.o
-    0x0800c950   0x00000060   Data   RO         4490    .constdata          mixer.o
-    0x0800c9b0   0x00000060   Data   RO         4491    .constdata          mixer.o
-    0x0800ca10   0x00000040   Data   RO         4492    .constdata          mixer.o
-    0x0800ca50   0x00000060   Data   RO         4493    .constdata          mixer.o
-    0x0800cab0   0x00000080   Data   RO         4494    .constdata          mixer.o
-    0x0800cb30   0x00000080   Data   RO         4495    .constdata          mixer.o
-    0x0800cbb0   0x00000080   Data   RO         4496    .constdata          mixer.o
-    0x0800cc30   0x00000040   Data   RO         4497    .constdata          mixer.o
-    0x0800cc70   0x00000060   Data   RO         4498    .constdata          mixer.o
-    0x0800ccd0   0x000000a0   Data   RO         4499    .constdata          mixer.o
-    0x0800cd70   0x0000009e   Data   RO         4734    .constdata          serial.o
-    0x0800ce0e   0x00000002   PAD
-    0x0800ce10   0x00000088   Data   RO         4902    .constdata          m_wm.l(pow.o)
-    0x0800ce98   0x00000081   Data   RO         4941    .constdata          mc_w.l(ctype_o.o)
-    0x0800cf19   0x00000003   PAD
-    0x0800cf1c   0x00000004   Data   RO         4942    .constdata          mc_w.l(ctype_o.o)
-    0x0800cf20   0x00000008   Data   RO         5024    .constdata          m_wm.l(qnan.o)
-    0x0800cf28   0x00000020   Data   RO         5026    .constdata          m_wm.l(rredf.o)
-    0x0800cf48   0x00000794   Data   RO         4279    .conststring        cli.o
-    0x0800d6dc   0x000000da   Data   RO         4342    .conststring        gps.o
-    0x0800d7b6   0x00000002   PAD
-    0x0800d7b8   0x00000020   Data   RO         5085    Region$$Table       anon$$obj.o
+    0x08002e84   0x000001e8   Code   RO         4092    .text               drv_system.o
+    0x0800306c   0x000003e0   Code   RO         4118    .text               drv_uart.o
+    0x0800344c   0x0000021c   Code   RO         4254    .text               buzzer.o
+    0x08003668   0x000012c0   Code   RO         4276    .text               cli.o
+    0x08004928   0x00000480   Code   RO         4303    .text               config.o
+    0x08004da8   0x00000f18   Code   RO         4338    .text               gps.o
+    0x08005cc0   0x00000b14   Code   RO         4374    .text               imu.o
+    0x080067d4   0x0000011c   Code   RO         4416    .text               kalman1d.o
+    0x080068f0   0x000001c4   Code   RO         4439    .text               kalmanfilterfrontend.o
+    0x08006ab4   0x000001f8   Code   RO         4466    .text               main.o
+    0x08006cac   0x00000728   Code   RO         4487    .text               mixer.o
+    0x080073d4   0x00000fe0   Code   RO         4542    .text               mw.o
+    0x080083b4   0x00000258   Code   RO         4585    .text               printf.o
+    0x0800860c   0x000009f4   Code   RO         4699    .text               sensors.o
+    0x08009000   0x00000778   Code   RO         4737    .text               serial.o
+    0x08009778   0x00000144   Code   RO         4763    .text               simpleintegrator.o
+    0x080098bc   0x000000f4   Code   RO         4811    .text               spektrum.o
+    0x080099b0   0x00000338   Code   RO         4835    .text               telemetry.o
+    0x08009ce8   0x00000008   Code   RO         4945    .text               mc_w.l(ctype_o.o)
+    0x08009cf0   0x0000000c   Code   RO         4973    .text               mc_w.l(toupper.o)
+    0x08009cfc   0x00000046   Code   RO         4975    .text               mc_w.l(bsearch.o)
+    0x08009d42   0x00000024   Code   RO         4977    .text               mc_w.l(memcpya.o)
+    0x08009d66   0x00000026   Code   RO         4979    .text               mc_w.l(memseta.o)
+    0x08009d8c   0x0000001c   Code   RO         4981    .text               mc_w.l(strcat.o)
+    0x08009da8   0x0000002c   Code   RO         4983    .text               mc_w.l(strstr.o)
+    0x08009dd4   0x00000018   Code   RO         4985    .text               mc_w.l(strncpy.o)
+    0x08009dec   0x00000012   Code   RO         4987    .text               mc_w.l(strchr.o)
+    0x08009dfe   0x00000010   Code   RO         4989    .text               mc_w.l(strlen.o)
+    0x08009e0e   0x00000032   Code   RO         4993    .text               mc_w.l(strncasecmp.o)
+    0x08009e40   0x0000001a   Code   RO         4995    .text               mc_w.l(atoi.o)
+    0x08009e5a   0x0000014c   Code   RO         4997    .text               mf_w.l(dadd.o)
+    0x08009fa6   0x000000e0   Code   RO         4999    .text               mf_w.l(dmul.o)
+    0x0800a086   0x000000de   Code   RO         5001    .text               mf_w.l(ddiv.o)
+    0x0800a164   0x00000022   Code   RO         5003    .text               mf_w.l(dflti.o)
+    0x0800a186   0x0000001a   Code   RO         5005    .text               mf_w.l(dfltui.o)
+    0x0800a1a0   0x0000003e   Code   RO         5007    .text               mf_w.l(dfixi.o)
+    0x0800a1de   0x0000002c   Code   RO         5009    .text               mf_w.l(f2d.o)
+    0x0800a20a   0x00000038   Code   RO         5011    .text               mf_w.l(d2f.o)
+    0x0800a242   0x0000001e   Code   RO         5052    .text               mc_w.l(llshl.o)
+    0x0800a260   0x00000020   Code   RO         5054    .text               mc_w.l(llushr.o)
+    0x0800a280   0x00000024   Code   RO         5056    .text               mc_w.l(llsshr.o)
+    0x0800a2a4   0x0000000c   Code   RO         5058    .text               mc_w.l(tolower.o)
+    0x0800a2b0   0x00000070   Code   RO         5067    .text               mc_w.l(strtol.o)
+    0x0800a320   0x00000000   Code   RO         5069    .text               mc_w.l(iusefp.o)
+    0x0800a320   0x0000006c   Code   RO         5070    .text               mf_w.l(fepilogue.o)
+    0x0800a38c   0x000000be   Code   RO         5072    .text               mf_w.l(depilogue.o)
+    0x0800a44a   0x0000002e   Code   RO         5076    .text               mf_w.l(dscalb.o)
+    0x0800a478   0x00000028   Code   RO         5078    .text               mf_w.l(cdrcmple.o)
+    0x0800a4a0   0x00000024   Code   RO         5080    .text               mc_w.l(init.o)
+    0x0800a4c4   0x0000009e   Code   RO         5082    .text               mc_w.l(_strtoul.o)
+    0x0800a562   0x000000a2   Code   RO         5084    .text               mf_w.l(dsqrt.o)
+    0x0800a604   0x0000001c   Code   RO         5088    .text               mc_w.l(_chval.o)
+    0x0800a620   0x0000005c   Code   RO         5098    .text               mc_w.l(__dczerorl2.o)
+    0x0800a67c   0x00000030   Code   RO         5021    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
+    0x0800a6ac   0x00000026   Code   RO         5023    i.__ARM_fpclassifyf  m_wm.l(fpclassifyf.o)
+    0x0800a6d2   0x00000002   PAD
+    0x0800a6d4   0x00000008   Code   RO         5060    i.__aeabi_errno_addr  mc_w.l(errno.o)
+    0x0800a6dc   0x00000124   Code   RO         4856    i.__hardfp_asinf    m_wm.l(asinf.o)
+    0x0800a800   0x00000248   Code   RO         4868    i.__hardfp_atan2f   m_wm.l(atan2f.o)
+    0x0800aa48   0x00000160   Code   RO         4892    i.__hardfp_cosf     m_wm.l(cosf.o)
+    0x0800aba8   0x00000ca8   Code   RO         4904    i.__hardfp_pow      m_wm.l(pow.o)
+    0x0800b850   0x00000178   Code   RO         4918    i.__hardfp_sinf     m_wm.l(sinf.o)
+    0x0800b9c8   0x0000003a   Code   RO         4930    i.__hardfp_sqrtf    m_wm.l(sqrtf.o)
+    0x0800ba02   0x000000f8   Code   RO         5027    i.__kernel_poly     m_wm.l(poly.o)
+    0x0800bafa   0x00000006   PAD
+    0x0800bb00   0x00000020   Code   RO         5013    i.__mathlib_dbl_underflow  m_wm.l(dunder.o)
+    0x0800bb20   0x00000010   Code   RO         5025    i.__mathlib_flt_underflow  m_wm.l(funder.o)
+    0x0800bb30   0x00000140   Code   RO         5030    i.__mathlib_rredf2  m_wm.l(rredf.o)
+    0x0800bc70   0x0000000e   Code   RO         5092    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800bc7e   0x00000002   Code   RO         5093    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800bc80   0x0000000e   Code   RO         5094    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800bc8e   0x00000002   PAD
+    0x0800bc90   0x0000000c   Code   RO         5062    i.__set_errno       mc_w.l(errno.o)
+    0x0800bc9c   0x00000020   Code   RO         5017    i.fabs              m_wm.l(fabs.o)
+    0x0800bcbc   0x0000006c   Code   RO         5035    i.sqrt              m_wm.l(sqrt.o)
+    0x0800bd28   0x0000003e   Code   RO         4932    i.sqrtf             m_wm.l(sqrtf.o)
+    0x0800bd66   0x0000000e   Data   RO         4063    .constdata          drv_pwm.o
+    0x0800bd74   0x00000015   Data   RO         4064    .constdata          drv_pwm.o
+    0x0800bd89   0x0000000e   Data   RO         4065    .constdata          drv_pwm.o
+    0x0800bd97   0x00000015   Data   RO         4066    .constdata          drv_pwm.o
+    0x0800bdac   0x00000a0c   Data   RO         4278    .constdata          cli.o
+    0x0800c7b8   0x00000015   Data   RO         4306    .constdata          config.o
+    0x0800c7cd   0x00000003   PAD
+    0x0800c7d0   0x000000c0   Data   RO         4341    .constdata          gps.o
+    0x0800c890   0x00000030   Data   RO         4491    .constdata          mixer.o
+    0x0800c8c0   0x00000040   Data   RO         4492    .constdata          mixer.o
+    0x0800c900   0x00000040   Data   RO         4493    .constdata          mixer.o
+    0x0800c940   0x00000020   Data   RO         4494    .constdata          mixer.o
+    0x0800c960   0x00000060   Data   RO         4495    .constdata          mixer.o
+    0x0800c9c0   0x00000060   Data   RO         4496    .constdata          mixer.o
+    0x0800ca20   0x00000040   Data   RO         4497    .constdata          mixer.o
+    0x0800ca60   0x00000060   Data   RO         4498    .constdata          mixer.o
+    0x0800cac0   0x00000080   Data   RO         4499    .constdata          mixer.o
+    0x0800cb40   0x00000080   Data   RO         4500    .constdata          mixer.o
+    0x0800cbc0   0x00000080   Data   RO         4501    .constdata          mixer.o
+    0x0800cc40   0x00000040   Data   RO         4502    .constdata          mixer.o
+    0x0800cc80   0x00000060   Data   RO         4503    .constdata          mixer.o
+    0x0800cce0   0x000000a0   Data   RO         4504    .constdata          mixer.o
+    0x0800cd80   0x0000009e   Data   RO         4739    .constdata          serial.o
+    0x0800ce1e   0x00000002   PAD
+    0x0800ce20   0x00000088   Data   RO         4907    .constdata          m_wm.l(pow.o)
+    0x0800cea8   0x00000081   Data   RO         4946    .constdata          mc_w.l(ctype_o.o)
+    0x0800cf29   0x00000003   PAD
+    0x0800cf2c   0x00000004   Data   RO         4947    .constdata          mc_w.l(ctype_o.o)
+    0x0800cf30   0x00000008   Data   RO         5029    .constdata          m_wm.l(qnan.o)
+    0x0800cf38   0x00000020   Data   RO         5031    .constdata          m_wm.l(rredf.o)
+    0x0800cf58   0x00000794   Data   RO         4279    .conststring        cli.o
+    0x0800d6ec   0x000000da   Data   RO         4342    .conststring        gps.o
+    0x0800d7c6   0x00000002   PAD
+    0x0800d7c8   0x00000020   Data   RO         5090    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00001548, Max: 0x00020000, ABSOLUTE, COMPRESSED[0x000000cc])
@@ -2912,34 +2911,34 @@ Memory Map of the image
     0x20000210   0x00000004   Data   RW         4280    .data               cli.o
     0x20000214   0x00000008   Data   RW         4307    .data               config.o
     0x2000021c   0x00000080   Data   RW         4343    .data               gps.o
-    0x2000029c   0x0000006e   Data   RW         4376    .data               imu.o
-    0x2000030a   0x00000006   Data   RW         4377    .data               imu.o
-    0x20000310   0x00000002   Data   RW         4378    .data               imu.o
+    0x2000029c   0x0000006e   Data   RW         4377    .data               imu.o
+    0x2000030a   0x00000006   Data   RW         4378    .data               imu.o
+    0x20000310   0x00000002   Data   RW         4379    .data               imu.o
     0x20000312   0x00000002   PAD
-    0x20000314   0x00000010   Data   RW         4436    .data               kalmanfilterfrontend.o
-    0x20000324   0x00000012   Data   RW         4500    .data               mixer.o
+    0x20000314   0x00000010   Data   RW         4441    .data               kalmanfilterfrontend.o
+    0x20000324   0x00000012   Data   RW         4505    .data               mixer.o
     0x20000336   0x00000002   PAD
-    0x20000338   0x000000a8   Data   RW         4539    .data               mw.o
-    0x200003e0   0x00000002   Data   RW         4540    .data               mw.o
-    0x200003e2   0x00000001   Data   RW         4541    .data               mw.o
+    0x20000338   0x000000a8   Data   RW         4544    .data               mw.o
+    0x200003e0   0x00000002   Data   RW         4545    .data               mw.o
+    0x200003e2   0x00000001   Data   RW         4546    .data               mw.o
     0x200003e3   0x00000001   PAD
-    0x200003e4   0x00000002   Data   RW         4542    .data               mw.o
-    0x200003e6   0x00000001   Data   RW         4543    .data               mw.o
-    0x200003e7   0x00000001   Data   RW         4545    .data               mw.o
-    0x200003e8   0x00000008   Data   RW         4546    .data               mw.o
-    0x200003f0   0x00000002   Data   RW         4548    .data               mw.o
-    0x200003f2   0x00000002   Data   RW         4549    .data               mw.o
-    0x200003f4   0x00000002   Data   RW         4550    .data               mw.o
-    0x200003f6   0x00000002   Data   RW         4551    .data               mw.o
-    0x200003f8   0x00000008   Data   RW         4583    .data               printf.o
-    0x20000400   0x00000040   Data   RW         4696    .data               sensors.o
-    0x20000440   0x00000002   Data   RW         4697    .data               sensors.o
-    0x20000442   0x00000002   Data   RW         4698    .data               sensors.o
-    0x20000444   0x0000000a   Data   RW         4735    .data               serial.o
+    0x200003e4   0x00000002   Data   RW         4547    .data               mw.o
+    0x200003e6   0x00000001   Data   RW         4548    .data               mw.o
+    0x200003e7   0x00000001   Data   RW         4550    .data               mw.o
+    0x200003e8   0x00000008   Data   RW         4551    .data               mw.o
+    0x200003f0   0x00000002   Data   RW         4553    .data               mw.o
+    0x200003f2   0x00000002   Data   RW         4554    .data               mw.o
+    0x200003f4   0x00000002   Data   RW         4555    .data               mw.o
+    0x200003f6   0x00000002   Data   RW         4556    .data               mw.o
+    0x200003f8   0x00000008   Data   RW         4588    .data               printf.o
+    0x20000400   0x00000040   Data   RW         4701    .data               sensors.o
+    0x20000440   0x00000002   Data   RW         4702    .data               sensors.o
+    0x20000442   0x00000002   Data   RW         4703    .data               sensors.o
+    0x20000444   0x0000000a   Data   RW         4740    .data               serial.o
     0x2000044e   0x00000002   PAD
-    0x20000450   0x00000010   Data   RW         4808    .data               spektrum.o
-    0x20000460   0x00000008   Data   RW         4831    .data               telemetry.o
-    0x20000468   0x00000004   Data   RW         5058    .data               mc_w.l(errno.o)
+    0x20000450   0x00000010   Data   RW         4813    .data               spektrum.o
+    0x20000460   0x00000008   Data   RW         4836    .data               telemetry.o
+    0x20000468   0x00000004   Data   RW         5063    .data               mc_w.l(errno.o)
     0x2000046c   0x00000024   Zero   RW         3801    .bss                drv_bmp085.o
     0x20000490   0x00000010   Zero   RW         4039    .bss                drv_ms5611.o
     0x200004a0   0x000001f0   Zero   RW         4062    .bss                drv_pwm.o
@@ -2947,15 +2946,15 @@ Memory Map of the image
     0x20000990   0x00000030   Zero   RW         4277    .bss                cli.o
     0x200009c0   0x000001dc   Zero   RW         4305    .bss                config.o
     0x20000b9c   0x00000120   Zero   RW         4340    .bss                gps.o
-    0x20000cbc   0x00000090   Zero   RW         4375    .bss                imu.o
-    0x20000d4c   0x00000138   Zero   RW         4435    .bss                kalmanfilterfrontend.o
-    0x20000e84   0x000000d8   Zero   RW         4485    .bss                mixer.o
-    0x20000f5c   0x000000ad   Zero   RW         4538    .bss                mw.o
+    0x20000cbc   0x00000090   Zero   RW         4376    .bss                imu.o
+    0x20000d4c   0x00000138   Zero   RW         4440    .bss                kalmanfilterfrontend.o
+    0x20000e84   0x000000d8   Zero   RW         4490    .bss                mixer.o
+    0x20000f5c   0x000000ad   Zero   RW         4543    .bss                mw.o
     0x20001009   0x00000003   PAD
-    0x2000100c   0x0000009c   Zero   RW         4695    .bss                sensors.o
-    0x200010a8   0x00000040   Zero   RW         4733    .bss                serial.o
-    0x200010e8   0x00000030   Zero   RW         4763    .bss                simpleintegrator.o
-    0x20001118   0x0000002c   Zero   RW         4807    .bss                spektrum.o
+    0x2000100c   0x0000009c   Zero   RW         4700    .bss                sensors.o
+    0x200010a8   0x00000040   Zero   RW         4738    .bss                serial.o
+    0x200010e8   0x00000030   Zero   RW         4768    .bss                simpleintegrator.o
+    0x20001118   0x0000002c   Zero   RW         4812    .bss                spektrum.o
     0x20001144   0x00000004   PAD
     0x20001148   0x00000400   Zero   RW            1    STACK               startup_stm32f4xx_md.o
 
@@ -2983,13 +2982,13 @@ Image component sizes
        512         38          0          1          0       5353   drv_mpu6050.o
        684         38          0         12         16       3227   drv_ms5611.o
       1984         84         70        344        496       6666   drv_pwm.o
-       484         62          0          8          0      29126   drv_system.o
+       488         62          0          8          0      29130   drv_system.o
        992         50          0         40        768       4585   drv_uart.o
       3864        326        410        128        288      12287   gps.o
-      2836        176          0        118        144       6860   imu.o
+      2836        180          0        118        144       6664   imu.o
        284          8          0          0          0       2035   kalman1d.o
        452         28          0         16        312       1999   kalmanfilterfrontend.o
-       488         46          0          0          0       1057   main.o
+       504         46          0          0          0       1081   main.o
        116         14          0          0          0       1197   misc.o
       1832         58       1264         18        216      10257   mixer.o
       4064        158          0        191        173      13700   mw.o
@@ -3013,7 +3012,7 @@ Image component sizes
        824         50          0          8          0       3673   telemetry.o
 
     ----------------------------------------------------------------------
-     39736       3420       6866       1128       4316     553385   Object Totals
+     39756       3424       6866       1128       4316     553217   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          7         12          7          0   (incl. Padding)
 
@@ -3080,8 +3079,8 @@ Image component sizes
        108          0          0          0          0        168   fepilogue.o
 
     ----------------------------------------------------------------------
-      8342        654        312          4          0       5188   Library Totals
-        14          4          3          0          0          0   (incl. Padding)
+      8338        650        312          4          0       5188   Library Totals
+        10          0          3          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -3092,7 +3091,7 @@ Image component sizes
       1546          2          0          0          0       1324   mf_w.l
 
     ----------------------------------------------------------------------
-      8342        654        312          4          0       5188   Library Totals
+      8338        650        312          4          0       5188   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -3101,15 +3100,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     48078       4074       7178       1132       4316     547061   Grand Totals
-     48078       4074       7178        204       4316     547061   ELF Image Totals (compressed)
-     48078       4074       7178        204          0          0   ROM Totals
+     48094       4074       7178       1132       4316     546993   Grand Totals
+     48094       4074       7178        204       4316     546993   ELF Image Totals (compressed)
+     48094       4074       7178        204          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                55256 (  53.96kB)
+    Total RO  Size (Code + RO Data)                55272 (  53.98kB)
     Total RW  Size (RW Data + ZI Data)              5448 (   5.32kB)
-    Total ROM Size (Code + RO Data + RW Data)      55460 (  54.16kB)
+    Total ROM Size (Code + RO Data + RW Data)      55476 (  54.18kB)
 
 ==============================================================================
 

@@ -93,8 +93,8 @@ typedef struct baro_t
     baroCalculateFuncPtr calculate;
 } baro_t;
 
-#define digitalHi(p, i)     { p->BSRRH = i; }
-#define digitalLo(p, i)     { p->BSRRL = i; }
+#define digitalLo(p, i)     { p->BSRRH = i; }
+#define digitalHi(p, i)     { p->BSRRL = i; }
 #define digitalToggle(p, i) { p->ODR ^= i; }
 
 // Hardware definitions and GPIO
@@ -144,13 +144,13 @@ typedef struct baro_t
 #define LED1_OFF                 digitalLo(LED1_GPIO, LED1_PIN);
 #define LED1_ON                  digitalHi(LED1_GPIO, LED1_PIN);
 
-#define LED2_TOGGLE              digitalToggle(LED1_GPIO, LED1_PIN);
-#define LED2_OFF                 digitalLo(LED1_GPIO, LED1_PIN);
-#define LED2_ON                  digitalHi(LED1_GPIO, LED1_PIN);
+#define LED2_TOGGLE              digitalToggle(LED2_GPIO, LED1_PIN);
+#define LED2_OFF                 digitalLo(LED2_GPIO, LED2_PIN);
+#define LED2_ON                  digitalHi(LED2_GPIO, LED2_PIN);
 
 #define LED3_TOGGLE              digitalToggle(LED1_GPIO, LED1_PIN);
-#define LED3_OFF                 digitalHi(LED1_GPIO, LED1_PIN);
-#define LED3_ON                  digitalHi(LED1_GPIO, LED1_PIN);  
+#define LED3_OFF                 digitalLo(LED3_GPIO, LED3_PIN);
+#define LED3_ON                  digitalHi(LED3_GPIO, LED3_PIN);  
 
 #ifdef BEEP_GPIO
 #define BEEP_TOGGLE              digitalToggle(BEEP_GPIO, BEEP_PIN);
