@@ -44,27 +44,44 @@ uint32_t millis(void)
 
 void systemInit(void)
 {
-    GPIO_InitTypeDef GPIO_InitStructure;
-    uint32_t i;
+	
 
-    gpio_config_t gpio_cfg[] = {
-        { LED0_GPIO, LED0_PIN, GPIO_Mode_OUT }, // PB3 (LED), GPIO_OType_PP
-        { LED0_GPIO, LED0_PIN, GPIO_OType_PP },
-        { LED1_GPIO, LED1_PIN, GPIO_Mode_OUT },
-        { LED1_GPIO, LED1_PIN, GPIO_OType_PP },
-        { LED2_GPIO, LED2_PIN, GPIO_Mode_OUT },
-        { LED2_GPIO, LED2_PIN, GPIO_OType_PP },
-        { LED3_GPIO, LED3_PIN, GPIO_Mode_OUT },
-        { LED3_GPIO, LED3_PIN, GPIO_OType_PP },
+  GPIO_InitTypeDef GPIO_InitStructure;
+ //   uint32_t i;
+RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_GPIOE, ENABLE);
+   // gpio_config_t gpio_cfg[] = {
+    //    { LED0_GPIO, LED0_PIN, GPIO_Mode_OUT }, // PB3 (LED), GPIO_OType_PP
+    //    { LED0_GPIO, LED0_PIN, GPIO_OType_PP },
+    //    { LED1_GPIO, LED1_PIN, GPIO_Mode_OUT },
+    //    { LED1_GPIO, LED1_PIN, GPIO_OType_PP },
+    //    { LED2_GPIO, LED2_PIN, GPIO_Mode_OUT },
+    //    { LED2_GPIO, LED2_PIN, GPIO_OType_PP },
+    //    { LED3_GPIO, LED3_PIN, GPIO_Mode_OUT },
+    //    { LED3_GPIO, LED3_PIN, GPIO_OType_PP },
+        GPIO_InitStructure.GPIO_Pin = LED0_PIN | LED1_PIN | LED2_PIN| LED3_PIN;
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+        GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+	      GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+        GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+        GPIO_Init(GPIOE, &GPIO_InitStructure);
 
         // PB4 (LED)
+	
+    
+   
+    
+    
+   
+  ///  Delay(0xFFFFFF);
+	
+  
 
-#ifndef FY90Q
-        { BEEP_GPIO, BEEP_PIN, GPIO_Mode_OUT },
-        { BEEP_GPIO, BEEP_PIN, GPIO_OType_OD }, // PA12 (Buzzer)
-#endif
-    };
-    uint8_t gpio_count = sizeof(gpio_cfg) / sizeof(gpio_cfg[0]);
+//#ifndef FY90Q
+//        { BEEP_GPIO, BEEP_PIN, GPIO_Mode_OUT },
+//        { BEEP_GPIO, BEEP_PIN, GPIO_OType_OD }, // PA12 (Buzzer)
+//#endif
+   // };
+   // uint8_t gpio_count = sizeof(gpio_cfg) / sizeof(gpio_cfg[0]);
 
     // This is needed because some shit inside Keil startup fucks with SystemCoreClock, setting it back to 72MHz even on HSI.
     SystemCoreClockUpdate();
@@ -75,7 +92,7 @@ void systemInit(void)
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOE | RCC_AHB1Periph_DMA1, ENABLE);
     RCC_ClearFlag();
 
-    // Make all GPIO in by default to save power and reduce noise
+    /*/ Make all GPIO in by default to save power and reduce noise
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
@@ -83,23 +100,24 @@ void systemInit(void)
     GPIO_Init(GPIOC, &GPIO_InitStructure);
     GPIO_Init(GPIOD, &GPIO_InitStructure);
     GPIO_Init(GPIOE, &GPIO_InitStructure);
-
+*/
     // Turn off JTAG port 'cause we're using the GPIO for leds
    // GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
 
     // Configure gpio
-    for (i = 0; i < gpio_count; i++) {
-        GPIO_InitStructure.GPIO_Pin = gpio_cfg[i].pin;
-        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
-        GPIO_InitStructure.GPIO_Mode = gpio_cfg[i].mode;
-        GPIO_Init(gpio_cfg[i].gpio, &GPIO_InitStructure);
-    }
+  //  for (i = 0; i < gpio_count; i++) {
+      //  GPIO_InitStructure.GPIO_Pin = gpio_cfg[i].pin;
+      //  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+      //  GPIO_InitStructure.GPIO_Mode = gpio_cfg[i].mode;
+     //   GPIO_Init(gpio_cfg[i].gpio, &GPIO_InitStructure);
+  //  }
 
     LED0_OFF;
     LED1_OFF;
     LED2_OFF;
     LED3_OFF;
     BEEP_OFF;
+
 
     // Init cycle counter
     cycleCounterInit();
@@ -181,5 +199,6 @@ void systemReset(bool toBootloader)
     }        
 
     // Generate system reset
-    SCB->AIRCR = AIRCR_VECTKEY_MASK | (uint32_t)0x04;
+    SCB->AIRCR = 0x05FA0004;//AIRCR_VECTKEY_MASK | (uint32_t)0x04;
 }
+

@@ -3,7 +3,7 @@
 #include <string.h>
 
 #ifndef FLASH_PAGE_COUNT
-#define FLASH_PAGE_COUNT 128
+#define FLASH_PAGE_COUNT 3
 #endif
 #define ADDR_FLASH_SECTOR_0     ((uint32_t)0x08000000) /* Base @ of Sector 0, 16 Kbytes */
 #define ADDR_FLASH_SECTOR_1     ((uint32_t)0x08004000) /* Base @ of Sector 1, 16 Kbytes */
@@ -11,10 +11,12 @@
 #define ADDR_FLASH_SECTOR_3     ((uint32_t)0x0800C000) /* Base @ of Sector 3, 16 Kbytes */
 #define ADDR_FLASH_SECTOR_4     ((uint32_t)0x08010000) /* Base @ of Sector 4, 64 Kbytes */
 #define ADDR_FLASH_SECTOR_5     ((uint32_t)0x08020000) /* Base @ of Sector 5, 128 Kbytes */
+#define ADDR_FLASH_SECTOR_6     ((uint32_t)0x08040000) /* Base @ of Sector 6, 128 Kbytes */
+#define ADDR_FLASH_SECTOR_7     ((uint32_t)0x08060000) /* Base @ of Sector 7, 128 Kbytes */
 
 
-#define FLASH_PAGE_SIZE                 ((uint16_t)0x400)
-#define FLASH_WRITE_ADDR              ADDR_FLASH_SECTOR_5 // (0x08000000 + (uint32_t)FLASH_PAGE_SIZE * (FLASH_PAGE_COUNT - 1))       // use the last KB for storage
+#define FLASH_PAGE_SIZE                 ((uint32_t)0x20000)
+#define FLASH_WRITE_ADDR              ADDR_FLASH_SECTOR_7  //(0x08000000 + (uint32_t)FLASH_PAGE_SIZE*10 * (FLASH_PAGE_COUNT - 1))       // use the last KB for storage
 
 config_t cfg;
 const char rcChannelLetters[] = "AERT1234";
@@ -36,7 +38,7 @@ void parseRcChannels(const char *input)
 
 static uint8_t validEEPROM(void)
 {
-    const config_t *temp = (const config_t *)FLASH_WRITE_ADDR;
+    const config_t *temp = (const config_t *)FLASH_WRITE_ADDR;//;ADDR_FLASH_SECTOR_7
     const uint8_t *p;
     uint8_t chk = 0;
 
@@ -65,7 +67,7 @@ void readEEPROM(void)
     uint8_t i;
 
     // Read flash
-    memcpy(&cfg, (char *)FLASH_WRITE_ADDR, sizeof(config_t));
+    memcpy(&cfg, (char *)FLASH_WRITE_ADDR, sizeof(config_t));//ADDR_FLASH_SECTOR_7
 
     for (i = 0; i < 6; i++)
         lookupPitchRollRC[i] = (2500 + cfg.rcExpo8 * (i * i - 25)) * i * (int32_t) cfg.rcRate8 / 2500;
@@ -103,11 +105,11 @@ void writeParams(uint8_t b)
 
     // write it
     FLASH_Unlock();
-    FLASH_ClearFlag(FLASH_FLAG_EOP | FLASH_FLAG_PGPERR | FLASH_FLAG_WRPERR);
+    FLASH_ClearFlag(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR|FLASH_FLAG_PGSERR);
 
-    if (FLASH_EraseSector(FLASH_WRITE_ADDR, VoltageRange_4) == FLASH_COMPLETE) {
+    if (FLASH_EraseSector(FLASH_Sector_7, VoltageRange_3) == FLASH_COMPLETE) {
         for (i = 0; i < sizeof(config_t); i += 4) {
-            status = FLASH_ProgramWord(FLASH_WRITE_ADDR + i, *(uint32_t *) ((char *) &cfg + i));
+            status = FLASH_ProgramWord(FLASH_WRITE_ADDR + i, *(uint32_t *) ((char *) &cfg + i));//ADDR_FLASH_SECTOR_7
             if (status != FLASH_COMPLETE)
                 break;          // TODO: fail
         }

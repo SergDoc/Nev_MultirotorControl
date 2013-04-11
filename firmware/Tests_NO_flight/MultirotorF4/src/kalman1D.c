@@ -27,10 +27,10 @@ void kalman1DUpdate32(kalman1D_t *kalmanState, int32_t *pvalue, float dt)
 {
 	float m = *pvalue;
 	int i;
-  float y0 =0.0f;
-	float y1 =0.0f;
-	float s =0.0f;
-	float k =0.0f;
+float y0=0.0f;
+float y1=0.0f;
+	float s=0.0f;
+	float k=0.0f;
 	// Predict:
 	//   X = F*X + H*U
 	//   P = F*X*F^T + Q.
@@ -60,7 +60,7 @@ void kalman1DUpdate32(kalman1D_t *kalmanState, int32_t *pvalue, float dt)
 	 s = kalmanState->m_p[0] + kalmanState->m_r;
 
 	// K = P * H^T *S^-1
-	 k = kalmanState->m_p[0] / s;
+	k = kalmanState->m_p[0] / s;
 
 	// X = X + K*Y
 	kalmanState->m_x[0] += y0 * k;

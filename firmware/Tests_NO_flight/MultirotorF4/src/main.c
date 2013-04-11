@@ -1,4 +1,4 @@
-//
+
 // j-link s/n 228001252
 //
 #include "board.h"
@@ -50,19 +50,21 @@ int main(void)
 #endif
 
     systemInit();
+		
     init_printf(NULL, _putc);
 
     checkFirstTime(false);
-    readEEPROM();
+    
+		readEEPROM();
 
-    // configure power ADC
+     //configure power ADC
     if (cfg.power_adc_channel > 0 && (cfg.power_adc_channel == 1 || cfg.power_adc_channel == 9))
         adc_params.powerAdcChannel = cfg.power_adc_channel;
     else {
         adc_params.powerAdcChannel = 0;
         cfg.power_adc_channel = 0;
     }
-
+    
     adcInit(&adc_params);
 
     serialInit(cfg.serial_baudrate);
@@ -130,6 +132,7 @@ int main(void)
         if (getFeature(FEATURE_GPS))
             gpsInit(cfg.gps_baudrate);
     }
+		
 #ifdef SONAR
     // sonar stuff only works with PPM
     if (getFeature(FEATURE_PPM)) {
@@ -141,12 +144,39 @@ int main(void)
     LED1_ON;
     LED0_OFF;
     for (i = 0; i < 10; i++) {
-        LED1_TOGGLE;
-        LED0_TOGGLE;
-        delay(25);
-        BEEP_ON;
-        delay(25);
-        BEEP_OFF;
+        LED0_ON;
+    
+    
+    delay(300);
+    
+    
+    LED1_ON;
+    
+    
+    delay(300);
+  
+   
+    LED2_ON;
+    
+    
+    delay(300);
+    
+    
+    LED3_ON;
+    
+   
+    delay(300);
+    
+    LED0_OFF;
+    LED1_OFF;
+    LED2_OFF;
+    LED3_OFF;
+			// LED1_TOGGLE;
+       // LED0_TOGGLE;
+       // delay(25);
+       // BEEP_ON;
+      //  delay(25);
+      //  BEEP_OFF;
     }
     LED0_OFF;
     LED1_OFF;
@@ -177,3 +207,4 @@ void HardFault_Handler(void)
     writeAllMotors(cfg.mincommand);
     while (1);
 }
+

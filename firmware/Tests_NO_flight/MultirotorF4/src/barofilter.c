@@ -8,6 +8,8 @@
 #include <stdint.h>
 #include "board.h"
 
+
+
 #define	F_CUT_BARO     2.0f
 
 typedef struct
@@ -50,8 +52,7 @@ void baroKalmanfilterStep(int32_t *pressure)
 {
 	static float dTerm = 0.0;
 	static float fc;
- float tmp = 0.0f;
-	
+ float tmp =0.0f;
 	static int _init = 0;
 	static int32_t _lastTime = 0;
 	uint32_t currentTime = micros();
@@ -65,7 +66,7 @@ void baroKalmanfilterStep(int32_t *pressure)
 #define	R 60.0			// measurement noise covariance
 #define P 1.4			// estimation error covariance
 
-	 tmp = *pressure;
+		 tmp = *pressure;
 		fc = 0.5f / (M_PI * F_CUT_BARO);
 		kalmanBaroInit(Q, R, P, tmp);
 
@@ -153,8 +154,7 @@ float baroFilter(float pressure)
 	float dt = (currentTime - _lastTime) * 1e-6;
 	_lastTime = currentTime;
 
-	
-	_init = 0;
+	 _init = 0;
 	if (!_init)
 	{
 		_init = 1;

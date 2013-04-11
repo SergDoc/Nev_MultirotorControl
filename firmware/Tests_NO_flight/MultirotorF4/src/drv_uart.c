@@ -15,22 +15,22 @@ uint32_t txBufferHead = 0;
 
 static void uartTxDMA(void)
 {
-	DMA1_Stream4->M0AR = (uint32_t)&txBuffer[txBufferTail];
+	DMA1_Stream7->M0AR = (uint32_t)&txBuffer[txBufferTail];
     if (txBufferHead > txBufferTail) {
-    	DMA1_Stream4->NDTR = txBufferHead - txBufferTail;
+    	DMA1_Stream7->NDTR = txBufferHead - txBufferTail;
         txBufferTail = txBufferHead;
     } else {
-    	DMA1_Stream4->NDTR = UART_BUFFER_SIZE - txBufferTail;
+    	DMA1_Stream7->NDTR = UART_BUFFER_SIZE - txBufferTail;
         txBufferTail = 0;
     }
 
-    DMA_Cmd(DMA1_Stream4, ENABLE);
+    DMA_Cmd(DMA1_Stream7, ENABLE);
 }
 
 void DMA1_Channel4_IRQHandler(void)
 {
-    DMA_ClearITPendingBit(DMA1_Stream4, DMA_IT_TCIF4);
-    DMA_Cmd(DMA1_Stream4, DISABLE);
+    DMA_ClearITPendingBit(DMA2_Stream7, DMA_IT_TCIF7);
+    DMA_Cmd(DMA2_Stream7, DISABLE);
 
     if (txBufferHead != txBufferTail)
         uartTxDMA();
@@ -57,8 +57,11 @@ void uartInit(uint32_t speed)
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
 
+    GPIO_PinAFConfig(GPIOA, GPIO_PinSource9, GPIO_AF_USART1);
+    GPIO_PinAFConfig(GPIOA, GPIO_PinSource10,GPIO_AF_USART1);
+
     // DMA TX Interrupt
-    NVIC_InitStructure.NVIC_IRQChannel = DMA1_Stream4_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannel = DMA2_Stream7_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
@@ -72,12 +75,11 @@ void uartInit(uint32_t speed)
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
     USART_Init(USART1, &USART_InitStructure);
 
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource9, GPIO_AF_USART1);
-    GPIO_PinAFConfig(GPIOA, GPIO_PinSource10,GPIO_AF_USART1);
+
 
     // Receive DMA into a circular buffer
-    DMA_DeInit(DMA1_Stream5);
-    DMA_InitStructure.DMA_Channel = DMA_Channel_5;
+    DMA_DeInit(DMA2_Stream5);
+    DMA_InitStructure.DMA_Channel = DMA_Channel_4;
     DMA_InitStructure.DMA_Priority = DMA_Priority_Medium;
     DMA_InitStructure.DMA_FIFOMode = DMA_FIFOMode_Disable;
     DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&USART1->DR;
@@ -89,15 +91,15 @@ void uartInit(uint32_t speed)
     DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
     DMA_InitStructure.DMA_BufferSize = UART_BUFFER_SIZE;
     DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-    DMA_Init(DMA1_Stream5, &DMA_InitStructure);
+    DMA_Init(DMA2_Stream5, &DMA_InitStructure);
 
-    DMA_Cmd(DMA1_Stream5, ENABLE);
+    DMA_Cmd(DMA2_Stream5, ENABLE);
     USART_DMACmd(USART1, USART_DMAReq_Rx, ENABLE);
-    rxDMAPos = DMA_GetCurrDataCounter(DMA1_Stream5);
+    rxDMAPos = DMA_GetCurrDataCounter(DMA2_Stream5);
 
     // Transmit DMA
-    DMA_DeInit(DMA1_Stream5);
-    DMA_InitStructure.DMA_Channel = DMA_Channel_5;
+    DMA_DeInit(DMA2_Stream7);
+    DMA_InitStructure.DMA_Channel = DMA_Channel_4;
     DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&USART1->DR;
     DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralToMemory;
     DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
@@ -105,8 +107,8 @@ void uartInit(uint32_t speed)
     DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
     DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_Byte;
     DMA_InitStructure.DMA_Mode = DMA_Mode_Normal;
-    DMA_Init(DMA1_Stream5, &DMA_InitStructure);
-    DMA_ITConfig(DMA1_Stream5, DMA_IT_TC, ENABLE);
+    DMA_Init(DMA2_Stream7, &DMA_InitStructure);
+    DMA_ITConfig(DMA2_Stream7, DMA_IT_TC, ENABLE);
     DMA1_Stream5->NDTR = 0;
     USART_DMACmd(USART1, USART_DMAReq_Tx, ENABLE);
 
@@ -147,7 +149,7 @@ void uartWrite(uint8_t ch)
     txBufferHead = (txBufferHead + 1) % UART_BUFFER_SIZE;
 
     // if DMA wasn't enabled, fire it up
-    if (!(DMA1_Stream4->CR & 1))
+    if (!(DMA2_Stream7->CR & 1))
         uartTxDMA();
 }
 

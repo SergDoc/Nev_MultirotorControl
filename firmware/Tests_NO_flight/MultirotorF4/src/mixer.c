@@ -273,12 +273,12 @@ void rudderAileronMixer(void)
 {
 	float deltaRoll = 0.0;
 	float deltaYaw = 0.0;
-  float yawing = rcCommand[YAW];
-	float rolling = rcCommand[ROLL];
-	float throttle = rcCommand[THROTTLE];
+float yawing = 0.0f;
+float rolling = 0.0f;
+float throttle = 0.0f;	
 	// heading control (autopilot)
 	// - add yaw to mantain the course, not only 'yaw'
-	
+  yawing = rcCommand[YAW];
 	if (yawing != 0.0f)
 	{
 		// add a fraction to the roll command
@@ -287,12 +287,12 @@ void rudderAileronMixer(void)
 	}
 	// coordinated turns
 	// - add rudder when the aileron has been commanded
-	
+  rolling = rcCommand[ROLL];
 	if (rolling != 0.0f)
 	{
 		// rudder mixing depends on the true air speed
 		// no sensor yet
-		
+	 throttle = rcCommand[THROTTLE];
 		if (throttle != 0.0f)
 		{
 

@@ -1,7 +1,7 @@
 *** Creating Trace Output File '.\build\MultirotorF4.tra' Ok.
 ### Preparing for ADS-LD.
 ### Creating ADS-LD Command Line
-### List of Objects: adding '".\build\startup_stm32f4xx.o"'
+### List of Objects: adding '".\build\startup_stm32f4xx_md.o"'
 ### List of Objects: adding '".\build\system_stm32f4xx.o"'
 ### List of Objects: adding '".\build\misc.o"'
 ### List of Objects: adding '".\build\stm32f4xx_adc.o"'
@@ -34,7 +34,6 @@
 ### List of Objects: adding '".\build\stm32f4xx_tim.o"'
 ### List of Objects: adding '".\build\stm32f4xx_usart.o"'
 ### List of Objects: adding '".\build\stm32f4xx_wwdg.o"'
-### List of Objects: adding '".\build\core_cm3.o"'
 ### List of Objects: adding '".\build\drv_adc.o"'
 ### List of Objects: adding '".\build\drv_adc_fy90q.o"'
 ### List of Objects: adding '".\build\drv_adxl345.o"'
@@ -51,7 +50,6 @@
 ### List of Objects: adding '".\build\drv_ms5611.o"'
 ### List of Objects: adding '".\build\drv_pwm.o"'
 ### List of Objects: adding '".\build\drv_pwm_fy90q.o"'
-### List of Objects: adding '".\build\drv_spi.o"'
 ### List of Objects: adding '".\build\drv_system.o"'
 ### List of Objects: adding '".\build\drv_uart.o"'
 ### List of Objects: adding '".\build\barofilter.o"'
@@ -74,7 +72,7 @@
 ### List of Objects: adding '".\build\spektrum.o"'
 ### List of Objects: adding '".\build\telemetry.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M4.fp ".\build\startup_stm32f4xx.o" ".\build\system_stm32f4xx.o" ".\build\misc.o" ".\build\stm32f4xx_adc.o" ".\build\stm32f4xx_can.o" ".\build\stm32f4xx_crc.o" ".\build\stm32f4xx_cryp.o" ".\build\stm32f4xx_cryp_aes.o" ".\build\stm32f4xx_cryp_des.o" ".\build\stm32f4xx_cryp_tdes.o" ".\build\stm32f4xx_dac.o" ".\build\stm32f4xx_dbgmcu.o" ".\build\stm32f4xx_dcmi.o" ".\build\stm32f4xx_dma.o" ".\build\stm32f4xx_exti.o" ".\build\stm32f4xx_flash.o" ".\build\stm32f4xx_fsmc.o" ".\build\stm32f4xx_gpio.o" ".\build\stm32f4xx_hash.o" ".\build\stm32f4xx_hash_md5.o" ".\build\stm32f4xx_hash_sha1.o" ".\build\stm32f4xx_i2c.o" ".\build\stm32f4xx_iwdg.o" ".\build\stm32f4xx_pwr.o" ".\build\stm32f4xx_rcc.o" ".\build\stm32f4xx_rng.o" ".\build\stm32f4xx_rtc.o" ".\build\stm32f4xx_sdio.o" ".\build\stm32f4xx_spi.o" ".\build\stm32f4xx_syscfg.o" ".\build\stm32f4xx_tim.o" ".\build\stm32f4xx_usart.o" ".\build\stm32f4xx_wwdg.o" ".\build\core_cm3.o" ".\build\drv_adc.o" ".\build\drv_adc_fy90q.o" ".\build\drv_adxl345.o" ".\build\drv_bmp085.o" ".\build\drv_hcsr04.o" ".\build\drv_hmc5883l.o" ".\build\drv_i2c.o" ".\build\drv_i2c_soft.o" ".\build\drv_l3g4200d.o" ".\build\drv_ledring.o" ".\build\drv_mma845x.o" ".\build\drv_mpu3050.o" ".\build\drv_mpu6050.o" ".\build\drv_ms5611.o" ".\build\drv_pwm.o" ".\build\drv_pwm_fy90q.o" ".\build\drv_spi.o" ".\build\drv_system.o" ".\build\drv_uart.o" ".\build\barofilter.o" ".\build\barofusion.o" ".\build\buzzer.o" ".\build\cli.o" ".\build\config.o" ".\build\gps.o" ".\build\imu.o" ".\build\kalman1d.o" ".\build\kalmanfilterfrontend.o" ".\build\main.o" ".\build\mixer.o" ".\build\mw.o" ".\build\printf.o" ".\build\quaternion.o" ".\build\sensors.o" ".\build\serial.o" ".\build\simpleintegrator.o" ".\build\spektrum.o" ".\build\telemetry.o" --library_type=microlib --feedback ".\build\MultirotorF4.fed" 
+--cpu Cortex-M4.fp ".\build\startup_stm32f4xx_md.o" ".\build\system_stm32f4xx.o" ".\build\misc.o" ".\build\stm32f4xx_adc.o" ".\build\stm32f4xx_can.o" ".\build\stm32f4xx_crc.o" ".\build\stm32f4xx_cryp.o" ".\build\stm32f4xx_cryp_aes.o" ".\build\stm32f4xx_cryp_des.o" ".\build\stm32f4xx_cryp_tdes.o" ".\build\stm32f4xx_dac.o" ".\build\stm32f4xx_dbgmcu.o" ".\build\stm32f4xx_dcmi.o" ".\build\stm32f4xx_dma.o" ".\build\stm32f4xx_exti.o" ".\build\stm32f4xx_flash.o" ".\build\stm32f4xx_fsmc.o" ".\build\stm32f4xx_gpio.o" ".\build\stm32f4xx_hash.o" ".\build\stm32f4xx_hash_md5.o" ".\build\stm32f4xx_hash_sha1.o" ".\build\stm32f4xx_i2c.o" ".\build\stm32f4xx_iwdg.o" ".\build\stm32f4xx_pwr.o" ".\build\stm32f4xx_rcc.o" ".\build\stm32f4xx_rng.o" ".\build\stm32f4xx_rtc.o" ".\build\stm32f4xx_sdio.o" ".\build\stm32f4xx_spi.o" ".\build\stm32f4xx_syscfg.o" ".\build\stm32f4xx_tim.o" ".\build\stm32f4xx_usart.o" ".\build\stm32f4xx_wwdg.o" ".\build\drv_adc.o" ".\build\drv_adc_fy90q.o" ".\build\drv_adxl345.o" ".\build\drv_bmp085.o" ".\build\drv_hcsr04.o" ".\build\drv_hmc5883l.o" ".\build\drv_i2c.o" ".\build\drv_i2c_soft.o" ".\build\drv_l3g4200d.o" ".\build\drv_ledring.o" ".\build\drv_mma845x.o" ".\build\drv_mpu3050.o" ".\build\drv_mpu6050.o" ".\build\drv_ms5611.o" ".\build\drv_pwm.o" ".\build\drv_pwm_fy90q.o" ".\build\drv_system.o" ".\build\drv_uart.o" ".\build\barofilter.o" ".\build\barofusion.o" ".\build\buzzer.o" ".\build\cli.o" ".\build\config.o" ".\build\gps.o" ".\build\imu.o" ".\build\kalman1d.o" ".\build\kalmanfilterfrontend.o" ".\build\main.o" ".\build\mixer.o" ".\build\mw.o" ".\build\printf.o" ".\build\quaternion.o" ".\build\sensors.o" ".\build\serial.o" ".\build\simpleintegrator.o" ".\build\spektrum.o" ".\build\telemetry.o" --library_type=microlib --feedback ".\build\MultirotorF4.fed" 
 --strict --scatter ".\build\MultirotorF4.sct" 
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
@@ -82,7 +80,7 @@
 ### ADS-LD Output File: '.\build\MultirotorF4.axf'
 ### ADS-LD Command File: '.\build\MultirotorF4.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\build\MultirotorF4.lnp', Handle=0x00000E84
+### Creating CmdFile '.\build\MultirotorF4.lnp', Handle=0x000002D8
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\build\MultirotorF4.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

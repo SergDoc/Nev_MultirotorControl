@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Mon Apr 01 23:30:14 2013
+;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Wed Apr 10 21:33:20 2013
 ;VERSION 0.2
 ;FILE barofilter.o
 __asm___12_barofilter_c_liftoff____REV16 <= USED 0
@@ -20,13 +20,7 @@ __asm___5_cli_c_225204bd____REVSH <= USED 0
 ;FILE config.o
 __asm___8_config_c_c8593330____REV16 <= USED 0
 __asm___8_config_c_c8593330____REVSH <= USED 0
-;FILE core_cm3.o
-__REV16 <= USED 0
-__REVSH <= USED 0
-__get_MSP <= USED 0
-__get_PSP <= USED 0
-__set_MSP <= USED 0
-__set_PSP <= USED 0
+featureClearAll <= USED 0
 ;FILE drv_adc.o
 __asm___9_drv_adc_c_adcInit____REV16 <= USED 0
 __asm___9_drv_adc_c_adcInit____REVSH <= USED 0
@@ -72,15 +66,6 @@ __asm___12_drv_ms5611_c_4888915c____REVSH <= USED 0
 ;FILE drv_pwm.o
 __asm___9_drv_pwm_c_2da79081____REV16 <= USED 0
 __asm___9_drv_pwm_c_2da79081____REVSH <= USED 0
-;FILE drv_spi.o
-SPI1_main <= USED 0
-SPI1_send <= USED 0
-SPI2_main <= USED 0
-SPI2_send <= USED 0
-__asm___9_drv_spi_c_2217f5a9____REV16 <= USED 0
-__asm___9_drv_spi_c_2217f5a9____REVSH <= USED 0
-init_SPI1 <= USED 0
-init_SPI2 <= USED 0
 ;FILE drv_system.o
 __asm___12_drv_system_c_b672aa62____REV16 <= USED 0
 __asm___12_drv_system_c_b672aa62____REVSH <= USED 0
@@ -100,6 +85,7 @@ _update_checksum <= USED 0
 ;FILE imu.o
 __asm___5_imu_c_2c6521db____REV16 <= USED 0
 __asm___5_imu_c_2c6521db____REVSH <= USED 0
+isq <= USED 0
 ;FILE kalman1d.o
 __asm___10_kalman1D_c_7dac81eb____REV16 <= USED 0
 __asm___10_kalman1D_c_7dac81eb____REVSH <= USED 0
@@ -156,7 +142,7 @@ getZVelocity <= USED 0
 ;FILE spektrum.o
 __asm___10_spektrum_c_1179f265____REV16 <= USED 0
 __asm___10_spektrum_c_1179f265____REVSH <= USED 0
-;FILE startup_stm32f4xx.o
+;FILE startup_stm32f4xx_md.o
 ;FILE stm32f4xx_adc.o
 ADC_AnalogWatchdogCmd <= USED 0
 ADC_AnalogWatchdogSingleChannelConfig <= USED 0
@@ -164,11 +150,9 @@ ADC_AnalogWatchdogThresholdsConfig <= USED 0
 ADC_AutoInjectedConvCmd <= USED 0
 ADC_ClearFlag <= USED 0
 ADC_ClearITPendingBit <= USED 0
-ADC_CommonInit <= USED 0
 ADC_CommonStructInit <= USED 0
 ADC_ContinuousModeCmd <= USED 0
 ADC_DMARequestAfterLastTransferCmd <= USED 0
-ADC_DeInit <= USED 0
 ADC_DiscModeChannelCountConfig <= USED 0
 ADC_DiscModeCmd <= USED 0
 ADC_EOCOnEachRegularChannelCmd <= USED 0
@@ -468,7 +452,7 @@ PWR_EnterSTANDBYMode <= USED 0
 PWR_EnterSTOPMode <= USED 0
 PWR_FlashPowerDownCmd <= USED 0
 PWR_GetFlagStatus <= USED 0
-PWR_HighPerformanceModeCmd <= USED 0
+PWR_MainRegulatorModeConfig <= USED 0
 PWR_PVDCmd <= USED 0
 PWR_PVDLevelConfig <= USED 0
 PWR_WakeUpPinCmd <= USED 0
@@ -485,7 +469,6 @@ RCC_AHB3PeriphClockLPModeCmd <= USED 0
 RCC_AHB3PeriphResetCmd <= USED 0
 RCC_APB1PeriphClockLPModeCmd <= USED 0
 RCC_APB2PeriphClockLPModeCmd <= USED 0
-RCC_APB2PeriphResetCmd <= USED 0
 RCC_AdjustHSICalibrationValue <= USED 0
 RCC_BackupResetCmd <= USED 0
 RCC_ClearITPendingBit <= USED 0

@@ -12,13 +12,13 @@
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F407VE</Device>
+          <Device>STM32F407VG</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <Cpu>IRAM(0x20000000-0x2001FFFF) IRAM2(0x10000000-0x1000FFFF) IROM(0x8000000-0x807FFFF) CLOCK(25000000) CPUTYPE("Cortex-M4") FPU2</Cpu>
+          <Cpu>IRAM(0x20000000-0x2001FFFF) IRAM2(0x10000000-0x1000FFFF) IROM(0x8000000-0x80FFFFF) CLOCK(25000000) CPUTYPE("Cortex-M4") FPU2</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"Startup\ST\STM32F4xx\startup_stm32f4xx.s" ("STM32F4xx Startup Code")</StartupFile>
-          <FlashDriverDll>UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL080000)</FlashDriverDll>
-          <DeviceId>6106</DeviceId>
+          <FlashDriverDll>UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL0100000)</FlashDriverDll>
+          <DeviceId>6103</DeviceId>
           <RegisterFile>stm32f4xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
@@ -117,7 +117,7 @@
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
           <Simulator>
-            <UseSimulator>1</UseSimulator>
+            <UseSimulator>0</UseSimulator>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
             <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
@@ -128,9 +128,9 @@
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
           </Simulator>
           <Target>
-            <UseTarget>0</UseTarget>
+            <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -138,7 +138,7 @@
             <RestoreToolbox>1</RestoreToolbox>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>0</TargetSelection>
+          <TargetSelection>8</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -152,7 +152,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>BIN\UL2CM3.DLL</Driver>
+            <Driver>STLink\ST-LINKIII-KEIL.dll</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -162,9 +162,9 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <DriverSelection>4100</DriverSelection>
           </Flash1>
-          <Flash2>BIN\UL2CM3.DLL</Flash2>
+          <Flash2>STLink\ST-LINKIII-KEIL.dll</Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
         </Utilities>
@@ -226,7 +226,7 @@
             <Ro2Chk>0</Ro2Chk>
             <Ro3Chk>0</Ro3Chk>
             <Ir1Chk>1</Ir1Chk>
-            <Ir2Chk>0</Ir2Chk>
+            <Ir2Chk>1</Ir2Chk>
             <Ra1Chk>0</Ra1Chk>
             <Ra2Chk>0</Ra2Chk>
             <Ra3Chk>0</Ra3Chk>
@@ -271,7 +271,7 @@
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x80000</Size>
+                <Size>0x100000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -296,12 +296,12 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x80000</Size>
+                <Size>0xc000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x8010000</StartAddress>
+                <Size>0x58000</Size>
               </OCR_RVCT5>
               <OCR_RVCT6>
                 <Type>0</Type>
@@ -342,14 +342,14 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>1</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\lib\CMSIS\CM4\CoreSupport;.\lib\CMSIS\CM4\DeviceSupport\ST\STM32F10x;.\lib\STM32F4xx_StdPeriph_Driver\inc;.\lib\STM32F4xx_StdPeriph_Driver\src;.\lib\sys</IncludePath>
+              <IncludePath>.\lib\CMSIS\CM4\CoreSupport;.\lib\CMSIS\CM4\DeviceSupport\ST\STM32F4xx;.\lib\STM32F4xx_StdPeriph_Driver\inc;.\lib\STM32F4xx_StdPeriph_Driver\src;.\lib\sys</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -391,64 +391,59 @@
           <GroupName>system</GroupName>
           <Files>
             <File>
-              <FileName>startup_stm32f4xx.s</FileName>
+              <FileName>startup_stm32f4xx_md.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\startup_stm32f4xx.s</FilePath>
+              <FilePath>.\startup_stm32f4xx_md.s</FilePath>
             </File>
             <File>
               <FileName>arm_common_tables.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\CoreSupport\arm_common_tables.h</FilePath>
+              <FilePath>.\lib\CMSIS\Include\arm_common_tables.h</FilePath>
             </File>
             <File>
               <FileName>arm_math.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\CoreSupport\arm_math.h</FilePath>
-            </File>
-            <File>
-              <FileName>core_cm0.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\CoreSupport\core_cm0.h</FilePath>
+              <FilePath>.\lib\CMSIS\Include\arm_math.h</FilePath>
             </File>
             <File>
               <FileName>core_cm4.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\CoreSupport\core_cm4.h</FilePath>
+              <FilePath>.\lib\CMSIS\Include\core_cm4.h</FilePath>
             </File>
             <File>
               <FileName>core_cm4_simd.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\CoreSupport\core_cm4_simd.h</FilePath>
+              <FilePath>.\lib\CMSIS\Include\core_cm4_simd.h</FilePath>
             </File>
             <File>
               <FileName>core_cmFunc.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\CoreSupport\core_cmFunc.h</FilePath>
+              <FilePath>.\lib\CMSIS\Include\core_cmFunc.h</FilePath>
             </File>
             <File>
               <FileName>core_cmInstr.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\CoreSupport\core_cmInstr.h</FilePath>
+              <FilePath>.\lib\CMSIS\Include\core_cmInstr.h</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\DeviceSupport\ST\STM32F10x\stm32f4xx.h</FilePath>
+              <FilePath>.\lib\CMSIS\ST\STM32F4xx\Include\stm32f4xx.h</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_conf.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\DeviceSupport\ST\STM32F10x\stm32f4xx_conf.h</FilePath>
+              <FilePath>.\lib\sys\stm32f4xx_conf.h</FilePath>
             </File>
             <File>
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\lib\CMSIS\CM4\DeviceSupport\ST\STM32F10x\system_stm32f4xx.c</FilePath>
+              <FilePath>.\lib\CMSIS\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c</FilePath>
             </File>
             <File>
               <FileName>system_stm32f4xx.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\CMSIS\CM4\DeviceSupport\ST\STM32F10x\system_stm32f4xx.h</FilePath>
+              <FilePath>.\lib\CMSIS\ST\STM32F4xx\Include\system_stm32f4xx.h</FilePath>
             </File>
             <File>
               <FileName>misc.c</FileName>
@@ -605,156 +600,6 @@
               <FileType>1</FileType>
               <FilePath>.\lib\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
             </File>
-            <File>
-              <FileName>types.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\types.h</FilePath>
-            </File>
-            <File>
-              <FileName>stat.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\stat.h</FilePath>
-            </File>
-            <File>
-              <FileName>_default_fcntl.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\_default_fcntl.h</FilePath>
-            </File>
-            <File>
-              <FileName>_types.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\_types.h</FilePath>
-            </File>
-            <File>
-              <FileName>cdefs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\cdefs.h</FilePath>
-            </File>
-            <File>
-              <FileName>config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\config.h</FilePath>
-            </File>
-            <File>
-              <FileName>custom_file.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\custom_file.h</FilePath>
-            </File>
-            <File>
-              <FileName>dir.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\dir.h</FilePath>
-            </File>
-            <File>
-              <FileName>dirent.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\dirent.h</FilePath>
-            </File>
-            <File>
-              <FileName>errno.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\errno.h</FilePath>
-            </File>
-            <File>
-              <FileName>fcntl.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\fcntl.h</FilePath>
-            </File>
-            <File>
-              <FileName>features.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\features.h</FilePath>
-            </File>
-            <File>
-              <FileName>file.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\file.h</FilePath>
-            </File>
-            <File>
-              <FileName>iconvnls.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\iconvnls.h</FilePath>
-            </File>
-            <File>
-              <FileName>lock.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\lock.h</FilePath>
-            </File>
-            <File>
-              <FileName>param.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\param.h</FilePath>
-            </File>
-            <File>
-              <FileName>queue.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\queue.h</FilePath>
-            </File>
-            <File>
-              <FileName>reent.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\reent.h</FilePath>
-            </File>
-            <File>
-              <FileName>resource.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\resource.h</FilePath>
-            </File>
-            <File>
-              <FileName>sched.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\sched.h</FilePath>
-            </File>
-            <File>
-              <FileName>signal.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\signal.h</FilePath>
-            </File>
-            <File>
-              <FileName>stdio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\stdio.h</FilePath>
-            </File>
-            <File>
-              <FileName>string.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\string.h</FilePath>
-            </File>
-            <File>
-              <FileName>syslimits.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\syslimits.h</FilePath>
-            </File>
-            <File>
-              <FileName>time.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\time.h</FilePath>
-            </File>
-            <File>
-              <FileName>timeb.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\timeb.h</FilePath>
-            </File>
-            <File>
-              <FileName>times.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\times.h</FilePath>
-            </File>
-            <File>
-              <FileName>unistd.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\unistd.h</FilePath>
-            </File>
-            <File>
-              <FileName>utime.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\utime.h</FilePath>
-            </File>
-            <File>
-              <FileName>wait.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lib\sys\wait.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -841,14 +686,49 @@
               <FilePath>.\src\drv_pwm_fy90q.c</FilePath>
             </File>
             <File>
-              <FileName>drv_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\drv_spi.c</FilePath>
-            </File>
-            <File>
               <FileName>drv_system.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\drv_system.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>2</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>1</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>2</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
             </File>
             <File>
               <FileName>drv_uart.c</FileName>
