@@ -54,7 +54,7 @@ const char * const sensorNames[] = {
 
 // 
 const char * const accNames[] = {
-    "", "ADXL345", "MPU6050", "MMA845x", NULL
+    "", "ADXL345", "MPU6000", "MMA845x", NULL
 };
 
 typedef struct {
@@ -863,8 +863,8 @@ static void cliStatus(char *cmdline)
     }
     if (getSensors(SENSOR_ACC)) {
         printf("ACCHW: %s", accNames[accHardware]);
-        if (accHardware == ACC_MPU6050)
-            printf(".%c", cfg.mpu6050_scale ? 'o' : 'n');
+        if (accHardware == ACC_MPU6000)
+            printf(".%c", cfg.mpu6000_scale ? 'o' : 'n');
     }
     uartPrint("\r\n");
 

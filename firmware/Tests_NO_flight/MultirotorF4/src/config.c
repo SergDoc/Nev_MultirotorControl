@@ -2,9 +2,10 @@
 #include "mw.h"
 #include <string.h>
 
-#ifndef FLASH_PAGE_COUNT
-#define FLASH_PAGE_COUNT 3
+ #ifndef FLASH_PAGE_COUNT
+#define FLASH_PAGE_COUNT 128
 #endif
+
 #define ADDR_FLASH_SECTOR_0     ((uint32_t)0x08000000) /* Base @ of Sector 0, 16 Kbytes */
 #define ADDR_FLASH_SECTOR_1     ((uint32_t)0x08004000) /* Base @ of Sector 1, 16 Kbytes */
 #define ADDR_FLASH_SECTOR_2     ((uint32_t)0x08008000) /* Base @ of Sector 2, 16 Kbytes */
@@ -15,8 +16,8 @@
 #define ADDR_FLASH_SECTOR_7     ((uint32_t)0x08060000) /* Base @ of Sector 7, 128 Kbytes */
 
 
-#define FLASH_PAGE_SIZE                 ((uint32_t)0x20000)
-#define FLASH_WRITE_ADDR              ADDR_FLASH_SECTOR_7  //(0x08000000 + (uint32_t)FLASH_PAGE_SIZE*10 * (FLASH_PAGE_COUNT - 1))       // use the last KB for storage
+#define FLASH_PAGE_SIZE                ((uint16_t)0x400) //((uint32_t)0x20000)
+#define FLASH_WRITE_ADDR             ADDR_FLASH_SECTOR_7  //(ADDR_FLASH_SECTOR_7 + (uint32_t)FLASH_PAGE_SIZE * (FLASH_PAGE_COUNT - 1))//ADDR_FLASH_SECTOR_7  //(0x08000000 + (uint32_t)FLASH_PAGE_SIZE*10 * (FLASH_PAGE_COUNT - 1))       // use the last KB for storage
 
 config_t cfg;
 const char rcChannelLetters[] = "AERT1234";
@@ -192,7 +193,7 @@ static void resetConf(void)
     cfg.accz_deadband = 50;
     cfg.gyro_cmpf_factor = 400; // default MWC
     cfg.gyro_lpf = 42;
-    cfg.mpu6050_scale = 1; // fuck invensense
+    cfg.mpu6000_scale = 1; // fuck invensense
     cfg.baro_tab_size = 21;
     cfg.baro_noise_lpf = 0.6f;
     cfg.baro_cf = 0.985f;

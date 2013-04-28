@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Thu Apr 11 13:14:40 2013
+;#<FEEDBACK># ARM Linker, 4.1 [Build 894]: Last Updated: Sun Apr 28 16:26:23 2013
 ;VERSION 0.2
 ;FILE barofilter.o
 __asm___12_barofilter_c_liftoff____REV16 <= USED 0
@@ -30,6 +30,7 @@ __asm___13_drv_adxl345_c_ad1b9365____REVSH <= USED 0
 ;FILE drv_bmp085.o
 __asm___12_drv_bmp085_c_77b4e196____REV16 <= USED 0
 __asm___12_drv_bmp085_c_77b4e196____REVSH <= USED 0
+bmp085Detect <= USED 0
 ;FILE drv_hcsr04.o
 __asm___12_drv_hcsr04_c_8b020ac2____REV16 <= USED 0
 __asm___12_drv_hcsr04_c_8b020ac2____REVSH <= USED 0
@@ -55,9 +56,13 @@ __asm___13_drv_mma845x_c_edc661ca____REVSH <= USED 0
 ;FILE drv_mpu3050.o
 __asm___13_drv_mpu3050_c_53cd8143____REV16 <= USED 0
 __asm___13_drv_mpu3050_c_53cd8143____REVSH <= USED 0
+;FILE drv_mpu6000.o
+__asm___13_drv_mpu6000_c_fd044463____REV16 <= USED 0
+__asm___13_drv_mpu6000_c_fd044463____REVSH <= USED 0
 ;FILE drv_mpu6050.o
 __asm___13_drv_mpu6050_c_b5e44a07____REV16 <= USED 0
 __asm___13_drv_mpu6050_c_b5e44a07____REVSH <= USED 0
+mpu6050Detect <= USED 0
 mpu6050DmpLoop <= USED 0
 mpu6050DmpResetFifo <= USED 0
 ;FILE drv_ms5611.o
@@ -66,17 +71,20 @@ __asm___12_drv_ms5611_c_4888915c____REVSH <= USED 0
 ;FILE drv_pwm.o
 __asm___9_drv_pwm_c_2da79081____REV16 <= USED 0
 __asm___9_drv_pwm_c_2da79081____REVSH <= USED 0
+;FILE drv_spi.o
+SPI2_main <= USED 0
+SPI2_send <= USED 0
+__asm___9_drv_spi_c_2217f5a9____REV16 <= USED 0
+__asm___9_drv_spi_c_2217f5a9____REVSH <= USED 0
 ;FILE drv_system.o
 __asm___12_drv_system_c_b672aa62____REV16 <= USED 0
 __asm___12_drv_system_c_b672aa62____REVSH <= USED 0
 ;FILE drv_uart.o
-DMA1_Channel4_IRQHandler <= USED 0
 __asm___10_drv_uart_c_rxDMAPos____REV16 <= USED 0
 __asm___10_drv_uart_c_rxDMAPos____REVSH <= USED 0
-uart3ChangeBaud <= USED 0
-uart3Init <= USED 0
-uart3TransmitEmpty <= USED 0
-uart3Write <= USED 0
+uart2ChangeBaud <= USED 0
+uart2TransmitEmpty <= USED 0
+uart2Write <= USED 0
 uartReadPoll <= USED 0
 ;FILE gps.o
 __asm___5_gps_c_b986e19b____REV16 <= USED 0
@@ -142,7 +150,7 @@ getZVelocity <= USED 0
 ;FILE spektrum.o
 __asm___10_spektrum_c_1179f265____REV16 <= USED 0
 __asm___10_spektrum_c_1179f265____REVSH <= USED 0
-;FILE startup_stm32f4xx_md.o
+;FILE startup_stm32f4xx.o
 ;FILE stm32f4xx_adc.o
 ADC_AnalogWatchdogCmd <= USED 0
 ADC_AnalogWatchdogSingleChannelConfig <= USED 0
@@ -297,18 +305,14 @@ __asm___16_stm32f4xx_dcmi_c_3610e7fb____REV16 <= USED 0
 __asm___16_stm32f4xx_dcmi_c_3610e7fb____REVSH <= USED 0
 ;FILE stm32f4xx_dma.o
 DMA_ClearFlag <= USED 0
-DMA_ClearITPendingBit <= USED 0
 DMA_DoubleBufferModeCmd <= USED 0
 DMA_DoubleBufferModeConfig <= USED 0
 DMA_FlowControllerConfig <= USED 0
-DMA_GetCmdStatus <= USED 0
 DMA_GetCurrentMemoryTarget <= USED 0
 DMA_GetFIFOStatus <= USED 0
 DMA_GetFlagStatus <= USED 0
-DMA_GetITStatus <= USED 0
 DMA_MemoryTargetConfig <= USED 0
 DMA_PeriphIncOffsetSizeConfig <= USED 0
-DMA_SetCurrDataCounter <= USED 0
 DMA_StructInit <= USED 0
 __asm___15_stm32f4xx_dma_c_e9b554c0____REV16 <= USED 0
 __asm___15_stm32f4xx_dma_c_e9b554c0____REVSH <= USED 0
@@ -607,7 +611,6 @@ I2S_Init <= USED 0
 I2S_StructInit <= USED 0
 SPI_BiDirectionalLineConfig <= USED 0
 SPI_CalculateCRC <= USED 0
-SPI_Cmd <= USED 0
 SPI_DataSizeConfig <= USED 0
 SPI_GetCRC <= USED 0
 SPI_GetCRCPolynomial <= USED 0
@@ -615,12 +618,8 @@ SPI_I2S_ClearFlag <= USED 0
 SPI_I2S_ClearITPendingBit <= USED 0
 SPI_I2S_DMACmd <= USED 0
 SPI_I2S_DeInit <= USED 0
-SPI_I2S_GetFlagStatus <= USED 0
 SPI_I2S_GetITStatus <= USED 0
 SPI_I2S_ITConfig <= USED 0
-SPI_I2S_ReceiveData <= USED 0
-SPI_I2S_SendData <= USED 0
-SPI_Init <= USED 0
 SPI_NSSInternalSoftwareConfig <= USED 0
 SPI_SSOutputCmd <= USED 0
 SPI_StructInit <= USED 0

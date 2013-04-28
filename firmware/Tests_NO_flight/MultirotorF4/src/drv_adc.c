@@ -11,7 +11,7 @@ void adcInit(drv_adc_config_t *init)
     ADC_InitTypeDef ADC_InitStructure;
 	  ADC_CommonInitTypeDef ADC_CommonInitStructure;
     DMA_InitTypeDef DMA_InitStructure;
-		GPIO_InitTypeDef      GPIO_InitStructure;
+		GPIO_InitTypeDef  GPIO_InitStructure;
 
     bool multiChannel = init->powerAdcChannel > 0;
 

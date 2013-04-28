@@ -7,10 +7,6 @@
 #pragma once
 
 void init_SPI1(void);
-void SPI1_main(uint8_t received_val);
-void SPI2_main(uint8_t received_val);
-
-
-
-
-
+void init_SPI2(void);
+uint8_t spi_readByte(void);
+uint8_t spi_writeByte(uint8_t Data);

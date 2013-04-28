@@ -94,7 +94,7 @@ int main(void)
     setFeature(FEATURE_PPM);
     pwm_params.usePPM = true; //  feature(FEATURE_PPM);
 //    cfg.acc_hardware = ACC_MPU6050;
-//    cfg.mpu6050_scale = 1;
+//    cfg.mpu6000_scale = 1;
     //cfg.looptime = 3000;
     cfg.acc_lpf_factor = 0;
 #else
@@ -135,52 +135,57 @@ int main(void)
 		
 #ifdef SONAR
     // sonar stuff only works with PPM
-    if (getFeature(FEATURE_PPM)) {
-        if (getFeature(FEATURE_SONAR))
+    //if (getFeature(FEATURE_PPM)) {
+        if (getFeature(FEATURE_SONAR)) {
             Sonar_init();
     }
 #endif
 
    // LED1_ON;
-    LED0_OFF;
-    for (i = 0; i < 10; i++) {
-    LED0_ON;
+  //  LED0_OFF;
+		LED0_ON;
     
     
-    delay(300);
+    delay(25);
     
     
     LED1_ON;
     
     
-    delay(300);
+    delay(25);
   
    
     LED2_ON;
     
     
-    delay(300);
+    delay(25);
     
     
     LED3_ON;
     
    
-    delay(300);
+    delay(25);
     
     LED0_OFF;
     LED1_OFF;
     LED2_OFF;
     LED3_OFF;
-		delay(300);
-			// LED1_TOGGLE;
-       // LED0_TOGGLE;
-       // delay(25);
-       // BEEP_ON;
-      //  delay(25);
-      //  BEEP_OFF;
+    for (i = 0; i < 10; i++) {
+    
+	
+			 LED1_TOGGLE;
+       LED0_TOGGLE;
+			 LED2_TOGGLE;
+			 LED3_TOGGLE;
+       delay(25);
+       BEEP_ON;
+       delay(25);
+       BEEP_OFF;
     }
-   // LED0_OFF;
-   // LED1_OFF;
+    LED0_OFF;
+    LED1_OFF;
+    LED2_OFF;
+    LED3_OFF;
 
     // drop out any sensors that don't seem to work, init all the others. halt if gyro is dead.
     sensorsAutodetect();

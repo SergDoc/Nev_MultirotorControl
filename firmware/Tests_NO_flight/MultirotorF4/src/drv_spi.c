@@ -37,15 +37,15 @@ void init_SPI1(void){
 
 
 	/* Configure the chip select pin
-	   in this case we will use PE7 */
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_7;
+	   in this case we will use PA4 */
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_4;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_Init(GPIOE, &GPIO_InitStruct);
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	GPIOA->BSRRL |= GPIO_Pin_4; // set PE7 high
+	GPIOA->BSRRL |= GPIO_Pin_4; // set PA4 high
 
 	// enable peripheral clock
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);
@@ -67,34 +67,28 @@ void init_SPI1(void){
 	SPI_Cmd(SPI1, ENABLE); // enable SPI1
 }
 
-/* This funtion is used to transmit and receive data
- * with SPI1
- * 			data --> data to be transmitted
- * 			returns received value
- */
-uint8_t SPI1_send(uint8_t data){
 
-	SPI1->DR = data; // write data to be transmitted to the SPI data register
-	while( !(SPI1->SR & SPI_I2S_FLAG_TXE) ); // wait until transmit complete
-	while( !(SPI1->SR & SPI_I2S_FLAG_RXNE) ); // wait until receive complete
-	while( SPI1->SR & SPI_I2S_FLAG_BSY ); // wait until SPI is not busy anymore
-	return SPI1->DR; // return received data from SPI data register
+
+uint8_t spi_writeByte(uint8_t Data)
+{
+    /* Wait until the transmit buffer is empty */
+    while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_BSY) == SET);
+    SPI_I2S_SendData(SPI1, Data);
+    while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_BSY) == SET);
+    return SPI_I2S_ReceiveData(SPI1);
 }
 
-void SPI1_main(uint8_t received_val){
-
-	received_val = 0;
-
-	init_SPI1();
-
-	while(1){
-
-		GPIOA->BSRRH |= GPIO_Pin_4; // set PE7 (CS) low
-		SPI1_send(0xAA);  // transmit data
-		received_val = SPI1_send(0x00); // transmit dummy byte and receive data
-		GPIOA->BSRRL |= GPIO_Pin_4; // set PE7 (CS) high
-	}
+uint8_t spi_readByte(void)
+{
+    volatile uint8_t data = 0;
+    while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_BSY) == SET);
+    SPI_I2S_SendData(SPI1,0xFF);         // Dummy Byte
+    while(SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_BSY) == SET);
+    data = SPI_I2S_ReceiveData(SPI1);
+    /* Return the shifted data */
+    return data;
 }
+
 
 void init_SPI2(void){
 
@@ -179,7 +173,7 @@ void SPI2_main(uint8_t received_val){
 
 		GPIOD->BSRRH |= GPIO_Pin_13; // set PE7 (CS) low
 		SPI2_send(0xAA);  // transmit data
-		received_val = SPI1_send(0x00); // transmit dummy byte and receive data
+		received_val = SPI2_send(0x00); // transmit dummy byte and receive data
 		GPIOD->BSRRL |= GPIO_Pin_13; // set PE7 (CS) high
 	}
 

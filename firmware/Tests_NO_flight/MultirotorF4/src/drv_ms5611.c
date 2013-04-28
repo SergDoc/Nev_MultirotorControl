@@ -3,8 +3,8 @@
 // MS5611, Standard address 0x77
 #define MS5611_ADDR                 0x77
 // Autodetect: turn off BMP085 while initializing ms5611 and check PROM crc to confirm device
-#define BMP085_OFF                  digitalLo(BARO_GPIO, BARO_PIN);
-#define BMP085_ON                   digitalHi(BARO_GPIO, BARO_PIN);
+//#define BMP085_OFF                  digitalLo(BARO_GPIO, BARO_PIN);
+//#define BMP085_ON                   digitalHi(BARO_GPIO, BARO_PIN);
 
 #define CMD_RESET               0x1E // ADC reset command
 #define CMD_ADC_READ            0x00 // ADC read command
@@ -41,13 +41,13 @@ bool ms5611Detect(baro_t *baro)
     uint8_t sig;
     int i;
 
-    // PC13 (BMP085's XCLR reset input, which we use to disable it)
+    /*/ PC13 (BMP085's XCLR reset input, which we use to disable it)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
     GPIO_Init(GPIOC, &GPIO_InitStructure);
-    BMP085_OFF;
+    BMP085_OFF;*/
 
     delay(10); // No idea how long the chip takes to power-up, but let's make it 10ms
 

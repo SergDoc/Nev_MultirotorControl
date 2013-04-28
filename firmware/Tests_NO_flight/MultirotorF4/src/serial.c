@@ -1,9 +1,11 @@
 #include "board.h"
 #include "mw.h"
 
+
 // Multiwii Serial Protocol 0 
 #define MSP_VERSION              0
 #define PLATFORM_32BIT           0x80000000
+
 
 #define MSP_IDENT                100    //out message         multitype + version
 #define MSP_STATUS               101    //out message         cycletime & errors_count & sensor present & box activation
@@ -25,6 +27,7 @@
 #define MSP_PIDNAMES             117    //out message         the PID names
 #define MSP_WP                   118    //out message         get a WP, WP# is in the payload, returns (WP#, lat, lon, alt, flags) WP#0-home, WP#16-poshold
 
+
 #define MSP_SET_RAW_RC           200    //in message          8 rc chan
 #define MSP_SET_RAW_GPS          201    //in message          fix, numsat, lat, lon, alt, speed
 #define MSP_SET_PID              202    //in message          up to 16 P I D (8 are used)
@@ -36,18 +39,24 @@
 #define MSP_RESET_CONF           208    //in message          no param
 #define MSP_WP_SET               209    //in message          sets a given WP (WP#,lat, lon, alt, flags)
 
+
 #define MSP_EEPROM_WRITE         250    //in message          no param
+
 
 #define MSP_DEBUGMSG             253    //out message         debug string buffer
 #define MSP_DEBUG                254    //out message         debug1,debug2,debug3,debug4
 
+
 #define MSP_ACC_TRIM             240    //out message         get acc angle trim values
 #define MSP_SET_ACC_TRIM         239    //in message          set acc angle trim values
+
 
 // Additional commands that are not compatible with MultiWii
 #define MSP_UID                  160    //out message         Unique device ID
 
+
 #define INBUF_SIZE 64
+
 
 static const char boxnames[] =
     "ANGLE;"
@@ -66,6 +75,7 @@ static const char boxnames[] =
     "LLIGHTS;"
     "HEADADJ;";
 
+
 static const char pidnames[] =
     "ROLL;"
     "PITCH;"
@@ -78,11 +88,13 @@ static const char pidnames[] =
     "MAG;"
     "VEL;";
 
+
 static uint8_t checksum, indRX, inBuf[INBUF_SIZE];
 static uint8_t cmdMSP;
 static bool guiConnected = false;
 // signal that we're in cli mode
 uint8_t cliMode = 0;
+
 
 void serialize32(uint32_t a)
 {
@@ -101,6 +113,7 @@ void serialize32(uint32_t a)
     checksum ^= t;
 }
 
+
 void serialize16(int16_t a)
 {
     static uint8_t t;
@@ -112,16 +125,19 @@ void serialize16(int16_t a)
     checksum ^= t;
 }
 
+
 void serialize8(uint8_t a)
 {
     uartWrite(a);
     checksum ^= a;
 }
 
+
 uint8_t read8(void)
 {
     return inBuf[indRX++] & 0xff;
 }
+
 
 uint16_t read16(void)
 {
@@ -130,12 +146,14 @@ uint16_t read16(void)
     return t;
 }
 
+
 uint32_t read32(void)
 {
     uint32_t t = read16();
     t += (uint32_t) read16() << 16;
     return t;
 }
+
 
 void headSerialResponse(uint8_t err, uint8_t s)
 {
@@ -147,20 +165,24 @@ void headSerialResponse(uint8_t err, uint8_t s)
     serialize8(cmdMSP);
 }
 
+
 void headSerialReply(uint8_t s)
 {
     headSerialResponse(0, s);
 }
+
 
 void headSerialError(uint8_t s)
 {
     headSerialResponse(1, s);
 }
 
+
 void tailSerialReply(void)
 {
     serialize8(checksum);
 }
+
 
 void serializeNames(const char *s)
 {
@@ -169,15 +191,18 @@ void serializeNames(const char *s)
         serialize8(*c);
 }
 
+
 void serialInit(uint32_t baudrate)
 {
     uartInit(baudrate);
 }
 
+
 static void evaluateCommand(void)
 {
     uint32_t i;
     uint8_t wp_no;
+
 
     switch (cmdMSP) {
     case MSP_SET_RAW_RC:
@@ -395,6 +420,7 @@ static void evaluateCommand(void)
     tailSerialReply();
 }
 
+
 // evaluate all other incoming serial data
 static void evaluateOtherData(uint8_t sr)
 {
@@ -407,6 +433,7 @@ static void evaluateOtherData(uint8_t sr)
             break;
     }
 }
+
 
 void serialCom(void)
 {
@@ -422,14 +449,17 @@ void serialCom(void)
         HEADER_CMD,
     } c_state = IDLE;
 
+
     // in cli mode, all uart stuff goes to here. enter cli mode by sending #
     if (cliMode) {
         cliProcess();
         return;
     }
 
+
     while (uartAvailable()) {
         c = uartRead();
+
 
         if (c_state == IDLE) {
             c_state = (c == '$') ? HEADER_START : IDLE;

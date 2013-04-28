@@ -12,13 +12,13 @@
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F407VG</Device>
+          <Device>STM32F407VE</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <Cpu>IRAM(0x20000000-0x2001FFFF) IRAM2(0x10000000-0x1000FFFF) IROM(0x8000000-0x80FFFFF) CLOCK(25000000) CPUTYPE("Cortex-M4") FPU2</Cpu>
+          <Cpu>IRAM(0x20000000-0x2001FFFF) IRAM2(0x10000000-0x1000FFFF) IROM(0x8000000-0x807FFFF) CLOCK(25000000) CPUTYPE("Cortex-M4") FPU2</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"Startup\ST\STM32F4xx\startup_stm32f4xx.s" ("STM32F4xx Startup Code")</StartupFile>
-          <FlashDriverDll>UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL0100000)</FlashDriverDll>
-          <DeviceId>6103</DeviceId>
+          <FlashDriverDll>UL2CM3(-O207 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL080000)</FlashDriverDll>
+          <DeviceId>6106</DeviceId>
           <RegisterFile>stm32f4xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
@@ -165,7 +165,7 @@
             <DriverSelection>4100</DriverSelection>
           </Flash1>
           <Flash2>STLink\ST-LINKIII-KEIL.dll</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
         </Utilities>
         <TargetArmAds>
@@ -271,7 +271,7 @@
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x100000</Size>
+                <Size>0x80000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -296,7 +296,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x60000</Size>
+                <Size>0x80000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -390,11 +390,6 @@
         <Group>
           <GroupName>system</GroupName>
           <Files>
-            <File>
-              <FileName>startup_stm32f4xx_md.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\startup_stm32f4xx_md.s</FilePath>
-            </File>
             <File>
               <FileName>arm_common_tables.h</FileName>
               <FileType>5</FileType>
@@ -600,6 +595,11 @@
               <FileType>1</FileType>
               <FilePath>.\lib\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
             </File>
+            <File>
+              <FileName>startup_stm32f4xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\startup_stm32f4xx.s</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -609,11 +609,6 @@
               <FileName>drv_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\drv_adc.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_adc_fy90q.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\drv_adc_fy90q.c</FilePath>
             </File>
             <File>
               <FileName>drv_adxl345.c</FileName>
@@ -734,6 +729,16 @@
               <FileName>drv_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\drv_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\drv_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_mpu6000.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\drv_mpu6000.c</FilePath>
             </File>
           </Files>
         </Group>

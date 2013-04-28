@@ -34,6 +34,7 @@ uint32_t micros(void)
         cycle_cnt = SysTick->VAL;
     } while (ms != sysTickUptime);
     return (ms * 1000) + (168000 - cycle_cnt) / 168;
+	
 }
 
 // Return system uptime in milliseconds (rollover in 49 days)
@@ -89,7 +90,7 @@ RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_GPIOE, ENABLE);
     // Turn on clocks for stuff we use
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3 | RCC_APB1Periph_TIM4 | RCC_APB1Periph_TIM5 | RCC_APB1Periph_I2C2 | RCC_APB1Periph_SPI2 | RCC_APB1Periph_USART2 | RCC_APB1Periph_USART3 , ENABLE);
     RCC_APB2PeriphClockCmd(  RCC_APB2Periph_TIM1 | RCC_APB2Periph_TIM8 | RCC_APB2Periph_ADC1 | RCC_APB2Periph_USART1 | RCC_APB2Periph_SPI1, ENABLE);
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOE | RCC_AHB1Periph_DMA1, ENABLE);
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOE | RCC_AHB1Periph_DMA2, ENABLE);
     RCC_ClearFlag();
 
     /*/ Make all GPIO in by default to save power and reduce noise
@@ -128,6 +129,8 @@ RCC_AHB1PeriphClockCmd( RCC_AHB1Periph_GPIOE, ENABLE);
     // Configure the rest of the stuff
 #ifndef FY90Q
     i2cInit(I2C2);
+		init_SPI1();
+		init_SPI2();
 #endif
 
     // sleep for 100ms

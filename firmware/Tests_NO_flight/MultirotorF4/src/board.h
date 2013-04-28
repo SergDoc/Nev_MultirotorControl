@@ -15,6 +15,7 @@
 #include "core_cm4.h"
 #include "printf.h"
 
+
 #ifndef M_PI
 #define M_PI       3.14159265358979323846f
 #endif /* M_PI */
@@ -41,7 +42,7 @@ typedef enum {
 typedef enum AccelSensors {
     ACC_DEFAULT = 0,
     ACC_ADXL345 = 1,
-    ACC_MPU6050 = 2,
+    ACC_MPU6000 = 2,
     ACC_MMA8452 = 3,
 } AccelSensors;
 
@@ -167,7 +168,7 @@ typedef struct baro_t
 #ifdef FY90Q
  // FY90Q
 #include "drv_system.h"         // timers, delays, etc
-#include "drv_adc.h"
+//#include "drv_adc.h"
 #include "drv_i2c.h"
 #include "drv_pwm.h"
 #include "drv_uart.h"
@@ -177,19 +178,19 @@ typedef struct baro_t
 #include "drv_system.h"         // timers, delays, etc
 #include "drv_adc.h"
 #include "drv_adxl345.h"
-#include "drv_bmp085.h"
+//#include "drv_bmp085.h"
 #include "drv_ms5611.h"
 #include "drv_hmc5883l.h"
 #include "drv_i2c.h"
 #include "drv_ledring.h"
 #include "drv_mma845x.h"
 #include "drv_mpu3050.h"
-#include "drv_mpu6050.h"
-//#include "drv_mpu6000.h"
+//#include "drv_mpu6050.h"
+#include "drv_mpu6000.h"
 #include "drv_l3g4200d.h"
 #include "drv_pwm.h"
 #include "drv_uart.h"
 #include "drv_hcsr04.h"
-//#include "drv_spi.h"
+#include "drv_spi.h"
 
 #endif
