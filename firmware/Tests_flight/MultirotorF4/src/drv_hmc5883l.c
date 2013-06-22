@@ -1,5 +1,5 @@
 #include "board.h"
-
+#include "mw.h"
 // HMC5883L, default address 0x1E
 // PB12 connected to MAG_DRDY on rev4 hardware
 
@@ -124,12 +124,22 @@ void hmc5883lRead(int16_t *magData)
     uint8_t buf[6];
     int16_t mag[3];
     int i;
-
+    int16_t temp[2];
+	
     i2cRead(MAG_ADDRESS, MAG_DATA_REGISTER, 6, buf);
-    mag[0] = buf[0] << 8 | buf[1];
+    mag[0] = buf[0] << 8 | buf[1];//mag2
     mag[1] = buf[2] << 8 | buf[3];
-    mag[2] = buf[4] << 8 | buf[5];
+    mag[2] = buf[4] << 8 | buf[5];//-mag0
 
+		temp[0] = mag[0];
+    temp[1] = mag[2];
+		mag[0]=-temp[0];
+		mag[2]=-temp[1];
+	
+	//debug[0] = mag[0];
+	//debug[1] = mag[1];
+	//debug[2] = mag[2];
+	
     for (i = 0; i < 3; i++) {
         int8_t axis = sensor_align[i];
         if (axis > 0)
