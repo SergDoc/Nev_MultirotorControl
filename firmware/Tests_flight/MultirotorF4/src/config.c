@@ -13,17 +13,21 @@
 #define ADDR_FLASH_SECTOR_5     ((uint32_t)0x08020000) /* Base @ of Sector 5, 128 Kbytes */
 #define ADDR_FLASH_SECTOR_6     ((uint32_t)0x08040000) /* Base @ of Sector 6, 128 Kbytes */
 #define ADDR_FLASH_SECTOR_7     ((uint32_t)0x08060000) /* Base @ of Sector 7, 128 Kbytes */
+#define ADDR_FLASH_SECTOR_8     ((uint32_t)0x08080000) /* Base @ of Sector 8, 128 Kbytes */
+#define ADDR_FLASH_SECTOR_9     ((uint32_t)0x080A0000) /* Base @ of Sector 9, 128 Kbytes */
+#define ADDR_FLASH_SECTOR_10    ((uint32_t)0x080C0000) /* Base @ of Sector 10, 128 Kbytes */
+#define ADDR_FLASH_SECTOR_11    ((uint32_t)0x080E0000) /* Base @ of Sector 11, 128 Kbytes */
 
 
 
 #define FLASH_PAGE_SIZE                 ((uint16_t)0x400)
-#define FLASH_WRITE_ADDR              ADDR_FLASH_SECTOR_7  //(0x08000000 + (uint32_t)FLASH_PAGE_SIZE * (FLASH_PAGE_COUNT - 1))       // use the last KB for storage
+#define FLASH_WRITE_ADDR              ADDR_FLASH_SECTOR_11  //(0x08000000 + (uint32_t)FLASH_PAGE_SIZE * (FLASH_PAGE_COUNT - 1))       // use the last KB for storage
 
 master_t mcfg;  // master config struct with data independent from profiles
 config_t cfg;   // profile config struct
 const char rcChannelLetters[] = "AERT1234";
 
-static uint8_t EEPROM_CONF_VERSION = 47;
+static uint8_t EEPROM_CONF_VERSION = 48;
 static uint32_t enabledSensors = 0;
 static void resetConf(void);
 
@@ -94,6 +98,7 @@ void readEEPROM(void)
     }
 
     cfg.tri_yaw_middle = constrain(cfg.tri_yaw_middle, cfg.tri_yaw_min, cfg.tri_yaw_max);       //REAR
+		setPIDController(cfg.pidController);
 }
 
 void writeEEPROM(uint8_t b, uint8_t updateProfile)
@@ -127,14 +132,14 @@ retry:
     FLASH_Unlock();
     FLASH_ClearFlag(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR|FLASH_FLAG_PGSERR);
 
-    if (FLASH_EraseSector(FLASH_Sector_7, VoltageRange_3) == FLASH_COMPLETE) {
+    if (FLASH_EraseSector(FLASH_Sector_11, VoltageRange_3) == FLASH_COMPLETE) {
         for (i = 0; i < sizeof(master_t); i += 4) {
             status = FLASH_ProgramWord(FLASH_WRITE_ADDR + i, *(uint32_t *) ((char *)&mcfg + i));
             if (status != FLASH_COMPLETE) {
                 FLASH_Lock();
                 tries++;
-                if (tries < 3)
-                    goto retry;
+               if (tries < 3)
+                   goto retry;
                 else
                     break;
             }
@@ -176,7 +181,7 @@ static void resetConf(void)
     mcfg.version = EEPROM_CONF_VERSION;
     mcfg.mixerConfiguration = MULTITYPE_QUADX;
     featureClearAll();
-    featureSet(FEATURE_VBAT);
+   // featureSet(FEATURE_VBAT);
 		featureSet(FEATURE_PPM);
 
     // global settings
@@ -211,8 +216,8 @@ static void resetConf(void)
     mcfg.gps_baudrate = 115200;
     // serial (USART1) baudrate
     mcfg.serial_baudrate = 115200;
-    mcfg.looptime = 1500;
-
+    mcfg.looptime = 2048;
+    cfg.pidController = 1;
     cfg.P8[ROLL] = 40;
     cfg.I8[ROLL] = 30;
     cfg.D8[ROLL] = 23;
@@ -252,8 +257,8 @@ static void resetConf(void)
     //     cfg.activate[i] = 0;
     cfg.angleTrim[0] = 0;
     cfg.angleTrim[1] = 0;
-    cfg.mag_declination = 0;    // For example, -6deg 37min, = -637 Japan, format is [sign]dddmm (degreesminutes) default is zero.
-    cfg.acc_lpf_factor = 4;
+    cfg.mag_declination = 625;    // For example, -6deg 37min, = -637 Japan, format is [sign]dddmm (degreesminutes) default is zero.
+    cfg.acc_lpf_factor = 100;
     cfg.accz_deadband = 50;
     cfg.baro_tab_size = 21;
     cfg.baro_noise_lpf = 0.6f;
@@ -263,7 +268,7 @@ static void resetConf(void)
     parseRcChannels("AETR1234");
     cfg.deadband = 20;
     cfg.yawdeadband = 20;
-    cfg.alt_hold_throttle_neutral = 45;
+    cfg.alt_hold_throttle_neutral = 40;
     cfg.alt_hold_fast_change = 1;
 
     // Failsafe Variables

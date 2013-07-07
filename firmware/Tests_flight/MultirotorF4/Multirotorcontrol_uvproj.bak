@@ -401,11 +401,6 @@
           <GroupName>app</GroupName>
           <Files>
             <File>
-              <FileName>barofilter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\barofilter.c</FilePath>
-            </File>
-            <File>
               <FileName>buzzer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\buzzer.c</FilePath>
@@ -431,21 +426,6 @@
               <FilePath>.\src\imu.c</FilePath>
             </File>
             <File>
-              <FileName>integrator.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\integrator.c</FilePath>
-            </File>
-            <File>
-              <FileName>kalman1D.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\kalman1D.c</FilePath>
-            </File>
-            <File>
-              <FileName>kalmanFilterFrontend.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\kalmanFilterFrontend.c</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\main.c</FilePath>
@@ -464,11 +444,6 @@
               <FileName>printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\printf.c</FilePath>
-            </File>
-            <File>
-              <FileName>quaternion.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\quaternion.c</FilePath>
             </File>
             <File>
               <FileName>sensors.c</FileName>
@@ -544,16 +519,6 @@
               <FileName>drv_ledring.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\drv_ledring.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_lsm330acc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\drv_lsm330acc.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_lsm330gyro.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\drv_lsm330gyro.c</FilePath>
             </File>
             <File>
               <FileName>drv_mma845x.c</FileName>

@@ -1,6 +1,7 @@
 #include "board.h"
 #include "mw.h"
 
+
 // we unset this on 'exit'
 extern uint8_t cliMode;
 static void cliAux(char *cmdline);
@@ -18,19 +19,24 @@ static void cliSet(char *cmdline);
 static void cliStatus(char *cmdline);
 static void cliVersion(char *cmdline);
 
+
 // from sensors.c
 extern uint8_t batteryCellCount;
 extern uint8_t accHardware;
 
+
 // from config.c RC Channel mapping
 extern const char rcChannelLetters[];
+
 
 // buffer
 static char cliBuffer[48];
 static uint32_t bufferIndex = 0;
 
+
 static float _atof(const char *p);
 static char *ftoa(float x, char *floatString);
+
 
 // sync this with MultiType enum from mw.h
 const char * const mixerNames[] = {
@@ -40,6 +46,7 @@ const char * const mixerNames[] = {
     "AIRPLANE", "HELI_120_CCPM", "HELI_90_DEG", "VTAIL4", "CUSTOM", NULL
 };
 
+
 // sync this with AvailableFeatures enum from board.h
 const char * const featureNames[] = {
     "PPM", "VBAT", "INFLIGHT_ACC_CAL", "SPEKTRUM", "MOTOR_STOP",
@@ -48,21 +55,25 @@ const char * const featureNames[] = {
     NULL
 };
 
+
 // sync this with AvailableSensors enum from board.h
 const char * const sensorNames[] = {
     "ACC", "BARO", "MAG", "SONAR", "GPS", NULL
 };
 
+
 // 
 const char * const accNames[] = {
-    "", "ADXL345", "MPU6000", "MMA845x", NULL
+    "", "ADXL345", "MPU6050", "MMA845x", NULL
 };
+
 
 typedef struct {
     char *name;
     char *param;
     void (*func)(char *cmdline);
 } clicmd_t;
+
 
 // should be sorted a..z for bsearch()
 const clicmd_t cmdTable[] = {
@@ -83,6 +94,7 @@ const clicmd_t cmdTable[] = {
 };
 #define CMD_COUNT (sizeof(cmdTable) / sizeof(cmdTable[0]))
 
+
 typedef enum {
     VAR_UINT8,
     VAR_INT8,
@@ -92,6 +104,7 @@ typedef enum {
     VAR_FLOAT
 } vartype_e;
 
+
 typedef struct {
     const char *name;
     const uint8_t type; // vartype_e
@@ -99,6 +112,7 @@ typedef struct {
     const int32_t min;
     const int32_t max;
 } clivalue_t;
+
 
 const clivalue_t valueTable[] = {
     { "looptime", VAR_UINT16, &mcfg.looptime, 0, 9000 },
@@ -133,6 +147,7 @@ const clivalue_t valueTable[] = {
     { "gyro_cmpf_factor", VAR_UINT16, &mcfg.gyro_cmpf_factor, 100, 1000 },
     { "gyro_cmpfm_factor", VAR_UINT16, &mcfg.gyro_cmpfm_factor, 100, 1000 },
     { "gps_type", VAR_UINT8, &mcfg.gps_type, 0, 3 },
+    { "pid_controller", VAR_UINT8, &cfg.pidController, 0, 1 },
     { "deadband", VAR_UINT8, &cfg.deadband, 0, 32 },
     { "yawdeadband", VAR_UINT8, &cfg.yawdeadband, 0, 100 },
     { "alt_hold_throttle_neutral", VAR_UINT8, &cfg.alt_hold_throttle_neutral, 1, 250 },
@@ -207,12 +222,16 @@ const clivalue_t valueTable[] = {
     { "d_level", VAR_UINT8, &cfg.D8[PIDLEVEL], 0, 200 },
 };
 
+
 #define VALUE_COUNT (sizeof(valueTable) / sizeof(valueTable[0]))
+
 
 static void cliSetVar(const clivalue_t *var, const int32_t value);
 static void cliPrintVar(const clivalue_t *var, uint32_t full);
 
+
 #ifndef HAVE_ITOA_FUNCTION
+
 
 /*
 ** The following two functions together make up an itoa()
@@ -228,6 +247,7 @@ static void cliPrintVar(const clivalue_t *var, uint32_t full);
 ** Code from http://groups.google.com/group/comp.lang.c/msg/66552ef8b04fe1ab?pli=1
 */
 
+
 static char *i2a(unsigned i, char *a, unsigned r)
 {
     if (i / r > 0) 
@@ -235,6 +255,7 @@ static char *i2a(unsigned i, char *a, unsigned r)
     *a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"[i % r];
     return a + 1;
 }
+
 
 char *itoa(int i, char *a, int r)
 {
@@ -248,7 +269,9 @@ char *itoa(int i, char *a, int r)
     return a;
 } 
 
+
 #endif
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // String to Float Conversion
@@ -270,10 +293,12 @@ static float _atof(const char *p)
     int frac = 0;
     double sign, value, scale;
 
+
     // Skip leading white space, if any.
     while (white_space(*p) ) {
         p += 1;
     }
+
 
     // Get sign, if any.
     sign = 1.0;
@@ -281,9 +306,11 @@ static float _atof(const char *p)
         sign = -1.0;
         p += 1;
 
+
     } else if (*p == '+') {
         p += 1;
     }
+
 
     // Get digits before decimal point or exponent, if any.
     value = 0.0;
@@ -292,10 +319,12 @@ static float _atof(const char *p)
         p += 1;
     }
 
+
     // Get digits after decimal point, if any.
     if (*p == '.') {
         double pow10 = 10.0;
         p += 1;
+
 
         while (valid_digit(*p)) {
             value += (*p - '0') / pow10;
@@ -304,11 +333,13 @@ static float _atof(const char *p)
         }
     }
 
+
     // Handle exponent, if any.
     scale = 1.0;
     if ((*p == 'e') || (*p == 'E')) {
         unsigned int expon;
         p += 1;
+
 
         // Get sign of exponent, if any.
         frac = 0;
@@ -316,9 +347,11 @@ static float _atof(const char *p)
             frac = 1;
             p += 1;
 
+
         } else if (*p == '+') {
             p += 1;
         }
+
 
         // Get digits of exponent, if any.
         expon = 0;
@@ -328,15 +361,18 @@ static float _atof(const char *p)
         }
         if (expon > 308) expon = 308;
 
+
         // Calculate scaling factor.
         while (expon >= 50) { scale *= 1E50; expon -= 50; }
         while (expon >=  8) { scale *= 1E8;  expon -=  8; }
         while (expon >   0) { scale *= 10.0; expon -=  1; }
     }
 
+
     // Return signed and scaled floating point result.
     return sign * (frac ? (value / scale) : (value * scale));
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // FTOA
@@ -349,19 +385,24 @@ static char *ftoa(float x, char *floatString)
     char *decimalPoint = ".";
     uint8_t dpLocation;
 
+
     if (x > 0)                  // Rounding for x.xxx display format
         x += 0.0005f;
     else
         x -= 0.0005f;
 
+
     value = (int32_t) (x * 1000.0f);    // Convert float * 1000 to an integer
 
+
     itoa(abs(value), intString1, 10);   // Create string from abs of integer value
+
 
     if (value >= 0)
         intString2[0] = ' ';    // Positive number, add a pad space
     else
         intString2[0] = '-';    // Negative number, add a negative sign
+
 
     if (strlen(intString1) == 1) {
         intString2[1] = '0';
@@ -379,20 +420,25 @@ static char *ftoa(float x, char *floatString)
         strcat(intString2, intString1);
     }
 
+
     dpLocation = strlen(intString2) - 3;
+
 
     strncpy(floatString, intString2, dpLocation);
     floatString[dpLocation] = '\0';
     strcat(floatString, decimalPoint);
     strcat(floatString, intString2 + dpLocation);
 
+
     return floatString;
 }
+
 
 static void cliPrompt(void)
 {
     uartPrint("\r\n# ");
 }
+
 
 static int cliCompare(const void *a, const void *b)
 {
@@ -400,11 +446,13 @@ static int cliCompare(const void *a, const void *b)
     return strncasecmp(ca->name, cb->name, strlen(cb->name));
 }
 
+
 static void cliAux(char *cmdline)
 {
     int i, val = 0;
     uint8_t len;
     char *ptr;
+
 
     len = strlen(cmdline);
     if (len == 0) {
@@ -424,6 +472,7 @@ static void cliAux(char *cmdline)
     }
 }
 
+
 static void cliCMix(char *cmdline)
 {
     int i, check = 0;
@@ -433,7 +482,9 @@ static void cliCMix(char *cmdline)
     float mixsum[3];
     char *ptr;
 
+
     len = strlen(cmdline);
+
 
     if (len == 0) {
         uartPrint("Custom mixer: \r\nMotor\tThr\tRoll\tPitch\tYaw\r\n");
@@ -514,6 +565,7 @@ static void cliCMix(char *cmdline)
     }
 }
 
+
 static void cliDefaults(char *cmdline)
 {
     uartPrint("Resetting to defaults...\r\n");
@@ -522,6 +574,7 @@ static void cliDefaults(char *cmdline)
     delay(10);
     systemReset(false);
 }
+
 
 static void cliDump(char *cmdline)
 {
@@ -532,13 +585,17 @@ static void cliDump(char *cmdline)
     uint32_t mask;
     const clivalue_t *setval;
 
+
     printf("Current Config: Copy everything below here...\r\n");
+
 
     // print out aux switches
     cliAux("");
 
+
     // print out current motor mix
     printf("mixer %s\r\n", mixerNames[mcfg.mixerConfiguration - 1]);
+
 
     // print custom mix if exists
     if (mcfg.customMixer[0].throttle != 0.0f) {
@@ -566,6 +623,7 @@ static void cliDump(char *cmdline)
         printf("cmix %d 0 0 0 0\r\n", i + 1);
     }
 
+
     // print enabled features
     mask = featureMask();
     for (i = 0; ; i++) { // disable all feature first
@@ -580,11 +638,13 @@ static void cliDump(char *cmdline)
             printf("feature %s\r\n", featureNames[i]);
     }
 
+
     // print RC MAPPING
     for (i = 0; i < 8; i++)
         buf[mcfg.rcmap[i]] = rcChannelLetters[i];
     buf[i] = '\0';
     printf("map %s\r\n", buf);
+
 
     // print settings
     for (i = 0; i < VALUE_COUNT; i++) {
@@ -594,6 +654,7 @@ static void cliDump(char *cmdline)
         uartPrint("\r\n");
     }
 }
+
 
 static void cliExit(char *cmdline)
 {
@@ -605,14 +666,17 @@ static void cliExit(char *cmdline)
     cliSave(cmdline);
 }
 
+
 static void cliFeature(char *cmdline)
 {
     uint32_t i;
     uint32_t len;
     uint32_t mask;
 
+
     len = strlen(cmdline);
     mask = featureMask();
+
 
     if (len == 0) {
         uartPrint("Enabled features: ");
@@ -641,6 +705,7 @@ static void cliFeature(char *cmdline)
             len--;
         }
 
+
         for (i = 0; ; i++) {
             if (featureNames[i] == NULL) {
                 uartPrint("Invalid feature name...\r\n");
@@ -661,14 +726,17 @@ static void cliFeature(char *cmdline)
     }
 }
 
+
 static void cliHelp(char *cmdline)
 {
     uint32_t i = 0;
+
 
     uartPrint("Available commands:\r\n");    
     for (i = 0; i < CMD_COUNT; i++)
         printf("%s\t%s\r\n", cmdTable[i].name, cmdTable[i].param);
 }
+
 
 static void cliMap(char *cmdline)
 {
@@ -676,7 +744,9 @@ static void cliMap(char *cmdline)
     uint32_t i;
     char out[9];
 
+
     len = strlen(cmdline);
+
 
     if (len == 8) {
         // uppercase it
@@ -697,12 +767,15 @@ static void cliMap(char *cmdline)
     printf("%s\r\n", out);
 }
 
+
 static void cliMixer(char *cmdline)
 {
     int i;
     int len;
 
+
     len = strlen(cmdline);
+
 
     if (len == 0) {
         printf("Current mixer: %s\r\n", mixerNames[mcfg.mixerConfiguration - 1]);
@@ -718,6 +791,7 @@ static void cliMixer(char *cmdline)
         return;
     }
 
+
     for (i = 0; ; i++) {
         if (mixerNames[i] == NULL) {
             uartPrint("Invalid mixer type...\r\n");
@@ -731,10 +805,12 @@ static void cliMixer(char *cmdline)
     }
 }
 
+
 static void cliProfile(char *cmdline)
 {
     uint8_t len;
     int i;
+
 
     len = strlen(cmdline);
     if (len == 0) {
@@ -750,6 +826,7 @@ static void cliProfile(char *cmdline)
     }
 }
 
+
 static void cliSave(char *cmdline)
 {
     uartPrint("Saving...");
@@ -759,31 +836,38 @@ static void cliSave(char *cmdline)
     systemReset(false);
 }
 
+
 static void cliPrintVar(const clivalue_t *var, uint32_t full)
 {
     int32_t value = 0;
     char buf[8];
+
 
     switch (var->type) {
         case VAR_UINT8:
             value = *(uint8_t *)var->ptr;
             break;
 
+
         case VAR_INT8:
             value = *(int8_t *)var->ptr;
             break;
+
 
         case VAR_UINT16:
             value = *(uint16_t *)var->ptr;
             break;
 
+
         case VAR_INT16:
             value = *(int16_t *)var->ptr;
             break;
 
+
         case VAR_UINT32:
             value = *(uint32_t *)var->ptr;
             break;
+
 
         case VAR_FLOAT:
             printf("%s", ftoa(*(float *)var->ptr, buf));
@@ -798,6 +882,7 @@ static void cliPrintVar(const clivalue_t *var, uint32_t full)
         printf(" %d %d", var->min, var->max);
 }
 
+
 static void cliSetVar(const clivalue_t *var, const int32_t value)
 {
     switch (var->type) {
@@ -806,20 +891,24 @@ static void cliSetVar(const clivalue_t *var, const int32_t value)
             *(char *)var->ptr = (char)value;
             break;
 
+
         case VAR_UINT16:
         case VAR_INT16:
             *(short *)var->ptr = (short)value;
             break;
 
+
         case VAR_UINT32:
             *(int *)var->ptr = (int)value;
             break;
+
 
         case VAR_FLOAT:
             *(float *)var->ptr = *(float *)&value;
             break;
     }
 }
+
 
 static void cliSet(char *cmdline)
 {
@@ -830,7 +919,9 @@ static void cliSet(char *cmdline)
     int32_t value = 0;
     float valuef = 0;
 
+
     len = strlen(cmdline);
+
 
     if (len == 0 || (len == 1 && cmdline[0] == '*')) {
         uartPrint("Current settings: \r\n");
@@ -860,17 +951,30 @@ static void cliSet(char *cmdline)
             }
         }
         uartPrint("ERR: Unknown variable name\r\n");
+    } else {
+        // no equals, check for matching variables.
+        for (i = 0; i < VALUE_COUNT; i++) {
+            if (strstr(valueTable[i].name, cmdline)) {
+                val = &valueTable[i];
+                printf("%s = ", valueTable[i].name);
+                cliPrintVar(val, 0);
+                printf("\r\n");
+            }
+        }
     }
 }
+
 
 static void cliStatus(char *cmdline)
 {
     uint8_t i;
     uint32_t mask;
 
+
     printf("System Uptime: %d seconds, Voltage: %d * 0.1V (%dS battery)\r\n",
         millis() / 1000, vbat, batteryCellCount);
     mask = sensorsMask();
+
 
     printf("CPU %dMHz, detected sensors: ", (SystemCoreClock / 1000000));
     for (i = 0; ; i++) {
@@ -886,13 +990,16 @@ static void cliStatus(char *cmdline)
     }
     uartPrint("\r\n");
 
+
     printf("Cycle Time: %d, I2C Errors: %d, config size: %d\r\n", cycleTime, i2cGetErrorCounter(), sizeof(master_t));
 }
+
 
 static void cliVersion(char *cmdline)
 {
     uartPrint("Afro32 CLI version 2.1 " __DATE__ " / " __TIME__);
 }
+
 
 void cliProcess(void)
 {
@@ -902,37 +1009,9 @@ void cliProcess(void)
         cliPrompt();
     }
 
-    while (uartAvailable()) {
+
+    while (isUartAvailable()) {
         uint8_t c = uartRead();
-
-        /* first step: translate "ESC[" -> "CSI" */
-        if (c == '\033') {
-            c = uartReadPoll();
-            if (c == '[')
-                c = 0x9b;
-            else
-                /* ignore unknown sequences */
-                c = 0;
-        }
-
-        /* second step: translate known CSI sequence into singlebyte control sequences */
-        if (c == 0x9b) {
-            c = uartReadPoll();
-            if (c == 'A')       //up
-                c = 0x0b;
-            else if (c == 'B')  //down
-                c = 0x0a;
-            else if (c == 'C')  //right
-                c = 0x0c;
-            else if (c == 'D')  //left
-                c = 0x08;
-            else if (c == 0x33 && uartReadPoll() == 0x7e)       //delete
-                c = 0xff;       // nonstandard, borrowing 0xff for the delete key
-            else
-                c = 0;
-        }
-
-        /* from here on everything is a single byte */
         if (c == '\t' || c == '?') {
             // do tab completion
             const clicmd_t *cmd, *pstart = NULL, *pend = NULL;
@@ -972,40 +1051,21 @@ void cliProcess(void)
         } else if (!bufferIndex && c == 4) {
             cliExit(cliBuffer);
             return;
-        } else if (c == 0x15) {
-            // ctrl+u == delete line
-            uartPrint("\033[G\033[K# ");
-            bufferIndex = 0;
-            *cliBuffer = '\0';
-        } else if (c == 0x0b) {
-            //uartPrint("up unimplemented");
-        } else if (c == 0x0a) {
-            //uartPrint("down unimplemend");
-        } else if (c == 0x08) {
-            if (bufferIndex > 0) {
-                bufferIndex--;
-                uartPrint("\033[D");
-            }
         } else if (c == 12) {
-            if (cliBuffer[bufferIndex]) {
-                bufferIndex++;
-                uartPrint("\033[C");
-            }
-        } else if (c == 0xff) {
-            // delete key
-            if (cliBuffer[bufferIndex]) {
-                int len = strlen(cliBuffer + bufferIndex);
-                memmove(cliBuffer + bufferIndex, cliBuffer + bufferIndex + 1, len + 1);
-                printf("%s \033[%dD", cliBuffer + bufferIndex, len);
-            }
-        } else if (*cliBuffer && (c == '\n' || c == '\r')) {
+            // clear screen
+            uartPrint("\033[2J\033[1;1H");
+            cliPrompt();
+        } else if (bufferIndex && (c == '\n' || c == '\r')) {
             // enter pressed
             clicmd_t *cmd = NULL;
             clicmd_t target;
             uartPrint("\r\n");
+            cliBuffer[bufferIndex] = 0; // null terminate
+
 
             target.name = cliBuffer;
             target.param = NULL;
+
 
             cmd = bsearch(&target, cmdTable, CMD_COUNT, sizeof cmdTable[0], cliCompare);
             if (cmd)
@@ -1013,8 +1073,10 @@ void cliProcess(void)
             else
                 uartPrint("ERR: Unknown command, try 'help'");
 
-            *cliBuffer = '\0';
+
+            memset(cliBuffer, 0, sizeof(cliBuffer));
             bufferIndex = 0;
+
 
             // 'exit' will reset this flag, so we don't need to print prompt again
             if (!cliMode)
@@ -1022,25 +1084,15 @@ void cliProcess(void)
             cliPrompt();
         } else if (c == 127) {
             // backspace
-            if (bufferIndex && *cliBuffer) {
-                int len = strlen(cliBuffer + bufferIndex);
-
-                --bufferIndex;
-                memmove(cliBuffer + bufferIndex, cliBuffer + bufferIndex + 1, len + 1);
-                printf("\033[D%s \033[%dD", cliBuffer + bufferIndex, len + 1);
+            if (bufferIndex) {
+                cliBuffer[--bufferIndex] = 0;
+                uartPrint("\010 \010");
             }
-        } else if (strlen(cliBuffer) + 1 < sizeof(cliBuffer) && c >= 32 && c <= 126) {
-            int len;
-
+        } else if (bufferIndex < sizeof(cliBuffer) && c >= 32 && c <= 126) {
             if (!bufferIndex && c == 32)
                 continue;
-
-            len = strlen(cliBuffer + bufferIndex);
-
-            memmove(cliBuffer + bufferIndex + 1, cliBuffer + bufferIndex, len + 1);
-            cliBuffer[bufferIndex] = c;
-            printf("%s \033[%dD", cliBuffer + bufferIndex, len + 1);
-            ++bufferIndex;
+            cliBuffer[bufferIndex++] = c;
+            uartWrite(c);
         }
     }
 }

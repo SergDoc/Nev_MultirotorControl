@@ -30,7 +30,7 @@
  */
 
 #include "board.h"
-#include "printf.h"
+#ifdef USE_LAME_PRINTF
 
 #define PRINTF_LONG_SUPPORT
 
@@ -228,7 +228,7 @@ void tfp_printf(char *fmt, ...)
     va_start(va, fmt);
     tfp_format(stdout_putp, stdout_putf, fmt, va);
     va_end(va);
-    while (!uartTransmitEmpty());
+    while (!isUartTransmitEmpty());
 }
 
 static void putcp(void *p, char c)
@@ -246,3 +246,5 @@ void tfp_sprintf(char *s, char *fmt, ...)
     putcp(&s, 0);
     va_end(va);
 }
+#endif /* USE_LAME_PRINTF */
+
