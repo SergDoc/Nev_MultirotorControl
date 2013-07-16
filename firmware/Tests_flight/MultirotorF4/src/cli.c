@@ -40,7 +40,7 @@ static char *ftoa(float x, char *floatString);
 
 // sync this with MultiType enum from mw.h
 const char * const mixerNames[] = {
-    "TRI", "QUADP", "QUADX", "BI",
+    "TRI", "QUADP", "QUADX", "BI",//"QUADXSERG",
     "GIMBAL", "Y6", "HEX6",
     "FLYING_WING", "Y4", "HEX6X", "OCTOX8", "OCTOFLATP", "OCTOFLATX",
     "AIRPLANE", "HELI_120_CCPM", "HELI_90_DEG", "VTAIL4", "CUSTOM", NULL
@@ -64,7 +64,7 @@ const char * const sensorNames[] = {
 
 // 
 const char * const accNames[] = {
-    "", "ADXL345", "MPU6050", "MMA845x", NULL
+    "", "ADXL345", "MPU6000", "MMA845x", NULL
 };
 
 
@@ -185,6 +185,7 @@ const clivalue_t valueTable[] = {
     { "gimbal_roll_max", VAR_UINT16, &cfg.gimbal_roll_max, 100, 3000 },
     { "gimbal_roll_mid", VAR_UINT16, &cfg.gimbal_roll_mid, 100, 3000 },
     { "acc_lpf_factor", VAR_UINT8, &cfg.acc_lpf_factor, 0, 250 },
+		{ "accz_deadband", VAR_UINT8, &cfg.accz_deadband, 0, 250 },
     { "acc_trim_pitch", VAR_INT16, &cfg.angleTrim[PITCH], -300, 300 },
     { "acc_trim_roll", VAR_INT16, &cfg.angleTrim[ROLL], -300, 300 },
     { "baro_tab_size", VAR_UINT8, &cfg.baro_tab_size, 0, BARO_TAB_SIZE_MAX },
@@ -997,7 +998,7 @@ static void cliStatus(char *cmdline)
 
 static void cliVersion(char *cmdline)
 {
-    uartPrint("Afro32 CLI version 2.1 " __DATE__ " / " __TIME__);
+    uartPrint("MultirotorControl CLI version 2.2 " __DATE__ " / " __TIME__);
 }
 
 

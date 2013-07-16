@@ -181,14 +181,14 @@ static void resetConf(void)
     mcfg.version = EEPROM_CONF_VERSION;
     mcfg.mixerConfiguration = MULTITYPE_QUADX;
     featureClearAll();
-   // featureSet(FEATURE_VBAT);
+    featureSet(FEATURE_VBAT);
 		featureSet(FEATURE_PPM);
 
     // global settings
     mcfg.current_profile = 0;       // default profile
     mcfg.gyro_cmpf_factor = 600;    // default MWC
     mcfg.gyro_cmpfm_factor = 250;   // default MWC
-    mcfg.gyro_lpf = 42;             // supported by all gyro drivers now. In case of ST gyro, will default to 32Hz instead
+    mcfg.gyro_lpf = 20;             // supported by all gyro drivers now. In case of ST gyro, will default to 32Hz instead
     mcfg.accZero[0] = 0;
     mcfg.accZero[1] = 0;
     mcfg.accZero[2] = 0;
@@ -216,8 +216,8 @@ static void resetConf(void)
     mcfg.gps_baudrate = 115200;
     // serial (USART1) baudrate
     mcfg.serial_baudrate = 115200;
-    mcfg.looptime = 2048;
-    cfg.pidController = 1;
+    mcfg.looptime = 3000;
+    cfg.pidController = 0;
     cfg.P8[ROLL] = 40;
     cfg.I8[ROLL] = 30;
     cfg.D8[ROLL] = 23;
@@ -258,8 +258,8 @@ static void resetConf(void)
     cfg.angleTrim[0] = 0;
     cfg.angleTrim[1] = 0;
     cfg.mag_declination = 625;    // For example, -6deg 37min, = -637 Japan, format is [sign]dddmm (degreesminutes) default is zero.
-    cfg.acc_lpf_factor = 100;
-    cfg.accz_deadband = 50;
+    cfg.acc_lpf_factor = 20;
+    cfg.accz_deadband = 10;
     cfg.baro_tab_size = 21;
     cfg.baro_noise_lpf = 0.6f;
     cfg.baro_cf = 0.985f;

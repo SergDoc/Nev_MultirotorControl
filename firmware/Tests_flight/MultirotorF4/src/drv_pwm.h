@@ -39,7 +39,7 @@ enum {
     PWM18,
     PWM19,
     PWM20,
-    MAX_PORTS
+    MAX_PORTS 
 };
 
 typedef struct {

@@ -51,26 +51,26 @@ extern uint8_t batteryCellCount;
  
 static void sendDataHead(uint8_t id)
 {
-    uartWrite(PROTOCOL_HEADER);
-    uartWrite(id);
+    uart2Write(PROTOCOL_HEADER);
+    uart2Write(id);
 }
 
 static void sendTelemetryTail(void)
 {
-    uartWrite(PROTOCOL_TAIL);
+    uart2Write(PROTOCOL_TAIL);
 }
 
 static void serializeFrsky(uint8_t data)
 {
     // take care of byte stuffing
     if (data == 0x5e) {
-        uartWrite(0x5d);
-        uartWrite(0x3e);
+        uart2Write(0x5d);
+        uart2Write(0x3e);
     } else if (data == 0x5d) {
-        uartWrite(0x5d);
-        uartWrite(0x3d);
+        uart2Write(0x5d);
+        uart2Write(0x3d);
     } else
-        uartWrite(data);
+        uart2Write(data);
 }
 
 static void serialize16(int16_t a)

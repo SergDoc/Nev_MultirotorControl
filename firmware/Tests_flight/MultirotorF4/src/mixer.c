@@ -22,11 +22,17 @@ static const motorMixer_t mixerQuadP[] = {
     { 1.0f,  0.0f, -1.0f, -1.0f },          // FRONT
 };
 
-static const motorMixer_t mixerQuadX[] = {
+/*static const motorMixer_t mixerQuadX[] = {
     { 1.0f, -1.0f,  1.0f, -1.0f },          // REAR_R
     { 1.0f, -1.0f, -1.0f,  1.0f },          // FRONT_R
     { 1.0f,  1.0f,  1.0f,  1.0f },          // REAR_L
     { 1.0f,  1.0f, -1.0f, -1.0f },          // FRONT_L
+};*/
+static const motorMixer_t mixerQuadX[] = {
+    { 0.87f, -1.0f,  1.0f, -1.0f },          // REAR_R
+    { 1.0f, -0.47f, -1.32f,  0.75f },        // FRONT_R
+    { 0.87f,  1.0f,  1.0f,  1.0f },          // REAR_L
+    { 1.0f,  0.47f, -1.32f, -0.75f },        // FRONT_L
 };
 
 static const motorMixer_t mixerBi[] = {
@@ -115,8 +121,9 @@ const mixer_t mixers[] = {
     { 3, 1, mixerTri },            // MULTITYPE_TRI
     { 4, 0, mixerQuadP },          // MULTITYPE_QUADP
     { 4, 0, mixerQuadX },          // MULTITYPE_QUADX
-    { 2, 1, mixerBi },             // MULTITYPE_BI
-    { 0, 1, NULL },                // * MULTITYPE_GIMBAL
+   // { 4, 0, mixerQuadXSerg },			 // MULTITYPE_QUADX DEAD CAT experimental
+    { 2, 2, mixerBi },             // MULTITYPE_BI
+    { 0, 2, NULL },                // * MULTITYPE_GIMBAL
     { 6, 0, mixerY6 },             // MULTITYPE_Y6
     { 6, 0, mixerHex6P },          // MULTITYPE_HEX6
     { 1, 1, NULL },                // * MULTITYPE_FLYING_WING
@@ -125,9 +132,9 @@ const mixer_t mixers[] = {
     { 8, 0, mixerOctoX8 },         // MULTITYPE_OCTOX8
     { 8, 0, mixerOctoFlatP },      // MULTITYPE_OCTOFLATP
     { 8, 0, mixerOctoFlatX },      // MULTITYPE_OCTOFLATX
-    { 1, 1, NULL },                // * MULTITYPE_AIRPLANE
-    { 0, 1, NULL },                // * MULTITYPE_HELI_120_CCPM
-    { 0, 1, NULL },                // * MULTITYPE_HELI_90_DEG
+    { 1, 4, NULL },                // * MULTITYPE_AIRPLANE
+    { 0, 4, NULL },                // * MULTITYPE_HELI_120_CCPM
+    { 0, 4, NULL },                // * MULTITYPE_HELI_90_DEG
     { 4, 0, mixerVtail4 },         // MULTITYPE_VTAIL4
     { 0, 0, NULL },                // MULTITYPE_CUSTOM
 };
@@ -192,12 +199,12 @@ void writeServos(void)
 
     switch (mcfg.mixerConfiguration) {
         case MULTITYPE_BI:
-            pwmWriteServo(0, servo[4]);
-            pwmWriteServo(1, servo[5]);
+            pwmWriteServo(0, servo[0]);
+            pwmWriteServo(1, servo[1]);
             break;
 
         case MULTITYPE_TRI:
-            pwmWriteServo(0, servo[5]);
+            pwmWriteServo(0, servo[0]);
             break;
 
         case MULTITYPE_AIRPLANE:
@@ -206,15 +213,15 @@ void writeServos(void)
 
         case MULTITYPE_FLYING_WING:
         case MULTITYPE_GIMBAL:
-            pwmWriteServo(0, servo[0]);
-            pwmWriteServo(1, servo[1]);
+            pwmWriteServo(0, servo[2]);
+            pwmWriteServo(1, servo[3]);
             break;
 
         default:
             // Two servos for SERVO_TILT, if enabled
             if (feature(FEATURE_SERVO_TILT)) {
-                pwmWriteServo(0, servo[0]);
-                pwmWriteServo(1, servo[1]);
+                pwmWriteServo(0, servo[2]);
+                pwmWriteServo(1, servo[3]);
             }
             break;
     }
@@ -308,17 +315,17 @@ void mixTable(void)
     // airplane / servo mixes
     switch (mcfg.mixerConfiguration) {
         case MULTITYPE_BI:
-            servo[4] = constrain(1500 + (cfg.yaw_direction * axisPID[YAW]) + axisPID[PITCH], 1020, 2000);   //LEFT
-            servo[5] = constrain(1500 + (cfg.yaw_direction * axisPID[YAW]) - axisPID[PITCH], 1020, 2000);   //RIGHT
+            servo[0] = constrain(1500 + (cfg.yaw_direction * axisPID[YAW]) + axisPID[PITCH], 1020, 2000);   //LEFT
+            servo[1] = constrain(1500 + (cfg.yaw_direction * axisPID[YAW]) - axisPID[PITCH], 1020, 2000);   //RIGHT
             break;
 
         case MULTITYPE_TRI:
-            servo[5] = constrain(cfg.tri_yaw_middle + cfg.yaw_direction * axisPID[YAW], cfg.tri_yaw_min, cfg.tri_yaw_max); //REAR
+            servo[0] = constrain(cfg.tri_yaw_middle + cfg.yaw_direction * axisPID[YAW], cfg.tri_yaw_min, cfg.tri_yaw_max); //REAR
             break;
 
         case MULTITYPE_GIMBAL:
-            servo[0] = constrain(cfg.gimbal_pitch_mid + cfg.gimbal_pitch_gain * angle[PITCH] / 16 + rcCommand[PITCH], cfg.gimbal_pitch_min, cfg.gimbal_pitch_max);
-            servo[1] = constrain(cfg.gimbal_roll_mid + cfg.gimbal_roll_gain * angle[ROLL] / 16 + rcCommand[ROLL], cfg.gimbal_roll_min, cfg.gimbal_roll_max);
+            servo[2] = constrain(cfg.gimbal_pitch_mid + cfg.gimbal_pitch_gain * angle[PITCH] / 16 + rcCommand[PITCH], cfg.gimbal_pitch_min, cfg.gimbal_pitch_max);
+            servo[3] = constrain(cfg.gimbal_roll_mid + cfg.gimbal_roll_gain * angle[ROLL] / 16 + rcCommand[ROLL], cfg.gimbal_roll_min, cfg.gimbal_roll_max);
             break;
 
         case MULTITYPE_AIRPLANE:
@@ -355,16 +362,16 @@ void mixTable(void)
 
         if (rcOptions[BOXCAMSTAB]) {
             if (cfg.gimbal_flags & GIMBAL_MIXTILT) {
-                servo[0] -= (-cfg.gimbal_pitch_gain) * angle[PITCH] / 16 - cfg.gimbal_roll_gain * angle[ROLL] / 16;
-                servo[1] += (-cfg.gimbal_pitch_gain) * angle[PITCH] / 16 + cfg.gimbal_roll_gain * angle[ROLL] / 16;
+                servo[2] -= (-cfg.gimbal_pitch_gain) * angle[PITCH] / 16 - cfg.gimbal_roll_gain * angle[ROLL] / 16;
+                servo[3] += (-cfg.gimbal_pitch_gain) * angle[PITCH] / 16 + cfg.gimbal_roll_gain * angle[ROLL] / 16;
             } else {
-                servo[0] += cfg.gimbal_pitch_gain * angle[PITCH] / 16;
-                servo[1] += cfg.gimbal_roll_gain * angle[ROLL]  / 16;
+                servo[2] += cfg.gimbal_pitch_gain * angle[PITCH] / 16;
+                servo[3] += cfg.gimbal_roll_gain * angle[ROLL]  / 16;
             }
         }
 
-        servo[0] = constrain(servo[0], cfg.gimbal_pitch_min, cfg.gimbal_pitch_max);
-        servo[1] = constrain(servo[1], cfg.gimbal_roll_min, cfg.gimbal_roll_max);
+        servo[2] = constrain(servo[2], cfg.gimbal_pitch_min, cfg.gimbal_pitch_max);
+        servo[3] = constrain(servo[3], cfg.gimbal_roll_min, cfg.gimbal_roll_max);
     }
 
     if (cfg.gimbal_flags & GIMBAL_FORWARDAUX) {

@@ -30,10 +30,10 @@
 #define abs(x) ((x) > 0 ? (x) : -(x))
 #define constrain(amt, low, high) ((amt) < (low) ? (low) : ((amt) > (high) ? (high) : (amt)))
 
-// Chip Unique ID on F103
-#define U_ID_0 (*(uint32_t*)0x1FFFF7E8)
-#define U_ID_1 (*(uint32_t*)0x1FFFF7EC)
-#define U_ID_2 (*(uint32_t*)0x1FFFF7F0)
+// Chip Unique ID on F4xx
+#define U_ID_0 (*(uint32_t*)0x1FFF7A10)
+#define U_ID_1 (*(uint32_t*)0x1FFF7A14)
+#define U_ID_2 (*(uint32_t*)0x1FFF7A18)
 
 typedef enum {
     SENSOR_ACC = 1 << 0,
@@ -231,5 +231,5 @@ typedef struct baro_t
 #include "drv_pwm.h"
 #include "drv_uart.h"
 #include "drv_hcsr04.h"
-
+//#include "drv_usb.h"
 #endif

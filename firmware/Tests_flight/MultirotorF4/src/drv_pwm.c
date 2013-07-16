@@ -41,24 +41,24 @@ typedef struct {
 } pwmPortData_t;
 
 enum {
-    TYPE_IP = 0x10,
-    TYPE_IW = 0x20,
-    TYPE_M = 0x40,
-    TYPE_S = 0x80
+    TYPE_IP = 0x1000,
+    TYPE_IW = 0x2000,
+    TYPE_M = 0x4000,
+    TYPE_S = 0x8000
 };
 
 static pwmPortData_t pwmPorts[MAX_PORTS];
 static uint16_t captures[MAX_INPUTS];
 static pwmPortData_t *motors[MAX_MOTORS];
 static pwmPortData_t *servos[MAX_SERVOS];
-static uint8_t numMotors = 0;
-static uint8_t numServos = 0;
-static uint8_t  numInputs = 0;
+static uint16_t numMotors = 0;
+static uint16_t numServos = 0;
+static uint16_t  numInputs = 0;
 static uint16_t failsafeThreshold = 985;
 // external vars (ugh)
 extern int16_t failsafeCnt;
 
-static const uint8_t multiPPM[] = {
+static const uint16_t multiPPM[] = {
     PWM6  | TYPE_IP,     // PPM input
     PWM9  | TYPE_M,
     PWM10 | TYPE_M,
@@ -72,10 +72,10 @@ static const uint8_t multiPPM[] = {
     PWM18 | TYPE_S,
     PWM19 | TYPE_S,
     PWM20 | TYPE_S,
-    0xFF
+    0xFFFF
 };
 
-static const uint8_t multiPWM[] = {
+static const uint16_t multiPWM[] = {
     PWM1 | TYPE_IW,     // input #1
     PWM2 | TYPE_IW,
     PWM3 | TYPE_IW,
@@ -96,10 +96,10 @@ static const uint8_t multiPWM[] = {
     PWM18 | TYPE_S,
     PWM19 | TYPE_S,
     PWM20 | TYPE_S,
-    0xFF
+    0xFFFF
 };
 
-static const uint8_t airPPM[] = {
+static const uint16_t airPPM[] = {
     PWM6 | TYPE_IP,     // PPM input
     PWM9 | TYPE_M,      // motor #1
     PWM10 | TYPE_M,     // motor #2
@@ -113,10 +113,10 @@ static const uint8_t airPPM[] = {
     PWM18 | TYPE_S,
     PWM19 | TYPE_S,
     PWM20 | TYPE_S,
-    0xFF
+    0xFFFF
 };
 
-static const uint8_t airPWM[] = {
+static const uint16_t airPWM[] = {
     PWM1 | TYPE_IW,     // input #1
     PWM2 | TYPE_IW,
     PWM3 | TYPE_IW,
@@ -137,10 +137,10 @@ static const uint8_t airPWM[] = {
     PWM18 | TYPE_S,
     PWM19 | TYPE_S,
     PWM20 | TYPE_S,
-    0xFF
+    0xFFFF
 };
 
-static const uint8_t *hardwareMaps[] = {
+static const uint16_t *hardwareMaps[] = {
     multiPWM,
     multiPPM,
     airPWM,
@@ -499,7 +499,7 @@ static void pwmCallback(uint8_t port, uint16_t capture)
 bool pwmInit(drv_pwm_config_t *init)
 {
     int i = 0;
-    const uint8_t *setup;
+    const uint16_t *setup;
 	 // to avoid importing cfg/mcfg
 	    failsafeThreshold = init->failsafeThreshold;
 
@@ -512,11 +512,16 @@ bool pwmInit(drv_pwm_config_t *init)
     setup = hardwareMaps[i];
 
     for (i = 0; i < MAX_PORTS; i++) {
-        uint8_t port = setup[i] & 0x0F;
-        uint8_t mask = setup[i] & 0xF0;
+        uint16_t port = setup[i] & 0x00FF;
+        uint16_t mask = setup[i] & 0xFF00;
 
-        if (setup[i] == 0xFF) // terminator
+        if (setup[i] == 0xFFFF) // terminator
             break;
+		//		if (init->useServos && !init->airplane) {
+            // remap PWM17-20 as servos (but not in airplane mode LOL)
+      //      if (port == PWM17 || port == PWM18 || port == PWM19 || port == PWM20)
+      //          mask = TYPE_S;
+      //  }
         if (mask & TYPE_IP) {
             pwmInConfig(port, ppmCallback, 0);
             numInputs = 8;
