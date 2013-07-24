@@ -257,7 +257,7 @@ static void resetConf(void)
     //     cfg.activate[i] = 0;
     cfg.angleTrim[0] = 0;
     cfg.angleTrim[1] = 0;
-    cfg.mag_declination = 625;    // For example, -6deg 37min, = -637 Japan, format is [sign]dddmm (degreesminutes) default is zero.
+    cfg.mag_declination = 0;    // For example, -6deg 37min, = -637 Japan, format is [sign]dddmm (degreesminutes) default is zero.
     cfg.acc_lpf_factor = 20;
     cfg.accz_deadband = 10;
     cfg.baro_tab_size = 21;
