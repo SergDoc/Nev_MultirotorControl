@@ -28,6 +28,8 @@ Battery voltage monitoring and low-voltage alarm
 Buzzer for alarm/user notification 
 
 4 Status LEDs
+
 2 VDD & VCC Status LEDs
+
 
 
