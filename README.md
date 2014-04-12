@@ -30,6 +30,8 @@ Buzzer for alarm/user notification
 4 Status LEDs
 
 2 VDD & VCC Status LEDs
+
+
 [![Donate](https://www.paypalobjects.com/en_US/RU/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YZJH32JYC6P8A)
 
 
